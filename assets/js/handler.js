@@ -11,9 +11,17 @@ function showDialog(msg, callback) {
 	});
 }
 
-function showPrivacyDialog() {
-	$('#modal-3').modal('show');
+function showPrivacyDialog() {	
+	$('#modal_title_content').text("APLY 개인정보처리방침");
+    $('#modal_body_content').load("privacy_for_email.html");
+    $('#modal-3').modal('show');
 }
+
+const showPrivacy = () => {
+    $('#modal_title_content').text("AQR 개인정보처리방침");
+    $('#modal_body_content').load("privacy.html");
+    $('#modal-3').modal({"show" : true});
+};
 
 var appSent = false;
 function sendApplicationData(form_id, token)
