@@ -99,7 +99,7 @@
                   <li class="nav-item"><a data-smooth-scroll href="#about" class="nav-link">説明</a></li>
                   <li class="nav-item"><a data-smooth-scroll href="#user" class="nav-link">使用方法</a></li>
                   <li class="nav-item"><a data-smooth-scroll href="#detail" class="nav-link">詳細機能</a></li>
-                  <li class="nav-item"><a data-smooth-scroll href="https://aplx.link/manager" class="nav-link">口座情報管理</a></li>
+                  <li class="nav-item"><a data-smooth-scroll href="https://aplx.link/manager?lang=ja" class="nav-link">口座情報管理</a></li>
                   <li class="nav-item"><a data-smooth-scroll href="#email-up" class="nav-link">問い合わせ</a></li>
                 </ul>
               </div>
@@ -117,7 +117,7 @@
           <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-7 text-center">
               <h1 class="display-3" data-aos="fade-up" data-aos-delay="50">Ready, Set, Go.</h1>
-              <span class="lead" data-aos="fade-up" data-aos-delay="100">AQR, 送金が容易になる。</span>
+              <span class="lead" data-aos="fade-up" data-aos-delay="100">口座情報、QRコードで保護してください。</span>
               <a class="btn btn-lg btn-success" href="https://aplx.link/register?lang=ja" target="_blank">自分だけのQRコードとURL作り</a>
             </div>
           </div>
@@ -130,17 +130,23 @@
             <div class="col-12 col-md-9 col-lg-8">
               <span class="title-decorative" data-aos="fade-up" data-aos-delay="10">Welcome</span>
               <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">AQRを紹介します。</h2>
-              <span class="lead" data-aos="fade-up" data-aos-delay="200">AQR(Advanced QR)は拡張現実プラットフォーム<br>APLXが支援する簡単な送金支援機能です。</span>
+              <span class="lead" data-aos="fade-up" data-aos-delay="200">これから、手軽に送金してください。</span>
             </div>
           </div>
-
-          <ul class="feature-list feature-list-lg">
-            <li class="row justify-content-around align-items-center">
-              <div class="col-12 col-md-6 col-lg-5 mb-4">
-                <iframe height="315px" src="https://www.youtube.com/embed/7U4Fh4tbBVk" title="AQR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>            
-            </li>
-          </ul>
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+              <div class="video-cover rounded shadow">                
+                <div class="video-play-icon">
+                  <i class="icon-controller-play"></i>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" data-src="https://www.youtube.com/embed/7U4Fh4tbBVk?autoplay=1&amp;mute=1&amp;showinfo=0&amp;rel=0" title="AQR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <!--end of video cover-->
+            </div>
+            <!--end of col-->
+          </div>         
         </div>
       </section>
       
@@ -149,7 +155,7 @@
         
           <div class="row justify-content-center text-center section-intro">
             <div class="col-12 col-md-9 col-lg-8">              
-              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">送金しやすくなる！</h2>
+              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">送金、簡単になる！</h2>
             </div>
           </div>
           
@@ -159,6 +165,10 @@
               <div class="tab-content">
                 <div class="tab-pane fade show active" id="content-1" role="tabpanel">
                   <img alt="QR認識" class="img-fluid w-100" src="assets/img/about-1.png" />
+                </div>
+
+                <div class="tab-pane fade" id="content-2" role="tabpanel">
+                  <img alt="バンキングアプリを開く" class="img-fluid w-100" src="assets/img/about-2_ja.png" />
                 </div>
                 
                 <div class="tab-pane fade" id="content-3" role="tabpanel">
@@ -183,13 +193,26 @@
                   </a>
                 </li>
                 <li>
-                  <a class="card" data-toggle="tab" href="#content-3" role="tab" aria-controls="content-3" aria-selected="false">
+                  <a class="card" data-toggle="tab" href="#content-2" role="tab" aria-controls="content-2" aria-selected="false">
                     <div class="card-body">
                       <div class="media align-items-center">
                         <div class="step-circle mr-4">2</div>
                         <div class="media-body">
                           <h5>バンキングアプリの選択後に実行</h5>
-                          <span>よく使うバンキングアプリから安全に送金してください。 口座番号をいちいち確認して入力する必要はありません！</span>
+                          <span>よく使うバンキングアプリから安全に送金してください。</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="card" data-toggle="tab" href="#content-3" role="tab" aria-controls="content-3" aria-selected="false">
+                    <div class="card-body">
+                      <div class="media align-items-center">
+                        <div class="step-circle mr-4">3</div>
+                        <div class="media-body">
+                          <h5>口座情報露出の心配。 No！</h5>
+                          <span>これからは口座番号ではなく固有QRコードまたはURLを共有してください。</span>
                         </div>
                       </div>
                     </div>
@@ -445,24 +468,7 @@
                   </div>              
             </form>
         </div>
-      </section>
-      
-      <section class="bg-secondary text-center pb-0">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="h2">APLX</h3>
-              <h3 class="h2">拡張現実ベースの展示/広報/コミュニケーションプラットフォーム</h3>
-              <a href="https://aplx.aply.biz/" class="btn btn-lg btn-success">Go to APLX</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <img alt="Image" class="w-100 opacity-60" src="assets/img/graphic-bg-city.svg" />
-            </div>
-          </div>
-        </div>
-      </section>
+      </section>            
       
 		<footer class="bg-gray text-light footer-long">
 			<div class="container">
