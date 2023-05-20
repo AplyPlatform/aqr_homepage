@@ -483,8 +483,8 @@
                                     <label class="lab_check" for="min_type_4"><span class="checkbox"></span> &nbsp;서비스 문의</label>
                                 </div>
                                 <div class="col-12 col-md-3 p-b-10">
-                                    <input type="checkbox" id="min_type_3" name="min_type_3" value="서비스">
-                                    <label class="lab_check" for="min_type_3"><span class="checkbox"></span> &nbsp;서비스 적용</label>
+                                    <input type="checkbox" id="min_type_3" name="min_type_3" value="고급고유URL요청">
+                                    <label class="lab_check" for="min_type_3"><span class="checkbox"></span> &nbsp;고급 고유 URL 요청</label>
                                 </div>
                                 <div class="col-12 col-md-3 p-b-10">
                                   <input type="checkbox" id="min_type_2" name="min_type_2" value="제휴">
@@ -682,6 +682,15 @@
 
               if (targetUrl != "")
                   window.open(targetUrl, "_blank");
+            });
+
+            $("#min_type_3").click(function(){
+              var chk = $(this).is(":checked");
+              if (chk) {
+                let str = $("#form_content").val();
+                if (str.includes("고유 URL 주소")) return;
+                $("#form_content").val("- 고유 URL 주소 :\n- 기업/단체명 :\n" + $("#form_content").val());
+              }
             });
 
             setPage();

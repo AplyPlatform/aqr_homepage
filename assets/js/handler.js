@@ -36,7 +36,7 @@ function sendApplicationData(form_id, token)
 	}
 
 	if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-		min_type = min_type + "/서비스 적용";
+		min_type = min_type + "/고급고유URL요청";
 	}
 
 	if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
