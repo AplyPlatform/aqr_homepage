@@ -1,3 +1,6 @@
+let isRecaptchaInit = false;
+let appSent = false;
+
 function showDialog(msg, callback) {
 	$('#askModalContent').text(msg);
 	$('#askModal').modal('show');
@@ -23,7 +26,6 @@ const showPrivacy = () => {
     $('#modal-3').modal({"show" : true});
 };
 
-var appSent = false;
 function sendApplicationData(form_id, token)
 {
 	let min_type = "";
@@ -92,6 +94,26 @@ function sendApplicationData(form_id, token)
 	$("#email_up_send").hide();
 	$("#sending_progress").show();
 
+	if (isRecaptchaInit == true) {
+		grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+			$(form_id).find('input[name="form_token"]').val(token);
+			let fed = new FormData($(form_id)[0]);
+			   ajaxRequest(fed, form_id);
+		});
+	}
+	else {
+		grecaptcha.ready(function() {
+			isRecaptchaInit = true;
+			grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+				$(form_id).find('input[name="form_token"]').val(token);
+				let fed = new FormData($(form_id)[0]);
+				   ajaxRequest(fed, form_id);
+			});
+		});
+	}	
+}
+
+function ajaxRequest(fed, form_id) {
 	$.ajax({
 		type: "POST",
 		url: 'https://aply.biz/contact/handler.php',
@@ -100,8 +122,8 @@ function sendApplicationData(form_id, token)
 		data:sed,
 		enctype: 'multipart/form-data', // 필수
 		processData: false,
-    contentType: false,
-    cache: false,
+    	contentType: false,
+    	cache: false,
 		success: function (data) {
 			if (data.result == "success") {
 				showDialog("転送が完了しました。 APLYから連絡いたします。", function(){
@@ -160,6 +182,10 @@ function setSubmitHandler(form_p_id) {
 
 function setPage() {
 	setSubmitHandler("email_up");
+
+	grecaptcha.ready(function() {
+		isRecaptchaInit = true;		
+	});
 }
 
 function validateNumber(event) {

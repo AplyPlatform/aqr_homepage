@@ -1,3 +1,7 @@
+
+let isRecaptchaInit = false;
+let appSent = false;
+
 function showDialog(msg, callback) {
 	$('#askModalContent').text(msg);
 	$('#askModal').modal('show');
@@ -23,7 +27,6 @@ const showPrivacy = () => {
     $('#modal-3').modal({"show" : true});
 };
 
-var appSent = false;
 function sendApplicationData(form_id)
 {
 	let min_type = "";
@@ -95,14 +98,24 @@ function sendApplicationData(form_id)
 
 	$("#email_up_send").hide();
 	$("#sending_progress").show();
-	
-	grecaptcha.ready(function() {
+		
+	if (isRecaptchaInit == true) {
 		grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
 			$(form_id).find('input[name="form_token"]').val(token);
 			let fed = new FormData($(form_id)[0]);
-		   	ajaxRequest(fed, form_id);
+			   ajaxRequest(fed, form_id);
 		});
-	});	
+	}
+	else {
+		grecaptcha.ready(function() {
+			isRecaptchaInit = true;
+			grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+				$(form_id).find('input[name="form_token"]').val(token);
+				let fed = new FormData($(form_id)[0]);
+				   ajaxRequest(fed, form_id);
+			});
+		});
+	}
 }
 
 function ajaxRequest(fed, form_id) {
@@ -165,10 +178,14 @@ function setSubmitHandler(form_p_id) {
 		sendApplicationData(form_id);
 	});
 
-	$('[name^=form_phone]').keypress(validateNumber);
+	$('[name^=form_phone]').keypress(validateNumber);	
 }
 
-function setPage() {
+function setPage() {	
+	grecaptcha.ready(function() {
+		isRecaptchaInit = true;		
+	});
+
 	setSubmitHandler("email_up");
 }
 
