@@ -121,7 +121,7 @@ function sendApplicationData(form_id)
 function ajaxRequest(fed, form_id) {
 	$.ajax({
 		type: "POST",
-		url: 'https://aply.biz/contact',
+		url: 'https://aply.biz/contact/',
 		crossDomain: true,
 		dataType: "json",
 		data:fed,
