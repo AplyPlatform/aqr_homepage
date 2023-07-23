@@ -95,11 +95,11 @@
             <div class="col-12 col-lg order-lg-1">
               <div class="collapse navbar-collapse navbar-toggle">
                 <ul class="navbar-nav">
-                  <li class="nav-item"><a data-smooth-scroll href="#home" class="nav-link">HOME</a></li>
-                  <li class="nav-item"><a data-smooth-scroll href="#about" class="nav-link">説明</a></li>
-                  <li class="nav-item"><a data-smooth-scroll href="#user" class="nav-link">使用方法</a></li>
-                  <li class="nav-item"><a data-smooth-scroll href="#detail" class="nav-link">詳細機能</a></li>                  
-                  <li class="nav-item"><a data-smooth-scroll href="#email-up" class="nav-link">問い合わせ</a></li>
+                  <li class="nav-item"><a data-smooth-scroll href="index_ja.html#home" class="nav-link">HOME</a></li>
+                  <li class="nav-item"><a data-smooth-scroll href="index_ja.html#about" class="nav-link">説明</a></li>
+                  <li class="nav-item"><a data-smooth-scroll href="index_ja.html#user" class="nav-link">使用方法</a></li>
+                  <li class="nav-item"><a data-smooth-scroll href="index_ja.html#detail" class="nav-link">詳細機能</a></li>                  
+                  <li class="nav-item"><a data-smooth-scroll href="index_ja.html#email-up" class="nav-link">問い合わせ</a></li>
                   <li class="nav-item"><a data-smooth-scroll href="https://aplx.link/manager?lang=ja" class="nav-link"><i class="fa-solid fa-gear"></i> 口座情報管理</a></li>
                 </ul>
               </div>
@@ -110,247 +110,44 @@
     </div>
     
     <div class="main-container">
-    
-      <section class="height-80 bg-dark text-white jarallax" data-jarallax data-speed="0.2" id="home">
-        <img alt="AQR" src="assets/img/bg1.jpg" class="bg-image opacity-60 jarallax-img" />
+      <section id="bulk" class="pb-0">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-7 text-center">
-              <h1 class="display-3" data-aos="fade-up" data-aos-delay="50">Ready, Set, Go.</h1>
-              <span class="lead" data-aos="fade-up" data-aos-delay="100">口座情報、QRコードで保護してください。</span>
-              <a class="btn btn-lg btn-success" href="https://aplx.link/register?lang=ja" target="_blank">自分だけのQRコードとURL作り</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-white" id="about">
-        <div class="container" data-aos="fade-up">        
           <div class="row justify-content-center text-center section-intro">
-            <div class="col-12 col-md-9 col-lg-8">
-              <span class="title-decorative" data-aos="fade-up" data-aos-delay="10">Welcome</span>
-              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">AQRを紹介します。</h2>
-              <span class="lead" data-aos="fade-up" data-aos-delay="200">これから、手軽に送金してください。</span>
+            <div class="col-12 col-md-8 col-lg-7 mt-3">
+              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">一度に大量の口座情報を登録してください。</h2>
+              <span class="lead" data-aos="fade-up" data-aos-delay="200">エクセルファイルだけ準備してください。</span>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-              <div class="video-cover rounded shadow">                
-                <div class="video-play-icon">
-                  <i class="icon-controller-play"></i>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" data-src="https://www.youtube.com/embed/7U4Fh4tbBVk?autoplay=1&amp;mute=1&amp;showinfo=0&amp;rel=0" title="AQR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+
+          <ul class="feature-list">
+            <li class="row justify-content-around mb-0">                         
+              <div class="col-12 col-md-6 order-md-2 mt-4">
+                <p class="lead"><span class="step-circle step-circle-sm">1</span> エクセルファイルを以下のように準備してください。
+                  <img src="./assets/img/xls_upload_1_ex_ja.png" class="img-fluid" border="0">
+
+                  <pre><code class="language-pug" style="font-size:12px">
+Aコラム:口座番号(数字のみ)
+Bコラム:銀行名
+Cコラム:預金主
+Dコラム:口座ニックネーム
+Eコラム:預金州の一部隠すことの可否(大文字YまたはN)
+Fコラム:支店名
+                  </code></pre>
+                </p>
+                <br>
+                <p class="lead"><span class="step-circle step-circle-sm">2</span> ファイル選択ボタンをクリックしてエクセルファイルを選択してください。</p>
+                <br>
+                <p class="lead"><span class="step-circle step-circle-sm">3</span> アップロードボタンをクリックしてください。</p>
+                <br>                
+                <p class="lead"><i class="fas fa-comment"></i> すべてのシートに存在する口座情報を登録します。</p>
               </div>
-              <!--end of video cover-->
-            </div>
-            <!--end of col-->
-          </div>         
+            </li>                                 
+          </ul>                    
         </div>
       </section>
+
+      <section class="pb-5"></section>
       
-      <section class="bg-white" id="user">
-        <div class="container" data-aos="fade-up">
-        
-          <div class="row justify-content-center text-center section-intro">
-            <div class="col-12 col-md-9 col-lg-8">              
-              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">送金、簡単になる！</h2>
-            </div>
-          </div>
-          
-          <div class="row justify-content-around">
-
-            <div class="col-md-5 col-7 mb-4">
-              <div class="tab-content">
-                <div class="tab-pane fade show active" id="content-1" role="tabpanel">
-                  <img alt="QR認識" class="img-fluid w-100" src="assets/img/about-1.png" />
-                </div>
-
-                <div class="tab-pane fade" id="content-2" role="tabpanel">
-                  <img alt="バンキングアプリを開く" class="img-fluid w-100" src="assets/img/about-3_ja.png" />
-                </div>
-                
-                <!-- <div class="tab-pane fade" id="content-3" role="tabpanel">
-                  <img alt="バンキングアプリを開く" class="img-fluid w-100" src="assets/img/about-3_ja.png" />
-                </div> -->
-              </div>
-            </div>
-
-            <div class="col-lg-5 col-md-8 mb-4">
-              <ul class="nav nav-cards" role="tablist">
-                <li>
-                  <a class="card active" data-toggle="tab" href="#content-1" role="tab" aria-controls="content-1" aria-selected="true">
-                    <div class="card-body">
-                      <div class="media align-items-center">
-                        <div class="step-circle mr-4">1</div>
-                        <div class="media-body">
-                          <h5>QR認識またはURLをクリック</h5>
-                          <span>QRをスキャンするか、URLをクリックしてください。 アプリのインストールと登録は必要ありません。</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="card" data-toggle="tab" href="#content-2" role="tab" aria-controls="content-2" aria-selected="false">
-                    <div class="card-body">
-                      <div class="media align-items-center">
-                        <div class="step-circle mr-4">2</div>
-                        <div class="media-body">
-                          <h5>バンキングアプリの選択後に実行</h5>
-                          <span>よく使うバンキングアプリから安全に送金してください。</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <!-- <li>
-                  <a class="card" data-toggle="tab" href="#content-3" role="tab" aria-controls="content-3" aria-selected="false">
-                    <div class="card-body">
-                      <div class="media align-items-center">
-                        <div class="step-circle mr-4">3</div>
-                        <div class="media-body">
-                          <h5>口座情報露出の心配。 No！</h5>
-                          <span>これからは口座番号ではなく固有QRコードまたはURLを共有してください。</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </li> -->
-              </ul>
-            </div>
-          </div>                 
-        </div>
-      </section>
-      
-      <section id="use">
-        <div class="container" data-aos="fade-up">
-          <div class="row justify-content-center text-center section-intro">
-            <div class="col-12 col-md-9 col-lg-8">
-              <span class="title-decorative" data-aos="fade-up" data-aos-delay="10">Advanced QR 登録</span>
-              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">入金要請も簡単に！</h2>
-              <span class="lead" data-aos="fade-up" data-aos-delay="200">自分だけのQRコードとURLを作って簡単に要請してください。</span>
-            </div>
-          </div>
-          <ul class="feature-list feature-list-lg">
-            <li class="row justify-content-around align-items-center">
-              
-              <div class="col-12 col-md-6 col-lg-5 text-center">
-                <a class="btn btn-lg btn-success" href="https://aplx.link/register?lang=ja" target="_blank">自分だけのQRコードとURL作り</a>
-              </div>
-            </li>
-          </ul>
-          <div class="wizard">
-          	<ul class="nav nav-tabs text-center row mb-5">
-          		<li class="col-3"><a href="#first" class="step-circle step-circle-sm">1</a></li>
-          		<li class="col-3"><a href="#second" class="step-circle step-circle-sm">2</a></li>
-          		<li class="col-3"><a href="#third" class="step-circle step-circle-sm">3</a></li>
-          		<li class="col-3"><a href="#fourth" class="step-circle step-circle-sm">4</a></li>
-          	</ul>
-          	<div class="tab-content">
-                <div id="first">
-                	<div class="card card-lg text-center shadow">
-                    	<div class="card-body">
-                    		<h3 class="card_title">AQR&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-qrcode"></i></h3>
-                        	<span><a href="https://aplx.link/register?lang=ja" target="_blank" class="text-teal">口座情報を入力</a>して自分だけのQRコードとURLを生成</span>
-                        	<br>
-                        	<button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="second">
-                	<div class="card card-lg text-center shadow">
-                		<div class="card-body">
-                			<h3 class="card_title"><i class="fa-solid fa-qrcode"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-user"></i></h3>
-                            <span>口座情報露出の心配。 No！ これからは口座番号ではなく固有QRコードまたはURLを共有してください。</span>
-                            <br>
-                            <button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="third">
-                	<div class="card card-lg text-center shadow">
-                		<div class="card-body">
-                          	<h3 class="card_title"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-mobile-screen-button"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-qrcode"></i></h3>
-                            <span>QRをスキャンするかURLをクリック</span>
-                            <br>
-                            <button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="fourth">
-                	<div class="card card-lg text-center shadow">
-                		<div class="card-body">
-                			<h3 class="card_title"><i class="fa-solid fa-mobile-screen-button"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-money-bill-trend-up"></i> </h3>
-                            <span>口座番号コピー後、バンキングアプリから送金完了！</span>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-      </section>
-      
-      <div class="height-5" id="detail">
-
-      </div>
-
-      <section class="bg-white pb-0">
-        <div class="container" data-aos="fade-up">          
-          <div class="row justify-content-center text-center section-intro">
-            <div class="col-12 col-md-9 col-lg-8">
-              <span class="title-decorative" data-aos="fade-up" data-aos-delay="10">詳細機能</span>
-              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">QR? AQR!</h2>
-              <span class="lead" data-aos="fade-up" data-aos-delay="200">AQRで作った自分だけの固有QRコードをこのように活用してください。</span>
-              <span data-aos="fade-up" data-aos-delay="300"><img alt="AQR 활용하기" class="img-fluid w-50" src="assets/img/detail_ja.png"></span>
-            </div>
-          </div>
-          <ul class="row feature-list feature-list-sm">
-            <li class="col-12 col-md-3">
-            	<a class="card card-lg">                
-                	<div class="card-body text-body">
-                		<img class="card-img-top" alt="AQR 활용하기" class="img-fluid w-100" src="assets/img/detail-1_ja.png">
-                  		<h4 class="card-title">名刺</h4>
-                  		<p class="card-text">名刺入金情報を簡単なAQRに変えてください。 送金が簡単になります。</p>
-                	</div>
-            	</a>
-            </li>
-            <li class="col-12 col-md-3">
-            	<a class="card card-lg">                
-                	<div class="card-body text-body">
-                		<img class="card-img-top" alt="AQR 활용하기" class="img-fluid w-100" src="assets/img/detail-2_ja.png">
-                  		<h4 class="card-title">ポスター.</h4>
-                  		<p class="card-text">ポスター募金情報を簡単なAQRに置き換えてください。 募金がしやすくなります。</p>
-                	</div>
-            	</a>
-            </li>
-            <li class="col-12 col-md-3">
-            	<a class="card card-lg">                
-                	<div class="card-body text-body">
-                		<img class="card-img-top" alt="AQR 활용하기" class="img-fluid w-100" src="assets/img/detail-3_ja.png">
-                  		<h4 class="card-title">設置物</h4>
-                  		<p class="card-text">広報用バナーなど設置物に入る複雑な入金情報を簡単なAQRに代替してください。</p>
-                	</div>
-            	</a>
-            </li>
-            <li class="col-12 col-md-3">
-            	<a class="card card-lg">                
-                	<div class="card-body text-body">
-                		<img class="card-img-top" alt="AQR 활용하기" class="img-fluid w-100" src="assets/img/detail-4_ja.png">
-                  		<h4 class="card-title">TV</h4>
-                  		<p class="card-text">TVに出てくる後援広告口座番号をAQRに代替してください! 後援が容易になります。</p>
-                	</div>
-            	</a>
-            </li>
-          </ul>
-        </div>
-        <svg class="decorative-divider" preserveAspectRatio="none" viewbox=" 0 0 100 100">
-          <polygon fill="#F8F9FB" points="0 100 100 100 100 0"></polygon>
-        </svg>
-      </section>
-
       <div class="height-5"  id="url_detail">
 
       </div>
