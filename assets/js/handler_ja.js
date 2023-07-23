@@ -42,7 +42,7 @@ function sendApplicationData(form_id, token)
 	}
 
 	if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-		min_type = min_type + "/기타 문의";
+		min_type = min_type + "/서비스 문의";
 	}
 
 	let form_content = $("#form_content").val();
@@ -116,7 +116,7 @@ function sendApplicationData(form_id, token)
 function ajaxRequest(fed, form_id) {
 	$.ajax({
 		type: "POST",
-		url: 'https://aply.biz/contact/handler.php',
+		url: 'https://aply.biz/contact',
 		crossDomain: true,
 		dataType: "json",
 		data:sed,
