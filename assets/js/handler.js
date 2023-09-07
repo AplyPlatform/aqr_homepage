@@ -43,7 +43,7 @@ function sendApplicationData(form_id)
 	}
 
 	if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-		min_type = min_type + "/서비스 문의";
+		min_type = min_type + "/서비스 및 가격";
 	}
 	
 	if (min_type == "") {
