@@ -55,8 +55,12 @@
     	<script src='https://www.google.com/recaptcha/api.js?render=6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7'></script>
     	<script src="https://kit.fontawesome.com/3bc6b6ae05.js" crossorigin="anonymous"></script>
       <style>
-        .grecaptcha-badge {
-            visibility: hidden;
+        .grecaptcha-badge {visibility: hidden;}
+        @media (min-width:426px) {
+          #pricing-2 {display:none;}
+        }
+        @media (max-width:425px) {
+          #pricing-1 {display:none;}
         }
       </style>
     </head>
@@ -554,107 +558,107 @@
           </div>
 
           <div class="row justify-content-center">                       
-            <div class="col-md-8">
-              <table class="table table-striped pricing table-middle">
+            <div id="pricing-1" class="col-md-8">
+              <table class="table table-striped text-center table-middle">
                 <thead>                  
                   <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"><span class="small text-blue"><b>추천!</b></span></th>
-                    <th scope="col"></th>
-                    <th scope="col"><span class="small text-blue"><b>Built for teams</b></span></th>
+                    <th scope="col" class="border-bottom-0 pb-0"></th>
+                    <th scope="col" class="border-bottom-0 pb-0"></th>
+                    <th scope="col" class="border-bottom-0 pb-0"><span class="small text-blue"><b>추천!</b></span></th>
+                    <th scope="col" class="border-bottom-0 pb-0"></th>
+                    <th scope="col" class="border-bottom-0 pb-0"><span class="small text-blue"><b>Built for teams</b></span></th>
+                  </tr>
+                  <tr>
+                    <th class="border-top-0"></th>
+                    <th class="border-top-0"><span class="h6"><b>Free</b></span></th>
+                    <th class="border-top-0"><span class="h6"><b>Basic</b></span></th>
+                    <th class="border-top-0"><span class="h6"><b>Advanced</b></span></th>
+                    <th class="border-top-0"><span class="h6"><b>Business</b></span></th>
                   </tr>
                 </thead>  
                 <tbody>
                   <tr>
-                    <td></td>
-                    <td><span class="h6"><b>Free</b></span></td>
-                    <td><span class="h6"><b>Basic</b></span></td>
-                    <td><span class="h6"><b>Advanced</b></span></td>
-                    <td><span class="h6"><b>Business</b></span></td>
-                  </tr>
-                  </tr>
-                    <td><span class="text-small text-gray">가격<br /><span class="text-small">(월)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">가격 <span class="text-small">(월)</span></span></td>
                     <td><span class="text-small text-gray">₩</span><span class="h5">0</span></td>
                     <td><span class="text-small text-gray">₩</span><span class="h5">1,800</span></td>
                     <td><span class="text-small text-gray">₩</span><span class="h5">5,400</span></td>
                     <td>맞춤</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">가격<br /><span class="text-small">(연)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">가격 <span class="text-small">(연)</span></span></td>
                     <td><span class="text-small text-gray">₩</span><span class="h5">0</span></td>
                     <td><span class="text-small text-gray">₩</span><span class="h5">19,800</span></td>
                     <td><span class="text-small text-gray">₩</span><span class="h5">59,400</span></td>
                     <td>맞춤</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">낱개 가격<br /><span class="text-small">(월)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">낱개 가격 <span class="text-small">(월)</span></span></td>
                     <td colspan="3"><span class="text-small text-gray">추가시 개당 ₩</span> <span class="h5" style="display:inline;">500</span></td>
                     <td>맞춤</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">낱개 가격<br /><span class="text-small">(연)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">낱개 가격 <span class="text-small">(연)</span></span></td>
                     <td colspan="3"><span class="text-small text-gray">추가시 개당 ₩</span> <span class="h5" style="display:inline;">5,500</span></td>
                     <td>맞춤</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">계좌 등록<br /><span class="text-small">(개)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">계좌 등록 <span class="text-small">(개)</span></span></td>
                     <td>3</td>
                     <td>+ 5</td>
                     <td>+ 20</td>
                     <td>무제한</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">QR 사용<br /><span class="text-small">(개)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">QR 사용 <span class="text-small">(개)</span></span></td>
                     <td>3</td>
                     <td>+ 5</td>
                     <td>+ 20</td>
                     <td>무제한</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">고유 URL<br /><span class="text-small">(개)</span></span></td>
+                    <td class="text-left"><span class="text-small text-gray">고유 URL <span class="text-small">(개)</span></span></td>
                     <td>3</td>
                     <td>+ 5</td>
                     <td>+ 20</td>
                     <td>무제한</td>
                   </tr>                 
                   <tr>
-                    <td><span class="text-small text-gray">QR 디자인</span></td>
+                    <td class="text-left"><span class="text-small text-gray">QR 디자인</span></td>
                     <td><i class="fas fa-check text-green"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">스킨 디자인</span></td>
+                    <td class="text-left"><span class="text-small text-gray">스킨 디자인</span></td>
                     <td>기본</td>
                     <td>기본</td>
                     <td>기본</td>
                     <td>맞춤</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">고급 고유 URL</span></td>
+                    <td class="text-left"><span class="text-small text-gray">고급 고유 URL</span></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                     <td>무제한</td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">API</span></td>
+                    <td class="text-left"><span class="text-small text-gray">API</span></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                   </tr>
                   <tr>
-                    <td><span class="text-small text-gray">기본 로고 수정</span></td>
+                    <td class="text-left"><span class="text-small text-gray">기본 로고 수정</span></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-check text-green"></i></td>
                   </tr>
                   <tr class="border-bottom">
-                    <td><span class="text-small text-gray">광고 제거</span></td>
+                    <td class="text-left"><span class="text-small text-gray">광고 제거</span></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-times text-red"></i></td>
                     <td><i class="fas fa-times text-red"></i></td>
@@ -663,6 +667,182 @@
                 </tbody>
               </table>
             </div>
+            
+            <div id="pricing-2" class="col-md-8">
+                        
+              <ul class="nav nav-pills nav-justified pb-2 w-75 m-auto" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">일반형</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="business-tab" data-toggle="tab" href="#business" role="tab" aria-controls="business" aria-selected="false">기업형</a>
+                </li>
+              </ul>
+              
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                  <table class="table table-striped text-center table-middle">
+                    <thead>                  
+                      <tr>
+                        <th scope="col" class="border-bottom-0 pb-0"></th>
+                        <th scope="col" class="border-bottom-0 pb-0"></th>
+                        <th scope="col" class="border-bottom-0 pb-0"><span class="small text-blue"><b>추천!</b></span></th>
+                        <th scope="col" class="border-bottom-0 pb-0"></th>
+                      </tr>
+                      <tr>
+                        <th class="border-top-0"></th>
+                        <th class="border-top-0"><span class="h6"><b>Free</b></span></th>
+                        <th class="border-top-0"><span class="h6"><b>Basic</b></span></th>
+                        <th class="border-top-0"><span class="h6"><b>Advanced</b></span></th>
+                      </tr>
+                    </thead>  
+                    <tbody>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">가격 <span class="text-small">(월)</span></span></td>
+                        <td><span class="text-small text-gray">₩</span><span class="h5">0</span></td>
+                        <td><span class="text-small text-gray">₩</span><span class="h5">1,800</span></td>
+                        <td><span class="text-small text-gray">₩</span><span class="h5">5,400</span></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">가격 <span class="text-small">(연)</span></span></td>
+                        <td><span class="text-small text-gray">₩</span><span class="h5">0</span></td>
+                        <td><span class="text-small text-gray">₩</span><span class="h5">19,800</span></td>
+                        <td><span class="text-small text-gray">₩</span><span class="h5">59,400</span></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">낱개 가격 <span class="text-small">(월)</span></span></td>
+                        <td colspan="3"><span class="text-small text-gray">추가시 개당 ₩</span> <span class="h5" style="display:inline;">500</span></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">낱개 가격 <span class="text-small">(연)</span></span></td>
+                        <td colspan="3"><span class="text-small text-gray">추가시 개당 ₩</span> <span class="h5" style="display:inline;">5,500</span></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">계좌 등록 <span class="text-small">(개)</span></span></td>
+                        <td>3</td>
+                        <td>+ 5</td>
+                        <td>+ 20</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">QR 사용 <span class="text-small">(개)</span></span></td>
+                        <td>3</td>
+                        <td>+ 5</td>
+                        <td>+ 20</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">고유 URL <span class="text-small">(개)</span></span></td>
+                        <td>3</td>
+                        <td>+ 5</td>
+                        <td>+ 20</td>
+                      </tr>                 
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">QR 디자인</span></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">스킨 디자인</span></td>
+                        <td>기본</td>
+                        <td>기본</td>
+                        <td>기본</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">고급 고유 URL</span></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">API</span></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">기본 로고 수정</span></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                      </tr>
+                      <tr class="border-bottom">
+                        <td class="text-left"><span class="text-small text-gray">광고 제거</span></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                        <td><i class="fas fa-times text-red"></i></td>
+                      </tr>                  
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="business-tab">
+                  <table class="table table-striped text-center table-middle">
+                    <thead>                  
+                      <tr>
+                        <th class="text-left"><span class="small text-blue"><b>Built for teams</b></span></th>
+                        <th style="width:65%;"><span class="h6"><b>Business</b></span></th>
+                      </tr>
+                    </thead>  
+                    <tbody>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">가격 <span class="text-small">(월)</span></span></td>
+                        <td>맞춤</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">가격 <span class="text-small">(연)</span></span></td>
+                        <td>맞춤</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">낱개 가격 <span class="text-small">(월)</span></span></td>
+                        <td>맞춤</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">낱개 가격 <span class="text-small">(연)</span></span></td>
+                        <td>맞춤</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">계좌 등록 <span class="text-small">(개)</span></span></td>
+                        <td>무제한</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">QR 사용 <span class="text-small">(개)</span></span></td>
+                        <td>무제한</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">고유 URL <span class="text-small">(개)</span></span></td>
+                        <td>무제한</td>
+                      </tr>                 
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">QR 디자인</span></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">스킨 디자인</span></td>
+                        <td>맞춤</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">고급 고유 URL</span></td>
+                        <td>무제한</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">API</span></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"><span class="text-small text-gray">기본 로고 수정</span></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>
+                      <tr class="border-bottom">
+                        <td class="text-left"><span class="text-small text-gray">광고 제거</span></td>
+                        <td><i class="fas fa-check text-green"></i></td>
+                      </tr>                  
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+            </div>
+            
           </div>
           <div class="row justify-content-center">  
             <div class="col-md-6 p-3 text-center"><a href="#email-up" class="btn btn-success btn-lg" data-aos-delay="300">가격정책 및 결제 관련 도움이 필요하세요?</a></div>
