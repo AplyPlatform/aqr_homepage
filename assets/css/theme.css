@@ -4204,15 +4204,12 @@ a.close.disabled {
   .popover-header:empty {
     display: none; }
 
-.popover-body {
-  padding: 0.5rem 0.75rem;
-  color: #212529; }
+.popover-body {padding: 0.5rem 0.75rem; color: #212529; }
 
-.carousel {
-  position: relative; }
-
-.carousel.pointer-event {
-  touch-action: pan-y; }
+.carousel {position: relative; }
+#carousel_custom {margin:auto; overflow:hiddeh; width:310px; height;590px; border: 5px solid #4F4F4F; border-radius: 24px; background-color:#FFF;}
+.custom_item {width:300px; height:580px; background-position: center; background-size: contain; background-repeat: no-repeat; border-radius: 24px;}
+.carousel.pointer-event {touch-action: pan-y; }
 
 .carousel-inner {
   position: relative;
