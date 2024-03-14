@@ -4050,14 +4050,8 @@ a.close.disabled {
 .custom_item {width:300px; height:580px; background-position: center; background-size: contain; background-repeat: no-repeat; }
 .carousel.pointer-event {touch-action: pan-y; }
 
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: hidden; }
-  .carousel-inner::after {
-    display: block;
-    clear: both;
-    content: ""; }
+.carousel-inner {position: relative; width: 100%; overflow: hidden; }
+.carousel-inner::after {display: block; clear: both; content: ""; }
 
 .carousel-item {
   position: relative;
@@ -4069,13 +4063,12 @@ a.close.disabled {
           backface-visibility: hidden;
   transition: transform 0.6s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
-    .carousel-item {
-      transition: none; } }
+    .carousel-item {transition: none; }
+    }
 
 .carousel-item.active,
 .carousel-item-next,
-.carousel-item-prev {
-  display: block; }
+.carousel-item-prev {display: block; }
 
 .carousel-item-next:not(.carousel-item-left),
 .active.carousel-item-right {
@@ -6571,7 +6564,7 @@ a.text-white:hover {opacity: .75; }
 
 .text-white .form-group small {color: #fff; }
 
-.bg-gradient {background: linear-gradient(135deg, #797877 0%, #746e61 100%); opacity:.9;}
+.bg-gradient {background: linear-gradient(135deg, #797877 0%, #746e61 100%);}
 
 .text-blue {color: #4582EC !important; }
 .text-indigo {color: #6610f2 !important; }
@@ -8106,7 +8099,7 @@ http://flickity.metafizzy.co
 
 .carousel-cell[class*='col'] {padding:0;}
 .carousel-cell[class*='col'] > * {transition: opacity .35s ease, transform .35s ease; }
-.carousel-cell[class*='col']:not(.is-selected) > * {opacity: .2; }
+.carousel-cell[class*='col']:not(.is-selected) > * {opacity:0.2;}
 .carousel-cell.is-selected {padding:0; border: 5px solid #4F4F4F; border-radius: 24px; overflow:hidden;}
 
 .bg-dark .flickity-page-dots .dot {background: #6c757d; }
