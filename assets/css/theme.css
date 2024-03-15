@@ -44,8 +44,7 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {display: block; }
 
-body { margin: 0; font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; text-align: left; background-color: #f8f9fa; word-break:keep-all;}
+body { margin: 0; font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; text-align: left; background-color: #f8f9fa; word-break:keep-all;}
 
 [tabindex="-1"]:focus {outline: 0 !important; }
 hr {box-sizing: content-box; height: 0; overflow: visible; }
