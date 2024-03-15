@@ -6977,161 +6977,62 @@ img[src*='png'].shadow, img[src*='svg'].shadow {
 [data-aos][data-aos][data-aos-easing=ease-in-out-quart], body[data-aos-easing=ease-in-out-quart] [data-aos] {transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
 [data-aos^=fade][data-aos^=fade] {opacity: 0; transition-property: opacity,transform; }
+[data-aos^=fade][data-aos^=fade].aos-animate {opacity: 1; transform: translateZ(0); }
+[data-aos=fade-up] {transform: translate3d(0, 100px, 0); }
+[data-aos=fade-down] {transform: translate3d(0, -100px, 0); }
+[data-aos=fade-right] {transform: translate3d(-100px, 0, 0); }
+[data-aos=fade-left] {transform: translate3d(100px, 0, 0); }
+[data-aos=fade-up-right] {transform: translate3d(-100px, 100px, 0); }
+[data-aos=fade-up-left] {transform: translate3d(100px, 100px, 0); }
+[data-aos=fade-down-right] {transform: translate3d(-100px, -100px, 0); }
+[data-aos=fade-down-left] {transform: translate3d(100px, -100px, 0); }
+[data-aos^=zoom][data-aos^=zoom] {opacity: 0; transition-property: opacity,transform; }
+[data-aos^=zoom][data-aos^=zoom].aos-animate {opacity: 1; transform: translateZ(0) scale(1); }
+[data-aos=zoom-in] {transform: scale(0.6); }
+[data-aos=zoom-in-up] {transform: translate3d(0, 100px, 0) scale(0.6); }
+[data-aos=zoom-in-down] {transform: translate3d(0, -100px, 0) scale(0.6); }
+[data-aos=zoom-in-right] {transform: translate3d(-100px, 0, 0) scale(0.6); }
+[data-aos=zoom-in-left] {transform: translate3d(100px, 0, 0) scale(0.6); }
+[data-aos=zoom-out] {transform: scale(1.2); }
+[data-aos=zoom-out-up] {transform: translate3d(0, 100px, 0) scale(1.2); }
+[data-aos=zoom-out-down] {transform: translate3d(0, -100px, 0) scale(1.2); }
+[data-aos=zoom-out-right] {transform: translate3d(-100px, 0, 0) scale(1.2); }
+[data-aos=zoom-out-left] {transform: translate3d(100px, 0, 0) scale(1.2); }
+[data-aos^=slide][data-aos^=slide] {transition-property: transform; }
+[data-aos^=slide][data-aos^=slide].aos-animate {transform: translateZ(0); }
+[data-aos=slide-up] {transform: translate3d(0, 100%, 0); }
+[data-aos=slide-down] {transform: translate3d(0, -100%, 0); }
+[data-aos=slide-right] {transform: translate3d(-100%, 0, 0); }
+[data-aos=slide-left] {transform: translate3d(100%, 0, 0); }
+[data-aos^=flip][data-aos^=flip] {-webkit-backface-visibility: hidden; backface-visibility: hidden; transition-property: transform; }
+[data-aos=flip-left] {transform: perspective(2500px) rotateY(-100deg); }
+[data-aos=flip-left].aos-animate {transform: perspective(2500px) rotateY(0); }
+[data-aos=flip-right] {transform: perspective(2500px) rotateY(100deg); }
+[data-aos=flip-right].aos-animate {transform: perspective(2500px) rotateY(0); }
+[data-aos=flip-up] {transform: perspective(2500px) rotateX(-100deg); }
+[data-aos=flip-up].aos-animate {transform: perspective(2500px) rotateX(0); }
+[data-aos=flip-down] {transform: perspective(2500px) rotateX(100deg); }
+[data-aos=flip-down].aos-animate {transform: perspective(2500px) rotateX(0); }
 
-[data-aos^=fade][data-aos^=fade].aos-animate {
-  opacity: 1;
-  transform: translateZ(0); }
+.accordion:not(:first-child) {margin-top: 3rem; }
+.accordion:not(:last-child) {margin-bottom: 1.5rem; }
 
-[data-aos=fade-up] {
-  transform: translate3d(0, 100px, 0); }
+.accordion-item {padding: 0.75rem 0; }
+.accordion-item > [data-toggle="collapse"] {transition: margin .35s ease, opacity .35s ease; cursor: pointer; display: flex; flex-wrap: wrap; justify-content: space-between; }
+.accordion-item > [data-toggle="collapse"] > * {margin-bottom: 0; }
+.accordion-item > [data-toggle="collapse"]:hover {text-decoration: none; }
+.accordion-item > [data-toggle="collapse"] i {transition: transform .35s ease; }
+.accordion-item > [data-toggle="collapse"][aria-expanded="true"] {margin-bottom: 0.75rem; }
+.accordion-item > [data-toggle="collapse"][aria-expanded="true"] i {transform: rotate(90deg); }
+.accordion-item > [data-toggle="collapse"][aria-expanded="false"] {opacity: .5;}
+.accordion-item > [data-toggle="collapse"][aria-expanded="false"]:hover {opacity: 1; }
+.accordion-item:not(:first-child) {border-top: 1px solid #e9ecef; }
 
-[data-aos=fade-down] {
-  transform: translate3d(0, -100px, 0); }
+.bg-dark .accordion-item:not(:first-child) {border-top: 1px solid #343a40; }
 
-[data-aos=fade-right] {
-  transform: translate3d(-100px, 0, 0); }
-
-[data-aos=fade-left] {
-  transform: translate3d(100px, 0, 0); }
-
-[data-aos=fade-up-right] {
-  transform: translate3d(-100px, 100px, 0); }
-
-[data-aos=fade-up-left] {
-  transform: translate3d(100px, 100px, 0); }
-
-[data-aos=fade-down-right] {
-  transform: translate3d(-100px, -100px, 0); }
-
-[data-aos=fade-down-left] {
-  transform: translate3d(100px, -100px, 0); }
-
-[data-aos^=zoom][data-aos^=zoom] {
-  opacity: 0;
-  transition-property: opacity,transform; }
-
-[data-aos^=zoom][data-aos^=zoom].aos-animate {
-  opacity: 1;
-  transform: translateZ(0) scale(1); }
-
-[data-aos=zoom-in] {
-  transform: scale(0.6); }
-
-[data-aos=zoom-in-up] {
-  transform: translate3d(0, 100px, 0) scale(0.6); }
-
-[data-aos=zoom-in-down] {
-  transform: translate3d(0, -100px, 0) scale(0.6); }
-
-[data-aos=zoom-in-right] {
-  transform: translate3d(-100px, 0, 0) scale(0.6); }
-
-[data-aos=zoom-in-left] {
-  transform: translate3d(100px, 0, 0) scale(0.6); }
-
-[data-aos=zoom-out] {
-  transform: scale(1.2); }
-
-[data-aos=zoom-out-up] {
-  transform: translate3d(0, 100px, 0) scale(1.2); }
-
-[data-aos=zoom-out-down] {
-  transform: translate3d(0, -100px, 0) scale(1.2); }
-
-[data-aos=zoom-out-right] {
-  transform: translate3d(-100px, 0, 0) scale(1.2); }
-
-[data-aos=zoom-out-left] {
-  transform: translate3d(100px, 0, 0) scale(1.2); }
-
-[data-aos^=slide][data-aos^=slide] {
-  transition-property: transform; }
-
-[data-aos^=slide][data-aos^=slide].aos-animate {
-  transform: translateZ(0); }
-
-[data-aos=slide-up] {
-  transform: translate3d(0, 100%, 0); }
-
-[data-aos=slide-down] {
-  transform: translate3d(0, -100%, 0); }
-
-[data-aos=slide-right] {
-  transform: translate3d(-100%, 0, 0); }
-
-[data-aos=slide-left] {
-  transform: translate3d(100%, 0, 0); }
-
-[data-aos^=flip][data-aos^=flip] {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transition-property: transform; }
-
-[data-aos=flip-left] {
-  transform: perspective(2500px) rotateY(-100deg); }
-
-[data-aos=flip-left].aos-animate {
-  transform: perspective(2500px) rotateY(0); }
-
-[data-aos=flip-right] {
-  transform: perspective(2500px) rotateY(100deg); }
-
-[data-aos=flip-right].aos-animate {
-  transform: perspective(2500px) rotateY(0); }
-
-[data-aos=flip-up] {
-  transform: perspective(2500px) rotateX(-100deg); }
-
-[data-aos=flip-up].aos-animate {
-  transform: perspective(2500px) rotateX(0); }
-
-[data-aos=flip-down] {
-  transform: perspective(2500px) rotateX(100deg); }
-
-[data-aos=flip-down].aos-animate {
-  transform: perspective(2500px) rotateX(0); }
-
-.accordion:not(:first-child) {
-  margin-top: 3rem; }
-
-.accordion:not(:last-child) {
-  margin-bottom: 1.5rem; }
-
-.accordion-item {
-  padding: 0.75rem 0; }
-  .accordion-item > [data-toggle="collapse"] {
-    transition: margin .35s ease, opacity .35s ease;
-    cursor: pointer;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; }
-    .accordion-item > [data-toggle="collapse"] > * {
-      margin-bottom: 0; }
-    .accordion-item > [data-toggle="collapse"]:hover {
-      text-decoration: none; }
-    .accordion-item > [data-toggle="collapse"] i {
-      transition: transform .35s ease; }
-    .accordion-item > [data-toggle="collapse"][aria-expanded="true"] {
-      margin-bottom: 0.75rem; }
-      .accordion-item > [data-toggle="collapse"][aria-expanded="true"] i {
-        transform: rotate(90deg); }
-    .accordion-item > [data-toggle="collapse"][aria-expanded="false"] {
-      opacity: .5; }
-      .accordion-item > [data-toggle="collapse"][aria-expanded="false"]:hover {
-        opacity: 1; }
-  .accordion-item:not(:first-child) {
-    border-top: 1px solid #e9ecef; }
-
-.bg-dark .accordion-item:not(:first-child) {
-  border-top: 1px solid #343a40; }
-
-article p + p, article p + ul, article ul + p {
-  margin-top: 1.5rem; }
-
-article h4, article h5 {
-  margin-bottom: 1.5rem; }
-  article h4:not(:first-child), article h5:not(:first-child) {
-    margin-top: 3rem; }
+article p + p, article p + ul, article ul + p {margin-top: 1.5rem; }
+article h4, article h5 {margin-bottom: 1.5rem; }
+article h4:not(:first-child), article h5:not(:first-child) {margin-top: 3rem; }
 
 article .blockquote {
   margin: 3rem 0; }
