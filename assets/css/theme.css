@@ -7768,7 +7768,6 @@ http://flickity.metafizzy.co
 .carousel-cell-2[class*='col'] {padding:0;}
 .carousel-cell-2[class*='col'] > * {transition: opacity .35s ease, transform .35s ease; }
 .carousel-cell-2[class*='col']:not(.is-selected) > * {opacity:.4;}
-.carousel-cell-2.is-selected {padding:0; overflow:hidden;}
 
 .bg-dark .flickity-page-dots .dot {background: #6c757d; }
 .bg-gradient .flickity-page-dots .dot {background: #fff; }
