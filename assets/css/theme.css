@@ -4657,7 +4657,6 @@ button.bg-dark:focus {background-color: #0a0c0d !important; }
 .position-static {position: static !important; }
 .position-relative {position: relative !important; }
 .position-absolute {position: absolute !important; }
-.position-absolute2 {position: absolute !important; }
 .position-fixed {position: fixed !important; }
 
 .position-sticky {
@@ -6424,7 +6423,6 @@ ul:last-child, dl:last-child, ol:last-child {margin-bottom: 0; }
   }
 
 .navbar-container .position-absolute, .navbar-container .position-fixed {z-index: 1020; width: 100%; top: 0; }
-.navbar-container .position-absolute2, .navbar-container .position-fixed {z-index: 1020; width: 100%; top: 0; }
 
 @media (min-width: 992px) {
   .container-fluid {padding-left: 3rem; padding-right: 3rem; }
@@ -6561,7 +6559,6 @@ dt {font-weight: 500; }
 .height-0 {height: 0; }
 
 .position-absolute {position: absolute !important; }
-.position-absolute2 {position: absolute !important; }
 .position-relative {position: relative; z-index: 1; }
 .position-static {position: static; }
 .position-fixed {position: fixed !important; }
@@ -8083,11 +8080,8 @@ pre[class*="language-"] {padding: 1em; margin: .5em 0; overflow: auto; border-ra
 [data-sticky] {transition: padding-top .35s ease; }
 
 .main-container [data-sticky].position-fixed {padding-top: 1.5rem; }
-.navbar-container [data-sticky="top"].position-absolute {transition: background-color .35s ease; }
-.navbar-container [data-sticky="top"].position-absolute.position-fixed {background:#212529; }
-
-.navbar-container [data-sticky="top"].position-absolute2 {background-color:transparent !important; transition: background-color .35s ease; }
-.navbar-container [data-sticky="top"].position-absolute2.position-fixed {background:#FFF !important; }
+.navbar-container [data-sticky="top"].position-absolute {background-color:transparent !important; transition: background-color .35s ease;}
+.navbar-container [data-sticky="top"].position-absolute.position-fixed {background:#FFF !important;}
 
 .thumbnail {display: inline-block; text-align: center; border-radius: 0.125rem; width: 4.5rem; }
 .thumbnail.thumbnail-sm {width: 3rem; }
