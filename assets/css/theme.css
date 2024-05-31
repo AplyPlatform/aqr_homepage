@@ -6827,7 +6827,7 @@ img[src*='png'].shadow, img[src*='svg'].shadow {
 .accordion-item > [data-toggle="collapse"] i {transition: transform .35s ease; }
 .accordion-item > [data-toggle="collapse"][aria-expanded="true"] {margin-bottom: 0.75rem; }
 .accordion-item > [data-toggle="collapse"][aria-expanded="true"] i {transform: rotate(90deg); }
-.accordion-item > [data-toggle="collapse"][aria-expanded="false"] {opacity: .5;}
+.accordion-item > [data-toggle="collapse"][aria-expanded="false"] {opacity: .7;}
 .accordion-item > [data-toggle="collapse"][aria-expanded="false"]:hover {opacity: 1; }
 .accordion-item:not(:first-child) {border-top: 1px solid #e9ecef; }
 
