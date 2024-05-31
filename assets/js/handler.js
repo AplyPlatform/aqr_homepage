@@ -31,7 +31,7 @@ function sendApplicationData(form_id)
 {
 	let min_type = "";
 	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-		min_type = "/SW개발";
+		min_type = "/기타";
 	}
 
 	if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
@@ -45,7 +45,7 @@ function sendApplicationData(form_id)
 	if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
 		min_type = min_type + "/서비스 및 가격 문의";
 	}
-	
+		
 	if (min_type == "") {
 		showDialog("문의 종류를 선택해 주세요.", null);		
 		if ($('div').is('.page-loader')) {

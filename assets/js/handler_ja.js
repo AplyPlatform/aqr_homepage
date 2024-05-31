@@ -30,7 +30,7 @@ function sendApplicationData(form_id, token)
 {
 	let min_type = "";
 	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-		min_type = "/SW개발";
+		min_type = "/기타";
 	}
 
 	if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
