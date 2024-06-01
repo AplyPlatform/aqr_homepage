@@ -181,12 +181,16 @@ function setSubmitHandler(form_p_id) {
 	$('[name^=form_phone]').keypress(validateNumber);	
 }
 
-function setPage() {	
+function setPage() {
+	
 	grecaptcha.ready(function() {
 		isRecaptchaInit = true;		
 	});
 
 	setSubmitHandler("email_up");
+
+	if (getCookie("ref1") != "") return;
+    setCookie("ref1", document.referrer, 1);
 }
 
 function validateNumber(event) {
@@ -204,4 +208,18 @@ function isSet(value) {
   if (value == "" || value == null || value == "undefined") return false;
 
   return true;
+}
+
+function setCookie(cName, cValue, cDay) {
+  var date = new Date();
+  date.setTime(date.getTime() + cDay * 60 * 60 * 24 * 1000);
+  document.cookie = cName + '=' + cValue + '; expires=' + date.toUTCString() + '; path=/; domain=.aplx.link';
+}
+  
+function getCookie(cName) {
+  let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + cName.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  
+  return matches ? matches[1] : "";
 }
