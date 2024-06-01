@@ -191,7 +191,6 @@ function setSubmitHandler(form_p_id) {
 }
 
 function setPage() {
-	
 	grecaptcha.ready(function() {
 		isRecaptchaInit = true;		
 	});
