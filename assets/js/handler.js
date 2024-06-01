@@ -184,7 +184,7 @@ function setSubmitHandler(form_p_id) {
 		var chk = $(this).is(":checked");
 		if (chk) {
 		  let str = $("#form_content").val();
-		  if (str.includes("고급 고유 URL") && str.includes("아래의 내용을 채워서") && str.includes("버튼을 클릭해 주세요")) return;
+		  if (str.includes("고급 고유 URL") && str.includes("비영리 공익/사회적 기업 및 단체") && str.includes("고급 고유 URL을 위한 키워드 후보 1")) return;
 		  $("#form_content").val("* 고급 고유 URL은 비영리 공익/사회적 기업 및 단체, 제휴 기업에게 무상으로 제공합니다.\n\n-고유 URL :\n-기업/단체명 :\n-고급 고유 URL을 위한 키워드 후보 1 Ex) mycompany1 :\n-고급 고유 URL을 위한 키워드 후보 2 Ex) mycompany2 :\n" + $("#form_content").val());
 		}
 	});
