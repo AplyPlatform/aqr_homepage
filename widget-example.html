@@ -54,46 +54,51 @@
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 </head>
-<body style="margin:0;border: 0;background: #11897D; font-family: 돋움;">
-  <div>
-    <br>
-    <font color="white">
-    <center>    
-    이 영역은 위젯의 바깥에 위치하고 있는<br> 콘텐츠 입니다.
-    </center>    
-    </font>
-    <br>
-    <br>
+<body>
+  <div class="main-container">          
+    <section class="bg-gradient overflow-hidden" style="background: #11897D">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 align-items-center text-center">
+          이 영역은 위젯의 바깥에 위치하고 있는 콘텐츠 입니다.        
+          </div>
+        </div>
+        
+        <div class="row" id="aqr-widget-area"></div>
+        
+        <div class="row">
+          <div class="col-12 align-items-center text-center">        
+          이 영역은 위젯의 바깥에 위치하고 있는 두번째 콘텐츠 입니다.          
+          </div>
+        </div>        
+      </div>  
+    </section>
+
+    <section class="bg-gradient overflow-hidden">
+      <div class="row">
+        <div class="col-12 align-items-center text-center">
+          <a class="btn btn-sm btn-success mt-2" href="index.html#email-up">위젯 서비스 문의하기 ></a>
+          <hr size="1" color="#fff">
+          © 2024 <a href="https://aply.biz" target="_blank" style="color:#fff" target="_blank">APLY Inc.</a>
+        </div>
+      </div>
+    </section>
   </div>
-  <div id="aqr-widget-area"></div>  
-  <div>
-    <br>
-    <font color="white">    
-    <center>        
-    이 영역은 위젯의 바깥에 위치하고 있는<br> 두번째 콘텐츠 입니다.
-    </center>
-    </font>
-    <br><br>
-  </div>
-  <div style="color:#fff">
-    <center>
-      © 2024 <a href="https://aply.biz" target="_blank" style="color:#fff" target="_blank">APLY Inc.</a>
-    </center>
-    <br><br>
-  </div>
-<script src="https://aq.gy/c/widget.js?v=2024060704"></script>
-<script>
-renderAQRWidget(
-  { 
-    token : "ABCDE", // uniq token
-    layer_id : "aqr-widget-area", // target layer id
-    amount : 50000, // set amount
-    profile : false, // Show or Not profile image and account name
-    libbutton : false, // Show or Not SNS Link Buttons
-    bgColor : "#11897D", // background color
-    textColor : "#ffffff" // guide text color
-  }
-);
-</script>
+
+  <script src="https://aq.gy/c/widget.js?v=2024060704"></script>
+  <script>
+  renderAQRWidget(
+    { 
+      token : "ABCDE", // uniq token
+      layer_id : "aqr-widget-area", // target layer id
+      amount : 50000, // set amount
+      profile : false, // Show or Not profile image and account name
+      libbutton : false, // Show or Not SNS Link Buttons
+      bgColor : "#11897D", // background color
+      textColor : "#ffffff" // guide text color
+    }
+  );
+  </script>
+  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </body>
 </html>
