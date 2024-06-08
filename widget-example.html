@@ -84,18 +84,18 @@
   </div>
 
   <script src="https://aq.gy/c/widget.js?v=2024060704"></script>
-  <script>
-  renderAQRWidget(
-    { 
-      token : "ABCDE", // uniq token
-      layer_id : "aqr-widget-area", // target layer id
-      amount : 50000, // set amount
-      profile : false, // Show or Not profile image and account name
-      libbutton : false, // Show or Not SNS Link Buttons
-      bgColor : "#11897D", // background color
-      textColor : "#ffffff" // guide text color
-    }
-  );
+  <script> 
+  new AQRWidget().renderAQRWidget(
+  { 
+    token : "ABCDE", // uniq token
+    layer_id : "aqr-widget-area", // target layer id
+    amount : 50000, // set amount
+    profile : false, // Show or Not profile image and account name
+    libbutton : false, // Show or Not SNS Link Buttons
+    bgColor : "#11897D", // hex only
+    textColor : "#ffffff"
+  }
+);
   </script>
   <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </body>
