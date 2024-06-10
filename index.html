@@ -63,6 +63,14 @@
       @media (max-width:425px) {
         #pricing-1 {display:none;}
       }
+
+      .arr-1 {
+        position: absolute;
+        width: 24px;
+        fill: #11976D;
+        z-index: 9;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      }
     </style>
   </head>
   
@@ -337,7 +345,20 @@
                         <h6>간편한 설치</h6>
                       </div>
                     </div>
-                  </li>                  
+                  </li>
+                  <li class="list-group-item">
+                    <div class="media">
+                      <div class="media-body">
+                        <a class="btn btn-outline-success" style="width:190px" href="widget-example.html" target="_blank">예제 화면 보기
+                          <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
