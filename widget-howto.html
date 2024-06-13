@@ -144,53 +144,274 @@
     </style>
 </head>
 <body style="overflow-x: hidden; margin: 0;">
+  <!-- Preloader-->
+  <div class="page-loader">
+    <div class="page-loader-inner">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Preloader end-->       
+      
+  <div class="navbar-container">
+    <div class="position-absolute navbar-light" data-sticky="top">
+      <div class="container">        
+        <nav class="navbar navbar-expand-lg text-center">
+          <a class="navbar-brand m-0 text-white" href="index.html">
+            <img class="navbar-logo navbar-logo-light" src="assets/img/logo-aqr2.png" alt="AQR" />
+            <img class="navbar-logo navbar-logo-dark" src="assets/img/logo-aqr1.png" alt="AQR" />
+            <small><b>위젯 서비스</b></small>
+          </a>
+          <div class="navbar-collapse justify-content-end" id="navbarNav" style="display: flex; flex-basis:auto;">
+            <ul class="navbar-nav" style="flex-direction:row;">
+              <li class="nav-item d-flex">
+                <a href="//aplx.link/manager/" class="btn btn-light text-dark navbar-logo-light">로그인</a>
+              </li>
+              <li class="nav-item d-flex">
+                <a href="//aplx.link/manager/" class="btn btn-dark text-white navbar-logo-dark">로그인</a>
+              </li>
+            </ul>
+          </div>
+        </nav>          
+      </div>
+    </div>
+  </div>
+
   <div class="main-container">
-    <section class="bg-gradient overflow-hidden" style="background: #11897D; color: #fff;">
-      <div class="container" style="padding-top:40px;padding-bottom:40px;">
-        <div class="row pb-2">
-          <div class="col-12 align-items-center text-center">
-          이 영역은 위젯의 바깥에 위치하고 있는 콘텐츠입니다.        
+    <section class="space-lg bg-gradient overflow-hidden">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 mb-5 mb-md-0 text-center text-sm-left position-relative">
+            <h1 class="h1 font-weight-bolder" data-aos="fade-up" data-aos-delay="50">AQR 위젯 서비스 도움말</h1>
+            <span class="lead" data-aos="fade-up" data-aos-delay="100">자사의 온라인 서비스 화면에 간편송금 기능을 넣으세요!</span>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="main-carousel overflow-visible" data-flickity='{ "cellAlign": "center", "contain": true, "prevNextButtons": false, "pageDots":false, "wrapAround":true, "autoPlay":2000, "imagesLoaded":true, "initialIndex":4, "draggable":false, "pauseAutoPlayOnHover": false }'>
+              <div class="carousel-cell col-6">
+                <div class="card-sm border-0">
+                  <img class="card-img-top" src="assets/img/widget_item_2.png" alt="AQR">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <div class="row" id="aqr-widget-area"></div>
-        
-        <div class="row">
-          <div class="col-12 align-items-center text-center">        
-          이 영역은 위젯의 바깥에 위치하고 있는 두번째 콘텐츠입니다.          
-          </div>
-        </div>        
       </div>
     </section>
-      <div class="row" style="background: #fff; color: #333; padding: 20px;">       
-        <div class="col-12 align-items-center justify-content-center text-center" style="color:#333;align-content:center;">
-          <p align="center">
-            <button class="btn animated-button" onclick="window.open('index.html#email-up', '_self');">
-              <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                ></path>
-              </svg>
-              <span class="text">AQR 위젯 서비스 문의하기</span>
-              <span class="circle"></span>
-              <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                ></path>
-              </svg>
-            </button>
-          </p>
-          <hr size="1" color="#333">
-          <table border="0" align="center" height="40px;">
-            <tr>
-              <td width="35px" valign="middle"><img src="assets/img/logo-aqr1.png" border="0" width="30px"></td>
-              <td width="100px" valign="middle"><a class="btn btn-sm btn-outline-success" href="index.html">소개 페이지</a></td>
-            </tr>
-          </table>
-          © 2024 <a href="https://aply.biz" target="_blank" style="color:#333" target="_blank">APLY Inc.</a>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6 col-lg-6 mb-5">
+            <h2 class="h1" data-aos="fade-up" data-aos-delay="100">AQR 위젯 서비스</h2>
+            <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">운영중인 서비스에 착!</span>
+            <div class="card w-75 mx-auto mt-5 text-left" data-aos="fade-up">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="media">
+                    <i class="fas fa-object-group mx-2"></i>
+                    <div class="media-body">
+                      <h6>계좌정보 노출 없이</h6> 
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <i class="fa-solid fa-link mx-2"></i>
+                    <div class="media-body">
+                      <h6>서비스 화면에 딱 맞는 디자인</h6>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <i class="fas fa-ad mx-2"></i>
+                    <div class="media-body">
+                      <h6>간편한 설치</h6>
+                    </div>
+                  </div>
+                </li>                
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <div class="container" style="padding-top:40px;padding-bottom:40px;">
+              <div class="row pb-2">
+                <div class="col-12 align-items-center text-center overflow-hidden">
+                이 영역은 위젯의 바깥에 위치하고 있는 콘텐츠입니다.        
+                </div>
+              </div>
+              
+              <div class="row" id="aqr-widget-area"></div>
+              
+              <div class="row">
+                <div class="col-12 align-items-center text-center">
+                이 영역은 위젯의 바깥에 위치하고 있는 두번째 콘텐츠입니다.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>    
-  </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-12 col-lg-10 mb-5">
+            <h2 class="h1" data-aos="fade-up" data-aos-delay="100">AQR 위젯 사용방법</h2>
+            <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">1분이면 충분해요!</span>
+            <div class="card w-75 mx-auto mt-5 text-left" data-aos="fade-up">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <p align="center" style="font-size:30px;font-style: bold;">1</p>
+                      <h6><a href="https://aplx.link/manager" target="_blank">AQR 관리페이지</a>에서 등록한 계좌정보의 "수정하기" 버튼을 클릭하세요.</h6> 
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <p align="center" style="font-size:30px;font-style: bold;">2</p>
+                      <h6>"위젯 코드 퍼가기" 센셕의 "복사" 버튼을 클릭하세요.</h6>
+                      <img src="assets/img/manager_widget_section.png" alt="AQR" width="400px"> 
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">                    
+                    <div class="media-body">
+                      <p align="center" style="font-size:30px;font-style: bold;">3</p>
+                      <h6>위젯을 적용할 페이지의 HTML 코드에서 "&lt;&#47;body&gt;" 앞에 위젯코드를 붙여넣습니다.</h6>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">                    
+                    <div class="media-body">
+                      <p align="center" style="font-size:30px;font-style: bold;">4</p>
+                      <h6>위젯을 표시할 위치에 아래의 코드를 붙여넣습니다.</h6>
+                      <pre><code class="language-pug">&lt;div id="aqr-widget-area"&gt;&lt;/div&gt;</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6 col-lg-6 mb-5">
+            <h2 class="h1" data-aos="fade-up" data-aos-delay="100">광고와 AQR의 로고가 없는 위젯이 필요하세요?</h2>
+            <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">아래 버튼을 클릭하여 문의해주세요.</span>
+            <center>
+              <button class="btn animated-button" onclick="window.open('index.html#email-up', '_self');">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                  ></path>
+                </svg>
+                <span class="text">AQR 위젯 서비스 문의하기</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                  ></path>
+                </svg>
+              </button>
+            </center>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <div class="container" style="padding-top:40px;padding-bottom:40px;">
+              <div class="row pb-2">
+                <div class="col-12 align-items-center text-center overflow-hidden">
+                이 영역은 위젯의 바깥에 위치하고 있는 콘텐츠입니다.        
+                </div>
+              </div>
+              
+              <div class="row" id="aqr-nologo-widget-area"></div>
+              
+              <div class="row">
+                <div class="col-12 align-items-center text-center">
+                이 영역은 위젯의 바깥에 위치하고 있는 두번째 콘텐츠입니다.
+                </div>
+              </div>
+            </div>
+          </div>                                         
+        </div>
+      </div>      
+    </section>
+
+    <footer class="border-top pt-5 pb-4" style="margin-bottom:5rem;">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 text-center">
+            <button class="btn btn-block bg-white dropdown-toggle font-weight-light text-dark" style="border-radius:0; border:1px solid #87929c; padding: 0.8rem 1.1rem;" data-toggle="dropdown">관련 사이트 <i class="icon-plus"></i></button>
+            <ul class="dropdown-menu p-2" style="border-radius:0; width:90%;">
+              <li class="py-1"><a href="index.html"  class="text-dark font-weight-light" target="_blank">AQR 서비스</a></li>
+              <li><a href="//smartstore.naver.com/aqr"  class="text-dark font-weight-light" target="_blank">AQR 플레이트</a></li>
+              <li class="py-1"><a href="//aplx.link" class="text-dark font-weight-light" target="_blank">APLX</a></li>
+              <li><a href="//qr.aply.biz/" class="text-dark font-weight-light" target="_blank">QR코드 만들기</a></li>
+              <li class="py-1"><a href="//aply.biz"  class="text-dark font-weight-light" target="_blank">APLY Inc.</a></li>
+            </ul>
+          </div>
+          <div class="col-6 text-center pt-2">              
+              <span class="col-auto"><a class="text-black-50" href="https://www.instagram.com/aplyplatform" target="_blank"><i class="socicon-instagram"></i></a></span>
+              <span class="col-auto"><a class="text-black-50" href="https://www.facebook.com/APLYPLATFORM" target="_blank"><i class="socicon-facebook" class="text-black-50"></i></a></span>
+              <span class="col-auto"><a class="text-black-50" href="https://kr.linkedin.com/company/aplyplatform" target="_blank"><i class="socicon-linkedin" class="text-black-50"></i></a></span>             
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-4 pt-4">
+            <p class="text-muted" style="font-size:.85rem;">
+              <script>
+                document.write("©" + (new Date()).getFullYear());
+              </script>
+              <a class="text-black-50" href="https://aply.biz" target="_blank">APLY Inc.</a> | <a class="text-black-50" href="javascript:showPrivacy();">개인정보처리방침</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    </div>
+
+  <!-- Required vendor scripts (Do not remove) -->
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/popper.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+  <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+  <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+  <script type="text/javascript" src="assets/js/aos.js"></script>
+  <!-- Flatpickr (calendar/date/time picker UI) -->
+  <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+  <!-- Flickity (handles touch enabled carousels and sliders) -->
+  <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+  <!-- jarallax (parallax effect and video backgrounds) -->
+  <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+  <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+  <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+  <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+  <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+  <!-- jQuery smartWizard facilitates steppable wizard content -->
+  <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+  <!-- Smooth scroll (animation to links in-page)-->
+  <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+  <!-- Prism (displays formatted code boxes) -->
+  <script type="text/javascript" src="assets/js/prism.js"></script>
+  <script type="text/javascript" src="assets/js/zoom.min.js"></script>
+
+  <!-- Required theme scripts (Do not remove) -->
+  <script type="text/javascript" src="assets/js/theme.js"></script>
 
   <script src="https://aq.gy/c/widget.js?v=2024060801"></script>
   <script> 
@@ -201,11 +422,22 @@
       amount : 50000, // set amount
       profile : false, // Show or Not profile image and account name
       libbutton : false, // Show or Not SNS Link Buttons
-      bgcolor : "#11897D", // hex only
-      textcolor : "#ffffff"
+      bgcolor : "#f8f9fa", // hex only
+      textcolor : "#000000"
+    }
+  );
+
+  new AQRWidget().renderAQRWidget(
+    { 
+      token : "ABCDE", // uniq token
+      layer_id : "aqr-nologo-widget-area", // target layer id
+      amount : 50000, // set amount
+      profile : false, // Show or Not profile image and account name
+      libbutton : false, // Show or Not SNS Link Buttons
+      bgcolor : "#f8f9fa", // hex only
+      textcolor : "#000000"
     }
   );
   </script>
-  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </body>
 </html>
