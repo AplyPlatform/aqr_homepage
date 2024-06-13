@@ -308,6 +308,75 @@
     <section>
       <div class="container">
         <div class="row justify-content-center text-center">
+          <div class="col-md-12 col-lg-10 mb-5">
+            <h2 class="h1" data-aos="fade-up" data-aos-delay="100">AQR 위젯 옵션</h2>
+            <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">붙여넣은 위젯 코드를 수정하여 서비스 화면에 어울리도록 꾸며보세요.</span>
+            <div class="card w-75 mx-auto mt-5 text-left" data-aos="fade-up">
+              <ul class="list-group list-group-flush">                
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>위젯의 배경색과 글자색</b></h6>
+                      bgcolor는 배경색, textcolor는 글자색을 설정할 수 있습니다.
+                      <pre><code class="language-pug">bgcolor : "#000000", textcolor : "#ffffff"</code></pre>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>입금요청 금액</b></h6>
+                      송금하기 화면이 표시될 때 입금요청 금액을 표시할 수 있습니다. 'amount'에 금액을 입력하세요. 입력하지 않으면 아무런 표시를 하지 않습니다.
+                      <pre><code class="language-pug">amount : 50000</code></pre>
+                    </div>
+                  </div>
+                </li>                
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>프로필 이미지 및 계좌정보 별명 영역 표시 여부</b></h6>
+                      'profile'은 프로필 이미지와 계좌정보 별명의 표시 여부를 설정합니다. 표시를 원하면 'true', 그렇지 않으면 'false'를 입력하세요.
+                      <pre><code class="language-pug">profile : true // or false</code></pre>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>링크 버튼 표시 여부</b></h6>
+                      'libbutton'은 링크 버튼의 표시 여부를 설정합니다. 표시를 원하는 'true', 그렇지 않으면 'false'를 입력하세요.
+                      <pre><code class="language-pug">libbutton : true // or false</code></pre>
+                    </div>
+                  </div>
+                </li>                
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>위젯 적용 레이어</b></h6>
+                      위젯을 적용 할 레이어의 id 값을 입력합니다.
+                      <pre><code class="language-pug">layer_id : "aqr-widget-layer"</code></pre>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>계좌정보</b></h6>
+                      token은 위젯을 적용할 계좌정보의 고유 주소에서 고유 키워드 값입니다.
+                      <pre><code class="language-pug">token : "ABCDE" // http://aq.gy/f/ABCDE</code></pre>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center">
           <div class="col-md-6 col-lg-6 mb-5">
             <h2 class="h1" data-aos="fade-up" data-aos-delay="100">광고와 AQR의 로고가 없는 위젯이 필요하세요?</h2>
             <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">아래 버튼을 클릭하여 문의해주세요.</span>
