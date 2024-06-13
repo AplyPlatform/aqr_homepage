@@ -205,7 +205,7 @@
         <div class="row justify-content-center text-center">
           <div class="col-md-6 col-lg-6 mb-5">
             <h2 class="h1" data-aos="fade-up" data-aos-delay="100">AQR 위젯 서비스</h2>
-            <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">운영중인 서비스에 착!</span>
+            <span class="lead mt-5" data-aos="fade-up" data-aos-delay="200">내 서비스에 착!</span>
             <div class="card w-75 mx-auto mt-5 text-left" data-aos="fade-up">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -449,8 +449,24 @@
         </div>
       </div>
     </footer>
-    
+
+     <!-- Modal 3 -->
+     <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal_title_content">(주)어플라이 개인정보 처리방침</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+          <div class="modal-body" id="modal_body_content"></div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary btn-sm btn-circle" type="button" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
     </div>
+    
+  </div>
 
   <!-- Required vendor scripts (Do not remove) -->
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
@@ -507,6 +523,12 @@
       textcolor : "#000000"
     }
   );
+  
+  const showPrivacy = () => {
+    $('#modal_title_content').text("AQR 개인정보처리방침");
+    $('#modal_body_content').load("privacy.html");
+    $('#modal-3').modal({"show" : true});
+  };
   </script>
 </body>
 </html>
