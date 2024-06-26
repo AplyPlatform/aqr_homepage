@@ -449,30 +449,28 @@
                   <div class="media">
                     <div class="media-body">
                       <h6><b>전체 위젯 코드 예제 <i class="fas fa-chevron-down"></i></b></h6>
-                      <p align="left" style="background-color:#000;color:#fff;">
-                          <br>&lt;html&gt;<br>
-                          <br>&lt;body&gt;<br>
-                          &lt;div id="aqr-widget-area"&gt;&lt;&#47div&gt;<br>
-                          <br>
-                          &lt;script src="https://aq.gy/c/widget.js"&gt;&lt;&#47script&gt;<br>
-                          &lt;script&gt;<br>
-                          new AQRWidget().renderAQRWidget(<br>
-                          &nbsp;{<br>
-                              &nbsp;&nbsp;token : "NiceCompany",<br>
-                              &nbsp;&nbsp;layer_id : "aqr-widget-area",<br>                              
-                              &nbsp;&nbsp;profile : false,<br>
-                              &nbsp;&nbsp;libbutton : false,<br>
-                              &nbsp;&nbsp;bgcolor : "#f8f9fa",<br>
-                              &nbsp;&nbsp;button_text : "송금버튼 입니다",<br>
-                              &nbsp;&nbsp;amount : 50000<br>
-                              &nbsp;}<br>
-                          );<br>
-                          &lt;&#47script&gt;<br>
-                          &lt;&#47body&gt;<br>
-                          &lt;&#47html&gt;
-                          <br>
-                          <br>
-                      </p>                      
+                      <textarea rows="10" style="background-color:#000;color:#fff;width:100%;">
+<html>
+  <body>
+   <div id="aqr-widget-area"></div>
+  
+   <script src="https://aq.gy/c/widget.js"></script>
+   <script>
+   new AQRWidget().renderAQRWidget(
+    {
+       token : "NiceCompany",
+       layer_id : "aqr-widget-area",
+       profile : false,
+       libbutton : false,
+       bgcolor : "#f8f9fa",
+       button_text : "송금버튼 입니다",
+       amount : 50000
+      }
+     );
+     </script>
+  </body>
+</html>
+                      </textarea>                      
                     </div>
                   </div>
                 </li>
