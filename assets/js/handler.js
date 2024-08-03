@@ -104,7 +104,7 @@ function sendApplicationData(form_id)
 	$(form_id).append(ref);	
 	ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
 	$(form_id).append(ref);
-	if (form_id != "report_up") {
+	if (form_id != "#report_up") {
 		ref = $('<input type="hidden" value="aqrcontact" name="form_kind">');
 	}
 	else {
