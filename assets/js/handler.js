@@ -112,7 +112,7 @@ function sendApplicationData(form_id)
 	}
 	$(form_id).append(ref);
 
-	$("#email_up_send").hide();
+	$("#" + form_id + "_send").hide();
 	$("#sending_progress").show();
 		
 	if (isRecaptchaInit == true) {
@@ -158,7 +158,7 @@ function ajaxRequest(fed, form_id) {
 			}
 			else {
 				showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);
-				$("#email_up_send").show();
+				$("#" + form_id + "_send").show();
 				$("#sending_progress").hide();
 			}
 
@@ -170,7 +170,7 @@ function ajaxRequest(fed, form_id) {
 				$('.page-loader').delay(200).fadeOut(800);
 			}
 
-			$("#email_up_send").show();
+			$("#" + form_id + "_send").show();
 			$("#sending_progress").hide();
 		}
 	});
