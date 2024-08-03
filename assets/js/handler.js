@@ -27,23 +27,34 @@ const showPrivacy = () => {
     $('#modal-3').modal({"show" : true});
 };
 
+const showService = () => {
+    $('#modal_title_content').text("AQR 이용약관");
+    $('#modal_body_content').load("service.html");
+    $('#modal-3').modal({"show" : true});
+};
+
 function sendApplicationData(form_id)
 {
 	let min_type = "";
-	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-		min_type = "/기타";
+	if (form_id != "report_up") {
+		if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
+			min_type = "/기타";
+		}
+	
+		if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
+			min_type = min_type + "/제휴 및 광고 문의";
+		}
+	
+		if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
+			min_type = min_type + "/고급고유URL요청";
+		}
+	
+		if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
+			min_type = min_type + "/서비스 및 가격 문의";
+		}
 	}
-
-	if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-		min_type = min_type + "/제휴 및 광고 문의";
-	}
-
-	if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-		min_type = min_type + "/고급고유URL요청";
-	}
-
-	if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-		min_type = min_type + "/서비스 및 가격 문의";
+	else {
+		min_type = "페이지신고";
 	}
 		
 	if (min_type == "") {
@@ -56,7 +67,7 @@ function sendApplicationData(form_id)
 
 	let form_content = $("#form_content").val();
 	if (form_content == "") {
-		showDialog("문의 내용을 입력해 주세요.", null);
+		showDialog("내용을 입력해 주세요.", null);
 		if ($('div').is('.page-loader')) {
 			$('.page-loader').delay(200).fadeOut(800);
 		}
@@ -64,7 +75,7 @@ function sendApplicationData(form_id)
 	}
 
 	let form_phone = $(form_id).find('input[name="form_phone"]').val();
-	if (form_phone == "") {
+	if (form_id != "report_up" && form_phone == "") {
 		showDialog("전화번호를 입력해 주세요.", null);
 		if ($('div').is('.page-loader')) {
 			$('.page-loader').delay(200).fadeOut(800);
@@ -92,8 +103,13 @@ function sendApplicationData(form_id)
 	let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
 	$(form_id).append(ref);	
 	ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
-	$(form_id).append(ref);	
-	ref = $('<input type="hidden" value="aqrcontact" name="form_kind">');	
+	$(form_id).append(ref);
+	if (form_id != "report_up") {
+		ref = $('<input type="hidden" value="aqrcontact" name="form_kind">');
+	}
+	else {
+		ref = $('<input type="hidden" value="aqrreport" name="form_kind">');
+	}
 	$(form_id).append(ref);
 
 	$("#email_up_send").hide();
@@ -190,15 +206,15 @@ function setSubmitHandler(form_p_id) {
 	});
 }
 
-function setPage() {
+function setPage(form_id) {
 	grecaptcha.ready(function() {
 		isRecaptchaInit = true;		
-	});
+	});	
 
-	setSubmitHandler("email_up");
+	setSubmitHandler(form_id);
 
 	if (getCookie("ref1") != "") return;
-    setCookie("ref1", document.referrer, 1);
+    setCookie("ref1", document.referrer, 1);	
 }
 
 function validateNumber(event) {
@@ -232,7 +248,6 @@ function getCookie(cName) {
   return matches ? matches[1] : "";
 }
 
-$(function() {	
-	setPage();
+$(function() {
 	$('[data-youtube]').youtube_background();
 });

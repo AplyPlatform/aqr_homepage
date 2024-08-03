@@ -447,22 +447,19 @@ H 컬럼: SNS/홈페이지 주소(선택) [https://smartstore.naver.com/abcde]
 		  <footer class="bg-gray text-light footer-long">
 			    <div class="container">
             <div class="row">
-                <div class="col-md-4 text-center">
-                  <img alt="AQR" src="assets/img/logo-aqr2.png" class="mb-3 w-25"/>              			
-                </div>
-                <div class="col-md-4 text-center">              			
-                  <div>
-                    <select id="selSites" class="form-control" onChange="changedSelector">
-                      <option selected>Family Sites</option>
-                      <option>-------------------------------------</option>
-                      <option value="aply">APLY Inc.</option>
-                      <option value="recruit">Recruit</option>
-                      <option value="blog">Blog</option>
-                      <option>-------------------------------------</option>
-                      <option value="aplx">APLX</option>
-                      <option value="kiosk">R&D KIOSK</option>
-                    </select>
-                  </div>
+              <div class="col-md-4 text-center">
+                <img alt="AQR" src="assets/img/logo-aqr2.png" class="mb-3 w-25"/>              			
+              </div>
+              <div class="col-md-4 text-center">                  
+                  <button class="btn btn-block bg-white dropdown-toggle font-weight-light text-dark" style="border-radius:0; border:1px solid #87929c; padding: 0.8rem 1.1rem;" data-toggle="dropdown">관련 사이트 <i class="icon-plus"></i></button>
+                  <ul class="dropdown-menu p-2" style="border-radius:0; width:90%;">
+                    <li class="py-1"><a href="//aply.biz"  class="text-dark font-weight-light" target="_blank">APLY Inc.</a></li>
+                    <li class="py-1"><a href="widget-howto.html"  class="text-dark font-weight-light" target="_blank">AQR 위젯 서비스</a></li>
+                    <li class="py-1"><a href="//smartstore.naver.com/aqr"  class="text-dark font-weight-light" target="_blank">AQR 플레이트</a></li>
+                    <li class="py-1"><a href="//aqr-m.aplx.link"  class="text-dark font-weight-light" target="_blank">AQR-M</a></li>
+                    <li class="py-1"><a href="//aplx.link" class="text-dark font-weight-light" target="_blank">APLX</a></li>
+                    <li class="py-1"><a href="//qr.aply.biz/" class="text-dark font-weight-light" target="_blank">QR코드 만들기</a></li>              
+                  </ul>
               </div>
               <div class="col-md-4 text-center">
                 <div class="mb-2"></div>
@@ -470,8 +467,7 @@ H 컬럼: SNS/홈페이지 주소(선택) [https://smartstore.naver.com/abcde]
                     <span class="col-auto mb-1"><a href="https://www.instagram.com/aplyplatform" target="_blank"><i class="socicon-instagram"></i></a></span>
                     <span class="col-auto mb-1"><a href="https://www.facebook.com/APLYPLATFORM" target="_blank"><i class="socicon-facebook"></i></a></span>
                     <span class="col-auto mb-1"><a href="https://kr.linkedin.com/company/aplyplatform" target="_blank"><i class="socicon-linkedin"></i></a></span>
-                </div>
-                <div colorscheme="dark" class="fb-like" data-href="https://facebook.com/aplyplatform" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-width="330" data-share="false"></div>                
+                </div>                
               </div>
             </div>
             <div class="row">
@@ -590,16 +586,7 @@ H 컬럼: SNS/홈페이지 주소(선택) [https://smartstore.naver.com/abcde]
                   window.open(targetUrl, "_blank");
             });
 
-            $("#min_type_3").click(function(){
-              var chk = $(this).is(":checked");
-              if (chk) {
-                let str = $("#form_content").val();
-                if (str.includes("고급 고유 URL") && str.includes("아래의 내용을 채워서") && str.includes("버튼을 클릭해 주세요")) return;
-                $("#form_content").val("* 고급 고유 URL은 비영리 공익/사회적 기업 및 단체, 제휴 기업에게 무상으로 제공합니다.\n\n-고유 URL :\n-기업/단체명 :\n-고급 고유 URL을 위한 키워드 후보 1 Ex) mycompany1 :\n-고급 고유 URL을 위한 키워드 후보 2 Ex) mycompany2 :\n" + $("#form_content").val());
-              }
-            });
-
-            setPage();
+            setPage("email_up");
             $('[data-youtube]').youtube_background();
           });
     </script>
