@@ -36,7 +36,7 @@ const showService = () => {
 function sendApplicationData(form_id)
 {
 	let min_type = "";
-	if (form_id != "report_up") {
+	if (form_id != "#report_up") {
 		if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
 			min_type = "/기타";
 		}
@@ -75,7 +75,7 @@ function sendApplicationData(form_id)
 	}
 
 	let form_phone = $(form_id).find('input[name="form_phone"]').val();
-	if (form_id != "report_up" && form_phone == "") {
+	if (form_id != "#report_up" && form_phone == "") {
 		showDialog("전화번호를 입력해 주세요.", null);
 		if ($('div').is('.page-loader')) {
 			$('.page-loader').delay(200).fadeOut(800);
@@ -112,7 +112,7 @@ function sendApplicationData(form_id)
 	}
 	$(form_id).append(ref);
 
-	$("#" + form_id + "_send").hide();
+	$(form_id + "_send").hide();
 	$("#sending_progress").show();
 		
 	if (isRecaptchaInit == true) {
@@ -158,7 +158,7 @@ function ajaxRequest(fed, form_id) {
 			}
 			else {
 				showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);
-				$("#" + form_id + "_send").show();
+				$(form_id + "_send").show();
 				$("#sending_progress").hide();
 			}
 
@@ -170,7 +170,7 @@ function ajaxRequest(fed, form_id) {
 				$('.page-loader').delay(200).fadeOut(800);
 			}
 
-			$("#" + form_id + "_send").show();
+			$(form_id + "_send").show();
 			$("#sending_progress").hide();
 		}
 	});
