@@ -6,3 +6,85 @@
 /*  in your page by adding a reference to assets/css/custom.css in the head of each page.
 /*
 */
+
+/*
+.packman-loader-wrapper {position:relative; top:0; left;0; bottom:0; right:0; margin: auto;}
+.packman-loader-wrapper .packman::before {z-index:2; content: ''; background:url('assets/img/logo-aqr2.png') no-repeat center; background-size: cover; position:absolute; width:70px; height:35px; background-color:#158b7e; border-radius: 100px 100px 0 0; transform: translate(-50%, -50%); animation: pac-top 0.5s linear infinite; transform-origin: center bottom;}
+
+.packman-loader-wrapper .packman::after {z-index:2; content: ''; position:absolute; width:70px; height:35px; background-color:#158b7e; border-radius: 0 0 100px 100px; transform: translate(-50%, 50%); animation: pac-bot 0.5s linear infinite; transform-origin: center top;}
+
+@keyframes pac-top {
+  0% {transform: translate(-50%, -50%) rotate(0)}
+  50% {transform: translate(-50%, -50%) rotate(-30deg)}
+  100% {transform: translate(-50%, -50%) rotate(0)}
+}
+
+@keyframes pac-bot {
+  0% {transform: translate(-50%, 50%) rotate(0)}
+  50% {transform: translate(-50%, 50%) rotate(30deg)}
+  100% {transform: translate(-50%, 50%) rotate(0)}
+}
+
+.dots .dot {position: absolute; z-index:-1; top:0;}
+.dots .dot img {width:30px; height:auto;}
+.dots .dot:nth-child(1) {z-index:1; left: 90px; animation: dot-stage1 0.5s infinite;}
+.dots .dot:nth-child(2) {z-index:1; left: 60px; animation: dot-stage1 0.5s infinite;}
+.dots .dot:nth-child(3) {z-index:1; left: 30px; animation: dot-stage1 0.5s infinite;}
+.dots .dot:nth-child(4) {z-index:1; left: 10px; animation: dot-stage2 0.5s infinite;}
+
+@keyframes dot-stage1 {
+  0% {transform: translate(0, 0);}
+  100% {transform: translate(-24px, 0);}
+}
+
+@keyframes dot-stage2 {
+  0% {transform: scale(1);}
+  5%, 100% {transform: scale(0);}
+}
+*/
+
+.circle {position: relative; left: -100px; width: 0; height: 0; border: 50px solid #158b7e; border-radius: 50%; border-right-color: transparent; animation: move 5s linear 0s infinite normal forwards;}
+.circle:before {background:url('assets/img/logo-aqr2.png') no-repeat center; background-size: cover; content: ""; position: absolute; top: -50px; left: -50px; width: 0; height: 0; border: 50px solid #158b7e; border-radius:50%; border-right-color: transparent; animation: chomp1 .25s ease-in-out 0s infinite normal forwards;}
+
+.circle:after {content: ""; position: absolute; top: -50px; left: -50px; width: 0; height: 0; border: 50px solid #158b7e; border-radius: 50%; border-right-color: transparent; animation: chomp2 .25s ease-in-out 0s infinite normal forwards;}
+
+.dots {position:relative; top:40px; display: flex; justify-content: center; align-items: center;}
+.dot {position:relative; width:10px; height:10px; margin: 0 10px; border-radius:50%; animation: dot1 5s linear 0s infinite none normal;}
+.dot img {width:40px; height:auto;}
+
+.dot:nth-child(1) {animation-delay: 0s}
+.dot:nth-child(2) {animation-delay: 0.25s}
+.dot:nth-child(3) {animation-delay: 0.5s}
+.dot:nth-child(4) {animation-delay: 0.75s}
+.dot:nth-child(5) {animation-delay: 1s}
+.dot:nth-child(6) {animation-delay: 1.25s}
+.dot:nth-child(7) {animation-delay: 1.5s}
+.dot:nth-child(8) {animation-delay: 1.75s}
+.dot:nth-child(9) {animation-delay: 2s}
+.dot:nth-child(10) {animation-delay: 2.25s}
+
+/* #F44336;, #1E88E5, #FDD835; */
+@keyframes chomp1 {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(45deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes chomp2 {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(-45deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes move {
+  0%, 100% {left: -100px;}
+  0%, 48% {transform: rotateY(0deg);}
+  50%, 100% {transform: rotateY(180deg);}
+  50% {left: 100%;}
+}
+
+@keyframes dot1 {
+  0%,4% {opacity: 1;}
+  5%,94% {opacity: 0;}
+  95%,100% {opacity: 1;}
+}
