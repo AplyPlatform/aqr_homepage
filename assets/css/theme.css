@@ -1458,28 +1458,20 @@ a.btn.disabled, fieldset:disabled a.btn {pointer-events: none; }
     .show > .btn-secondary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5); }
 
-.btn-success {
-  color: #fff;
-  background-color: #11897D;
-  border-color: #11897D; }
-  .btn-success:hover {
-    color: #fff;
-    background-color: #02925d;
-    border-color: #018655; }
-  .btn-success:focus, .btn-success.focus {
-    box-shadow: 0 0 0 0.2rem rgba(40, 195, 138, 0.5); }
-  .btn-success.disabled, .btn-success:disabled {
-    color: #fff;
-    background-color: #11897D;
-    border-color: #11897D; }
-  .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
-  .show > .btn-success.dropdown-toggle {
-    color: #fff;
-    background-color: #018655;
-    border-color: #01794d; }
-    .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-success.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(40, 195, 138, 0.5); }
+.btn-success {color: #fff; background-color: #11897D; border-color: #11897D;}
+.btn-success:hover {color: #fff; background-color: #02925d; border-color: #018655;}
+.btn-success:focus, .btn-success.focus {box-shadow: 0 0 0 0.2rem rgba(40, 195, 138, 0.5);}
+.btn-success.disabled, .btn-success:disabled {color: #fff; background-color: #11897D; border-color: #11897D; }
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, .show > .btn-success.dropdown-toggle {color: #fff; background-color: #018655;     border-color: #01794d;}
+.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus, .show > .btn-success.dropdown-toggle:focus {box-shadow: 0 0 0 0.2rem rgba(40, 195, 138, 0.5);}
+
+.btn-pink {color: #fff; background-color: #f69388; border-color: #ee8377;}
+.btn-pink:hover {color: #fff; background-color: #ee8377; border-color: #ee8377;}
+.btn-pink:focus, .btn-pink.focus {box-shadow: 0 0 0 0.2rem rgba(238, 131, 119, 0.5);}
+
+.btn-outline-pink {color:#ee8377;  background-color: #FFF; border-color: #ee8377; }
+.btn-outline-pink:hover {color: #fff; background-color: #f69388; border-color: #ee8377; }
+.btn-outline-pink:focus, .btn-outline-pink.focus {box-shadow: 0 0 0 0.2rem rgba(238, 131, 119, 0.5); }
 
 .btn-info {
   color: #fff;
