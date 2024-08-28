@@ -267,4 +267,6 @@ $(function() {
     });
 
 	$('[data-youtube]').youtube_background();
+
+	setPage("email_up");
 });
