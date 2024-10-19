@@ -298,7 +298,7 @@ function setChart() {
 function dataRequest(fdata, successCallback, errorCallback) {
 	$.ajax({
 	type: 'GET',
-	url: "https://aply.biz/api/content?action=data",
+	url: "https://aply.biz/api/content/index.php?action=data",
 	//data: fdata,
 	dataType: "json",
 	crossDomain: true,
