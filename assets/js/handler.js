@@ -297,10 +297,9 @@ function setChart() {
 
 function dataRequest(fdata, successCallback, errorCallback) {
 	$.ajax({
-	type: 'POST',
-	enctype: 'multipart/form-data',
-	url: "https://aply.biz/api/content",
-	data: fdata,
+	type: 'GET',
+	url: "https://aply.biz/api/content?action=data",
+	//data: fdata,
 	dataType: "json",
 	crossDomain: true,
 	cache: false,
