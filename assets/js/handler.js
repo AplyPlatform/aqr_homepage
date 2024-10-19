@@ -286,8 +286,8 @@ function setChart() {
 	let fd = new FormData();
 	fd.append("action", "data");
 	dataRequest(fd, function(data) {
-	  bankdata.concat(data.data["bank"]);
-	  appdata.concat(data.data["app"]);
+	  bankdata.concat(Array.from(data.data["bank"]));
+	  appdata.concat(Array.from(data.data["app"]));
 	  showChart('chart_app_div', appdata);
 	  showChart('chart_bank_div', bankdata);
 	}, function() {
