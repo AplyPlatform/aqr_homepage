@@ -297,7 +297,8 @@ function setChart() {
 
 function dataRequest(fdata, successCallback, errorCallback) {
 	$.ajax({
-	type: 'GET',
+	type: 'POST',
+	enctype: 'multipart/form-data', // 필수
 	url: "https://aply.biz/api/content/index.php",
 	data: fdata,
 	dataType: "json",
