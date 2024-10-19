@@ -324,7 +324,8 @@ let chart_options = {
   },
   vAxis: {
 	title: '',
-	textStyle:{color: '#FFF'}
+	textStyle:{color: '#FFF'},
+	textPosition: 'none'
   },
   seriesType: 'bars',
   colors: ['#ffffff', '#ffffff', '#ffffff'],
