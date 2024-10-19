@@ -1194,8 +1194,8 @@ function setChart() {
       dataRequest(fd, function(data) {
         bankdata.concat(data.data["bank"]);
         appdata.concat(data.data["app"]);
-        setChart('chart_app_div', appdata);
-        setChart('chart_bank_div', bankdata);
+        showChart('chart_app_div', appdata);
+        showChart('chart_bank_div', bankdata);
       }, function() {
 
       });
@@ -1246,7 +1246,7 @@ let chart_options = {
     },
   };
 
-function setChart(chart_div, rdata) {
+function showChart(chart_div, rdata) {
   let data = google.visualization.arrayToDataTable(rdata);
   let chart = new google.visualization.ColumnChart(document.getElementById(chart_div));
   chart.draw(data, chart_options);
