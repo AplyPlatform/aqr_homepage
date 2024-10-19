@@ -841,7 +841,7 @@
               <span class="lead" data-aos="fade-up" data-aos-delay="200">서비스의 만족도가 매우 높아요.</span>
             </div>
           </div>
-          <div class="row justify-content-center overflow-hidden">          
+          <div class="row justify-content-center overflow-hidden">
             <div class="col-12 col-md-8">
               <div class="main-carousel overflow-visible" data-flickity='{ "cellAlign": "center", "contain": true, "prevNextButtons": false, "pageDots":false, "wrapAround":true, "autoPlay":2000, "imagesLoaded":true, "initialIndex":1, "draggable":false }'>
 
@@ -910,6 +910,21 @@
                 </div>
                 
               </div>              
+            </div>
+          </div>
+          <div class="row justify-content-center text-center">
+            <div class="col-12 col-lg-8 mt-3">
+              <h2 class="display-5" data-aos="fade-up" data-aos-delay="100">1금융권 모든 뱅킹앱 지원.</h2>
+              <span class="title-decorative text-white-50" data-aos="fade-up" data-aos-delay="10">(AQR 사용앱 순위 / 최근 1개월 기준)</span>
+              <div id="chart_app_div"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center text-center">
+            <div class="col-12 col-lg-8 mt-3">
+              
+              <h2 class="display-5" data-aos="fade-up" data-aos-delay="100">다양한 은행 지원.</h2>              
+              <span class="title-decorative text-white-50" data-aos="fade-up" data-aos-delay="10">(AQR 등록은행 순위 / 실시간)</span>
+              <div id="chart_bank_div"></div>
             </div>
           </div>
         </div>
@@ -1153,10 +1168,90 @@
     <!-- Required theme scripts (Do not remove) -->
     <script type="text/javascript" src="assets/js/theme.js"></script>
     
-    <!-- Scripts-->    
+    <!-- Scripts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>    
     <script type="text/javascript" src="assets/js/jquery.youtube-background.js"></script>
     <script type="text/javascript" src="assets/js/handler.js?v=20240828_01"></script>
     <script type="text/javascript" src="https://home.aply.biz/assets/js/aplyServices.js?v=20230917_01"></script>
+    <script>
+
+(function($) {
+  google.charts.load('current', {packages: ['corechart', 'bar']});
+  google.charts.setOnLoadCallback(setChart);
+})(jQuery);
+
+function setChart() {
+      let appdata = [
+        ['뱅킹앱', "%"],
+      ];
+
+      let bankdata = [
+        ['은행', "%"],
+      ];
+      
+      let fd = new FormData();
+      fd.append("action", "data");
+      dataRequest(fd, function(data) {
+        bankdata.concat(data.data["bank"]);
+        appdata.concat(data.data["app"]);
+        setChart('chart_app_div', appdata);
+        setChart('chart_bank_div', bankdata);
+      }, function() {
+
+      });
+}
+
+function dataRequest(fdata, successCallback, errorCallback) {
+  $.ajax({
+    type: 'POST',
+    enctype: 'multipart/form-data',
+    url: "http://aplx.link/api/content",
+    data: fdata,
+    dataType: "json",
+    cache: false,
+    processData: false,
+    contentType: false,
+    success: function (data) {
+        successCallback(data);
+    },          
+    error: function (e) {
+      errorCallback(e);
+    }
+  });
+}
+
+
+let chart_options = {
+    title :  '',
+    legend: {position: 'none'},
+    hAxis: {
+      title: '',                    
+      textStyle:{color: '#FFF'}
+    },
+    vAxis: {
+      title: '',
+      textStyle:{color: '#FFF'}
+    },
+    seriesType: 'bars',
+    colors: ['#ffffff', '#ffffff', '#ffffff'],
+    chartArea: {
+        backgroundColor: {
+            fill: '#F4F4F4',
+            fillOpacity : 0.0
+        },
+    },
+    backgroundColor: {
+      fill: '#FF0000',
+      fillOpacity: 0.0
+    },
+  };
+
+function setChart(chart_div, rdata) {
+  let data = google.visualization.arrayToDataTable(rdata);
+  let chart = new google.visualization.ColumnChart(document.getElementById(chart_div));
+  chart.draw(data, chart_options);
+}
+</script>
   </body>
     
 </html>
