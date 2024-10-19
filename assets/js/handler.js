@@ -299,7 +299,7 @@ function dataRequest(fdata, successCallback, errorCallback) {
 	$.ajax({
 	type: 'POST',
 	enctype: 'multipart/form-data',
-	url: "https://aplx.link/api/content",
+	url: "https://aply.biz/api/content",
 	data: fdata,
 	dataType: "json",
 	crossDomain: true,
