@@ -269,4 +269,79 @@ $(function() {
 	$('[data-youtube]').youtube_background();
 
 	setPage("email_up");
+
+	google.charts.load('current', {packages: ['corechart', 'bar']});
+  	google.charts.setOnLoadCallback(setChart);
 });
+
+function setChart() {
+	let appdata = [
+	  ['뱅킹앱', "%"],
+	];
+
+	let bankdata = [
+	  ['은행', "%"],
+	];
+	
+	let fd = new FormData();
+	fd.append("action", "data");
+	dataRequest(fd, function(data) {
+	  bankdata.concat(data.data["bank"]);
+	  appdata.concat(data.data["app"]);
+	  showChart('chart_app_div', appdata);
+	  showChart('chart_bank_div', bankdata);
+	}, function() {
+
+	});
+}
+
+function dataRequest(fdata, successCallback, errorCallback) {
+	$.ajax({
+	type: 'POST',
+	enctype: 'multipart/form-data',
+	url: "https://aplx.link/api/content",
+	data: fdata,
+	dataType: "json",
+	crossDomain: true,
+	cache: false,
+	processData: false,
+	contentType: false,
+	success: function (data) {
+		successCallback(data);
+	},          
+	error: function (e) {
+		errorCallback(e);
+	}
+	});
+}
+
+let chart_options = {
+  title :  '',
+  legend: {position: 'none'},
+  hAxis: {
+	title: '',                    
+	textStyle:{color: '#FFF'}
+  },
+  vAxis: {
+	title: '',
+	textStyle:{color: '#FFF'}
+  },
+  seriesType: 'bars',
+  colors: ['#ffffff', '#ffffff', '#ffffff'],
+  chartArea: {
+	  backgroundColor: {
+		  fill: '#F4F4F4',
+		  fillOpacity : 0.0
+	  },
+  },
+  backgroundColor: {
+	fill: '#FF0000',
+	fillOpacity: 0.0
+  },
+};
+
+function showChart(chart_div, rdata) {
+let data = google.visualization.arrayToDataTable(rdata);
+let chart = new google.visualization.ColumnChart(document.getElementById(chart_div));
+chart.draw(data, chart_options);
+}
