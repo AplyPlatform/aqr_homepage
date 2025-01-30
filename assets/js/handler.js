@@ -116,19 +116,25 @@ function sendApplicationData(form_id)
 	$("#sending_progress").show();
 		
 	if (isRecaptchaInit == true) {
-		grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-			$(form_id).find('input[name="form_token"]').val(token);
-			let fed = new FormData($(form_id)[0]);
-			   ajaxRequest(fed, form_id);
-		});
-	}
-	else {
-		grecaptcha.ready(function() {
-			isRecaptchaInit = true;
-			grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+		turnstile.render('#turnstileWidget', {
+			sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+			callback: function(token) {
 				$(form_id).find('input[name="form_token"]').val(token);
 				let fed = new FormData($(form_id)[0]);
 				   ajaxRequest(fed, form_id);
+			},
+		});
+	}
+	else {		
+		turnstile.ready(function () {
+			isRecaptchaInit = true;
+			turnstile.render('#turnstileWidget', {
+				sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+				callback: function(token) {
+					$(form_id).find('input[name="form_token"]').val(token);
+					let fed = new FormData($(form_id)[0]);
+				   		ajaxRequest(fed, form_id);
+				},
 			});
 		});
 	}
@@ -207,9 +213,9 @@ function setSubmitHandler(form_p_id) {
 }
 
 function setPage(form_id) {
-	grecaptcha.ready(function() {
+	turnstile.ready(function () {
 		isRecaptchaInit = true;		
-	});	
+	});
 
 	setSubmitHandler(form_id);
 
