@@ -54,9 +54,8 @@
     <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <script src='https://www.google.com/recaptcha/api.js?render=6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7'></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
     <style>
-      .grecaptcha-badge {visibility: hidden;}
       @media (min-width:426px) {
         #pricing-2 {display:none;}
       }
@@ -74,7 +73,8 @@
     </style>
   </head>
   
-  <body>  
+  <body>
+    <div id="turnstileWidget"></div>
     <!-- Preloader-->
     <div class="page-loader" id="loading">
       <div class="page-loader-inner">
