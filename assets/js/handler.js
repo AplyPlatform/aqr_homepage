@@ -1,14 +1,8 @@
 
-const showPrivacy = () => {
-    $('#modal_title_content').text("AQR 개인정보처리방침");
-    $('#modal_body_content').load("privacy.html");
-    $('#modal-3').modal({"show" : true});
-};
-
 const showService = () => {
     $('#modal_title_content').text("AQR 이용약관");
-    $('#modal_body_content').load("service.html");
-    $('#modal-3').modal({"show" : true});
+    $('#contact_privacy_body_content').load("service.html");
+    $('#contactPrivacyDialog').modal({"show" : true});
 };
 
 function stickToTop() {    
@@ -30,6 +24,4 @@ $(function() {
     });
 
 	$('[data-youtube]').youtube_background();
-
-	AAPI_setContactForm("aqrcontact");
 });
