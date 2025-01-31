@@ -136,47 +136,47 @@
               <h2 class="display-5" data-aos="fade-up" data-aos-delay="100">신고하기</h2>
               <p class="lead" data-aos="fade-up" data-aos-delay="100">신고하실 내용을 아래에 입력해주세요.</p>
             </div>
-          </div>
-          <form role="form" method="post" id="report_up">
+          </div>          
             <div class="row mt-4">              
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="form_email">이메일 주소</label>
-                  <input class="form-control" type="text" name="form_email" id="form_email" placeholder="이메일 주소" required="">
+                  <input class="form-control" type="text" name="form_contact_email" id="form_contact_email" placeholder="이메일 주소" required="">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="form_url">서비스 페이지 URL</label>
-                  <input class="form-control" type="text" name="form_url" id="form_url" placeholder="http://aq.gy/f/abcde" required="">
+                  <input class="form-control" type="text" name="form_contact_url" id="form_contact_url" placeholder="http://aq.gy/f/abcde" required="">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="form_url">신고 사항</label>
-                  <textarea class="form-control" name="form_content" id="form_content" rows="7" placeholder="자세하게 작성부탁드립니다." required=""></textarea>
+                  <textarea class="form-control" name="form_contact_content" id="form_contact_content" rows="7" placeholder="자세하게 작성부탁드립니다." required=""></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="col-md-12">
                 <p>
-                  <input type="checkbox" name="agree_1" id="agree_1" value="제공">
-                  <label class="lab_check" for="agree_1"><span class="checkbox"></span>
-                  <a href="javascript:showPrivacyDialog();" style="word-break:keep-all;">개인 정보 처리방침</a> 동의 <span class="required">(필수)</span></label>
+                  <input type="checkbox" name="form_contact_agree_1" id="form_contact_agree_1" value="제공">
+                  <label class="lab_check" for="form_contact_agree_1"><span class="checkbox"></span>
+                    <a style="cursor:pointer;" id="form_contact_privacy_link">개인정보 처리방침</a> 동의 <span class="required">(필수)</span>                
                 </p>
                 <div class="text-center">
-                  <input class="btn btn-lg btn-success" id="report_up_send" type="submit" value="보내기">
-                  <span id="sending_progress" style="display:none;">전송 중...</span>
+                  <button class="btn btn-lg btn-success" id="form_contact_send" type="button">보내기</button>
+                  <span id="form_contact_send_loading" style="display:none;">전송 중...</span>
                 </div>
                 <div class="text-center small mt-4">
-                  이 사이트는 reCAPTCHA의 보호를 받으며 Google <a href='https://policies.google.com/privacy' target='_blank'>개인 정보 보호 정책</a> 및 <a href='https://policies.google.com/terms' target='_blank'>서비스 약관</a>이 적용됩니다.</a>
+                  이 사이트는 Turnstile의 보호를 받으며 Cloudflare <a href='https://www.cloudflare.com/ko-kr/privacypolicy/'
+                    style='color:#333;' target='_blank'>개인 정보 보호 정책</a> 및 <a
+                    href='https://www.cloudflare.com/ko-kr/website-terms/' style='color:#333;' target='_blank'>서비스
+                    약관</a>이 적용됩니다.
                 </div>
-                <input type="hidden" name="form_token" id="form_token">
               </div>
-            </div>              
-          </form>
+            </div>
         </div>
       </section>
       
@@ -235,32 +235,35 @@
       
     </div>
 
+    
     <!-- Logout Modal-->
-    <div class="modal fade" id="askModal" tabindex="-1" role="dialog" aria-labelledby="askModalLabel" aria-hidden="true">
+    <div class="modal fade" id="AAPI_askModal" tabindex="-1" role="dialog" aria-labelledby="askModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="askModalLabel">AQR</h5>
           </div>
           <div class="modal-body">
-            <span id="askModalContent"></span>
+            <span id="AAPI_askModalContent"></span>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary" type="button" data-dismiss="modal" id="askModalOKButton">확인</button>
+            <button class="btn btn-primary" type="button" data-dismiss="modal" id="AAPI_askModalOKButton">확인</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Modal 3 -->
-    <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="contactPrivacyDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modal_title_content">(주)어플라이 개인정보 처리방침</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
           </div>
-          <div class="modal-body" id="modal_body_content"></div>
+          <div class="modal-body" id="contact_privacy_body_content"></div>
           <div class="modal-footer">
             <button class="btn btn-secondary btn-sm btn-circle" type="button" data-dismiss="modal">닫기</button>
           </div>
@@ -300,13 +303,8 @@
     
     <!-- Scripts-->    
     <script type="text/javascript" src="assets/js/jquery.youtube-background.js"></script>
-    <script type="text/javascript" src="assets/js/handler.js?v=20240803"></script>
-    <script type="text/javascript" src="https://home.aply.biz/assets/js/aplyServices.js?v=20230917_01"></script>
-    <script>
-      $(function() {
-	      setPage("report_up");
-      });
-    </script>
+    <script type="text/javascript" src="https://home.aply.biz/assets/js/aplyServices.js?v=20250131_01"></script>
+    <script type="text/javascript" src="assets/js/handler.js?v=20250131_01"></script>  
   </body>
     
 </html>
