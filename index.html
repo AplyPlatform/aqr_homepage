@@ -169,7 +169,8 @@
               <h6 class="text-center">SNS, QR메뉴, 영수증 리뷰를 QR 하나에.</h6>
               <h6 class="text-center">다양한 페이 및 써놓은 계좌번호도 QR 하나로.</h6>
               <h6 class="text-center">가입비 <i class="fa-solid fa-x mr-3"></i>유지비 <i class="fa-solid fa-x mr-3"></i> 수수료
-                <i class="fa-solid fa-x"></i></h6>
+                <i class="fa-solid fa-x"></i>
+              </h6>
             </div>
           </div>
         </div>
@@ -1080,20 +1081,24 @@
                 <div class="row">
                   <div class="col-12 col-md-3 p-b-10">
                     <input type="checkbox" id="form_contact_min_type_1" name="form_contact_min_type_1" value="서비스 및 가격">
-                    <label class="lab_check" for="form_contact_min_type_1"><span class="checkbox"></span> &nbsp;서비스 및 가격</label>
+                    <label class="lab_check" for="form_contact_min_type_1"><span class="checkbox"></span> &nbsp;서비스 및
+                      가격</label>
                   </div>
                   <div class="col-12 col-md-3 p-b-10">
                     <input type="checkbox" id="form_contact_min_type_2" name="form_contact_min_type_2"
                       value="고급 고유 URL 신청">
-                    <label class="lab_check" for="form_contact_min_type_2"><span class="checkbox"></span> &nbsp;고급 고유 URL 신청</label>
+                    <label class="lab_check" for="form_contact_min_type_2"><span class="checkbox"></span> &nbsp;고급 고유
+                      URL 신청</label>
                   </div>
                   <div class="col-12 col-md-3 p-b-10">
                     <input type="checkbox" id="form_contact_min_type_3" name="form_contact_min_type_3" value="제휴 및 광고">
-                    <label class="lab_check" for="form_contact_min_type_3"><span class="checkbox"></span> &nbsp;제휴 및 광고</label>
+                    <label class="lab_check" for="form_contact_min_type_3"><span class="checkbox"></span> &nbsp;제휴 및
+                      광고</label>
                   </div>
                   <div class="col-12 col-md-3 p-b-10">
                     <input type="checkbox" id="form_contact_min_type_4" name="form_contact_min_type_4" value="기타">
-                    <label class="lab_check" for="form_contact_min_type_4"><span class="checkbox"></span> &nbsp;기타</label>
+                    <label class="lab_check" for="form_contact_min_type_4"><span class="checkbox"></span>
+                      &nbsp;기타</label>
                   </div>
                 </div>
                 <p class="help-block text-danger"></p>
@@ -1102,22 +1107,22 @@
           </div>
           <div class="col-lg-6">
             <div class="form-group">
-              <input class="form-control" type="text" name="form_contact_phone" id="form_contact_phone" placeholder="전화번호(-없이 입력해주세요)"
-                required="" pattern="\d+">
+              <input class="form-control" type="text" name="form_contact_phone" id="form_contact_phone"
+                placeholder="전화번호(-없이 입력해주세요)" required="" pattern="\d+">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
-              <input class="form-control" type="text" name="form_contact_email" id="form_contact_email" placeholder="이메일 주소"
-                required="">
+              <input class="form-control" type="text" name="form_contact_email" id="form_contact_email"
+                placeholder="이메일 주소" required="">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <textarea class="form-control" name="form_contact_content" id="form_contact_content" rows="7" placeholder="문의 내용"
-                required=""></textarea>
+              <textarea class="form-control" name="form_contact_content" id="form_contact_content" rows="7"
+                placeholder="문의 내용" required=""></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -1125,7 +1130,8 @@
             <p>
               <input type="checkbox" name="form_contact_agree_1" id="form_contact_agree_1" value="제공">
               <label class="lab_check" for="form_contact_agree_1"><span class="checkbox"></span>&nbsp;</label>
-              <a style="cursor:pointer;" id="form_contact_privacy_link">개인정보 처리방침</a> 동의 <span class="required">(필수)</span>
+              <a style="cursor:pointer;" id="form_contact_privacy_link">개인정보 처리방침</a> 동의 <span
+                class="required">(필수)</span>
             </p>
             <div class="text-center">
               <button class="btn btn-lg btn-success" id="form_contact_send" type="button">보내기</button>
@@ -1215,7 +1221,8 @@
   </div>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="AAPI_askModal" tabindex="-1" role="dialog" aria-labelledby="askModalLabel" aria-hidden="true">
+  <div class="modal fade" id="AAPI_askModal" tabindex="-1" role="dialog" aria-labelledby="askModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -1285,7 +1292,7 @@
   <script type="text/javascript" src="https://home.aply.biz/assets/js/aplyServices.js?v=20250131_01"></script>
   <script type="text/javascript" src="assets/js/handler.js?v=20250131_01"></script>
   <script>
-    $(function() {
+    $(function () {
       AAPI_setContactForm("aqrcontact");
     });
   </script>
