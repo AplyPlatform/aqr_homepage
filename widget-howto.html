@@ -473,6 +473,47 @@
                     </div>
                   </div>
                 </li>
+                <li class="list-group-item bg-light">
+                  <div class="media">
+                    <div class="media-body">
+                      <h6><b>위젯 렌더링 완료 콜백 함수</b></h6>
+                      위젯의 렌더링이 완료되면 호출되는 콜백 함수를 지정할 수 있습니다.</br></br>
+                      <center>
+                        <code class="language-pug">renderAQRWidget 함수의 두 번째 파라메터</code>
+                      </center> 
+                      </br>
+                      <textarea rows="10" style="background-color:#333;color:#fff;width:100%;">
+<html>
+  <body>
+   <div id="aqr-widget-area"></div>
+  
+   <script src="https://aq.gy/c/widget.js"></script>
+   <script>
+   
+   // 렌더링 완료시 호출되는 콜백 함수 선언
+   function loadFinished() {
+      console.log("AQR 위젯 렌더링이 완료되었습니다.");
+   }
+
+   new AQRWidget().renderAQRWidget(
+    {
+       token : "NiceCompany",
+       layer_id : "aqr-widget-area",
+       profile : false,
+       libbutton : false,
+       bgcolor : "#f8f9fa",
+       button_text : "송금버튼 입니다",
+       amount : 50000
+      },
+      loadFinished // 콜백 함수 설정
+     );
+     </script>
+  </body>
+</html>
+                      </textarea>                      
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
