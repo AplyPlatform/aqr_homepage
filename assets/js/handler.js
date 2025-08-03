@@ -35,9 +35,7 @@ function getCookie(cName) {
 $(function () {
     $(window).on('scroll', function () {
         stickToTop();
-    });
-
-    $('[data-youtube]').youtube_background();
+    });    
 
     $("#form_contact_min_type_2").click(function () {
         let isChecked = $(this).is(":checked");
@@ -54,5 +52,8 @@ $(function () {
     }
     else {
         setCookie("ref1", document.referrer, 1);
-    }        
+    }
+
+    if ($('[data-youtube]').length > 0)
+        $('[data-youtube]').youtube_background();
 });
