@@ -7931,7 +7931,7 @@ nav.flex-md-column .nav-link.active {color: #00AF64; }
 
 .table.pricing {margin-bottom: 1.5rem; background: #fff; }
 .table.pricing th, .table.pricing tr, .table.pricing td {font-weight:400;}
-.table.pricing thead th {background: #f8f9fa; text-align: center; border-bottom-width: 1px; }
+.table.pricing thead th {background: #f8f9fa; text-align: center; vertical-align: middle; border-bottom-width: 1px; }
 .table.pricing tbody th {text-align: center; vertical-align: middle;}
 .table.pricing tbody td {text-align: center; vertical-align: middle;}
 .table.pricing tbody > tr:first-child { }
