@@ -448,7 +448,7 @@
       </div>
     </section>
 
-    <div id="faq_area"></div>
+    <div id="use_detail"></div>
 
     <!-- 가격 정책-->
     <section id="price" class="bg-white">
@@ -1033,7 +1033,7 @@
       AAPI_setContactForm("aqrcontact");
 
       let content = await loadHtml("area_faq.html");
-      $("#faq_area").html(content);
+      $("#use_detail").html(content);
 
       async function loadHtml(includePath) {
         const content = await fetch(includePath);

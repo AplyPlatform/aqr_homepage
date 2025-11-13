@@ -637,7 +637,7 @@ H 컬럼: 템플릿 종류 [기본, 결혼, 부의, 기타 축하, / 선택(기�
       </div>
     </section>
 
-    <div id="faq_area"></div>
+    <div id="use_detail"></div>
 
     <!-- animation -->
     <section>
@@ -966,7 +966,7 @@ H 컬럼: 템플릿 종류 [기본, 결혼, 부의, 기타 축하, / 선택(기�
       AAPI_setContactForm("aqrcontact");
 
       let content = await loadHtml("area_faq.html");
-      $("#faq_area").html(content);
+      $("#use_detail").html(content);
 
       async function loadHtml(includePath) {
         const content = await fetch(includePath);
