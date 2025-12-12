@@ -51,7 +51,7 @@ $(function () {
         setCookie("ref1", "", 1)
     }
     else {
-        setCookie("ref1", document.referrer, 1);
+        setCookie("ref1", document.referrer + "&from=aqrhome", 1);
     }
 
     if ($('[data-youtube]').length > 0)
