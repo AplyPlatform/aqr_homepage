@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQR - The QR of QRs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: #ffffff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #canvas {
+            display: block;
+            cursor: pointer;
+        }
+
+        .loading-container {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 2px;
+            background: rgba(28, 139, 126, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1c8b7e;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .skip-button {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid #1c8b7e;
+            color: #1c8b7e;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            z-index: 100;
+        }
+
+        .skip-button:hover {
+            background: #1c8b7e;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="loading-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <button class="skip-button" onclick="skipToMain()">SKIP</button>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Canvas setup
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Particle Configuration
+        const PARTICLE_COLOR = '#1c8b7e';
+        const PARTICLE_SIZE = 2;
+        const PARTICLE_COUNT = 15000; // Increased to 15,000 for high density
+
+        class Particle {
+            constructor(x, y) {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.targetX = x;
+                this.targetY = y;
+                this.size = PARTICLE_SIZE;
+                this.vx = 0;
+                this.vy = 0;
+                this.friction = 0.90; // Slightly more friction for tighter control
+                this.ease = 0.15 + Math.random() * 0.1; // Faster response
+            }
+
+            update() {
+                const dx = this.targetX - this.x;
+                const dy = this.targetY - this.y;
+
+                this.vx = (this.vx + dx * this.ease * 0.05) * this.friction;
+                this.vy = (this.vy + dy * this.ease * 0.05) * this.friction;
+
+                this.x += this.vx;
+                this.y += this.vy;
+            }
+
+            draw() {
+                ctx.fillStyle = PARTICLE_COLOR;
+                ctx.fillRect(Math.round(this.x), Math.round(this.y), this.size, this.size);
+            }
+
+            setTarget(x, y) {
+                this.targetX = x;
+                this.targetY = y;
+            }
+        }
+
+        const particles = [];
+
+        function initParticles() {
+            particles.length = 0;
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push(new Particle(canvas.width / 2, canvas.height / 2));
+            }
+        }
+
+        // High precision text pattern generator
+        function generateTextPattern(text) {
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+
+            const width = canvas.width;
+            const height = canvas.height;
+            tempCanvas.width = width;
+            tempCanvas.height = height;
+
+            const fontSize = Math.min(width, height) * 0.3;
+            tempCtx.fillStyle = '#000000';
+            // System font stack for boldest possible rendering
+            tempCtx.font = `900 ${fontSize}px -apple-system, BlinkMacSystemFont, Arial Black, sans-serif`;
+            tempCtx.textAlign = 'center';
+            tempCtx.textBaseline = 'middle';
+            tempCtx.fillText(text, width / 2, height / 2);
+
+            const imageData = tempCtx.getImageData(0, 0, width, height);
+            const data = imageData.data;
+            const points = [];
+
+            // Much tighter sampling
+            const step = 4; // Check every 4th pixel for high density
+
+            for (let y = 0; y < height; y += step) {
+                for (let x = 0; x < width; x += step) {
+                    const index = (y * width + x) * 4;
+                    if (data[index + 3] > 200) { // Only high opacity pixels
+                        points.push({ x, y });
+                    }
+                }
+            }
+            return points;
+        }
+
+        // Image pattern generator
+        function generateImagePattern() {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.src = 'assets/img/aqr_squre.png';
+
+                img.onload = () => {
+                    const tempCanvas = document.createElement('canvas');
+                    const tempCtx = tempCanvas.getContext('2d');
+
+                    const size = Math.min(canvas.width, canvas.height) * 0.6; // Scale up image
+                    tempCanvas.width = size;
+                    tempCanvas.height = size;
+
+                    tempCtx.drawImage(img, 0, 0, size, size);
+
+                    const imageData = tempCtx.getImageData(0, 0, size, size);
+                    const data = imageData.data;
+                    const points = [];
+
+                    const step = 3; // Very tight sampling for image details
+                    const offsetX = (canvas.width - size) / 2;
+                    const offsetY = (canvas.height - size) / 2;
+
+                    for (let y = 0; y < size; y += step) {
+                        for (let x = 0; x < size; x += step) {
+                            const index = (y * size + x) * 4;
+                            const alpha = data[index + 3];
+                            // Include teal color range or generally visible pixels
+                            if (alpha > 128) {
+                                points.push({
+                                    x: x + offsetX,
+                                    y: y + offsetY
+                                });
+                            }
+                        }
+                    }
+                    resolve(points);
+                };
+
+                img.onerror = () => {
+                    resolve(generateTextPattern("AQR"));
+                };
+            });
+        }
+
+        // Animation Sequence Management
+        let sequences = [
+            { type: 'text', content: 'easy', duration: 150 },
+            { type: 'text', content: 'cash', duration: 150 },
+            { type: 'text', content: 'trust', duration: 150 },
+            { type: 'image', content: null, duration: 240 }
+        ];
+
+        let currentSequenceIndex = 0;
+        let frameCount = 0;
+        let isPaused = false;
+        let patterns = [];
+
+        async function prepareSequences() {
+            // Pre-calculate patterns
+            patterns[0] = generateTextPattern('easy');
+            patterns[1] = generateTextPattern('cash');
+            patterns[2] = generateTextPattern('trust');
+            patterns[3] = await generateImagePattern();
+
+            startTransition();
+        }
+
+        function distributeParticles(targetPoints) {
+            // Shuffle points
+            const shuffledPoints = [...targetPoints].sort(() => Math.random() - 0.5);
+            const pointsLen = shuffledPoints.length;
+
+            particles.forEach((p, i) => {
+                if (i < pointsLen) {
+                    // Assign to a target point
+                    p.setTarget(shuffledPoints[i].x, shuffledPoints[i].y);
+                } else {
+                    // Excess particles: hide them INSIDE the shape rather than scattering
+                    // This makes the shape look solid and clean
+                    if (pointsLen > 0) {
+                        const randomPoint = shuffledPoints[Math.floor(Math.random() * pointsLen)];
+                        // Add very slight jitter so they don't all stack on one pixel
+                        p.setTarget(
+                            randomPoint.x + (Math.random() - 0.5) * 5,
+                            randomPoint.y + (Math.random() - 0.5) * 5
+                        );
+                    } else {
+                        p.setTarget(canvas.width / 2, canvas.height / 2);
+                    }
+                }
+            });
+        }
+
+        function startTransition() {
+            if (currentSequenceIndex >= patterns.length) {
+                completeAnimation();
+                return;
+            }
+
+            distributeParticles(patterns[currentSequenceIndex]);
+        }
+
+        function completeAnimation() {
+            isPaused = true;
+            document.querySelector('.loading-container').style.opacity = '0';
+            setTimeout(skipToMain, 1500);
+        }
+
+        function skipToMain() {
+            window.location.href = 'index.html';
+        }
+
+        function updateProgress() {
+            const totalDuration = sequences.reduce((sum, s) => sum + s.duration, 0);
+            let elapsed = 0;
+            for (let i = 0; i < currentSequenceIndex; i++) elapsed += sequences[i].duration;
+            elapsed += frameCount;
+
+            const pct = Math.min((elapsed / totalDuration) * 100, 100);
+            document.getElementById('progressFill').style.width = `${pct}%`;
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            if (!isPaused && patterns.length > 0) {
+                frameCount++;
+                updateProgress();
+
+                const currentDuration = sequences[currentSequenceIndex].duration;
+
+                if (frameCount > currentDuration) {
+                    currentSequenceIndex++;
+                    frameCount = 0;
+                    startTransition();
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Initialize
+        initParticles();
+        prepareSequences();
+        animate();
+
+        // Event Listeners
+        canvas.addEventListener('click', skipToMain);
+    </script>
+</body>
+
+</html>
