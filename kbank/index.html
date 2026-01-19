@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동행복권 가맹점주님을 위한 케이뱅크 사장님 통장 안내</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;            
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0020a3 0%, #1c8b7e 100%);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .logo-area {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #303435;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #0020a3;
+            font-weight: 600;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 700;
+        }
+
+        .key-feature {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .key-feature h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+            font-size: 28px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-icon {
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .feature-desc {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-list li {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .benefit-list li:hover {
+            background: #e8f5e9;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+        }
+
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            font-size: 28px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .qr-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #666;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .info-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .card, .key-feature, .cta-section {
+                padding: 25px;
+            }
+
+            .feature-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="subtitle">
+                <center>
+                <table border="0" cellpadding="0" cellspacing="5">
+                    <tr>
+                        <td><img src="dhlottery.jpg" width="100px"></td><td width="60px;" align="center"><span style="font-size:35px;color:#777;">×</span></td><td><img src="kbank.png" width="75px"></td>
+                    </tr>
+                </table>
+                </center>
+            </p>
+
+            <div class="logo-area">                
+                <h1>동행복권 가맹점주님을 위한 특별 안내</h1>                
+            </div>
+            <p class="subtitle">기존 <span class="highlight">AQR 플레이트 교체 없이</span></p>
+            <p class="subtitle"><strong>케이뱅크 사장님 통장</strong>으로 간편하게 입금 받으세요!</p>
+        </header>
+
+        <div class="key-feature">
+            <h2>🎯 AQR 플레이트를 사용 중이신 사장님께 특별한 소식</h2>
+            <div class="feature-item">
+                <div class="feature-title">
+                    <span class="feature-icon">1</span>
+                    플레이트 교체 없이 그대로 사용
+                </div>
+                <div class="feature-desc">
+                    현재 사용 중인 AQR 플레이트를 교체할 필요가 없습니다. 기존 QR로 새롭게 만든 케이뱅크 사장님 통장에 입금 받으실 수 있습니다.
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-title">
+                    <span class="feature-icon">2</span>
+                    간편한 통장 개설
+                </div>
+                <div class="feature-desc">
+                    복잡한 절차 없이 제공되는 URL 주소 또는 QR 코드를 통해 비대면으로 간편하게 케이뱅크 사장님 통장을 개설하세요.
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-title">
+                    <span class="feature-icon">3</span>
+                    더 다양한 혜택
+                </div>
+                <div class="feature-desc">
+                    케이뱅크 사장님 통장을 개설하시고 다양한 혜택을 받으세요.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💰 케이뱅크 사장님 통장 혜택</h2>
+            <ul class="benefit-list">
+                <li><strong>최대 연 ?.?% 높은 금리</strong> - ???통장 사용시</li>
+                <li><strong>무제한 무료 이체</strong> - 이체 수수료 및 출금 수수료 완전 무료</li>
+                <li><strong>각종 증명서 발급 무료</strong> - 사업 운영에 필요한 증명서 무료 발급</li>
+                <li><strong>사장님 전용 서비스</strong> - 사장님 신용리포트, 맞춤 정책자금 안내</li>
+                <li><strong>상호명 표기</strong> - 예금주명과 상호명 함께 표기로 거래 편의성 증대</li>                
+            </ul>
+
+            <div class="info-box">
+                <strong>📌 추가 혜택 안내</strong>
+                케이뱅크는 정기적으로 사장님 통장 프로모션을 진행하여 현금 리워드, 각종 자동이체 설정 시 추가 혜택 등을 제공해드립니다.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 이렇게 시작하세요</h2>
+            <div class="feature-item">
+                <div class="feature-title">
+                    <span class="feature-icon">①</span>
+                    케이뱅크 사장님 통장 개설
+                </div>
+                <div class="feature-desc">
+                    아래 QR 코드 또는 URL 링크를 통해 케이뱅크 사장님 통장을 개설하세요. 사업자등록증만 있으면 비대면으로 간편하게 개설 가능합니다.
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-title">
+                    <span class="feature-icon">②</span>
+                    AQR 서비스와 연동
+                </div>
+                <div class="feature-desc">
+                    기존 AQR 플레이트를 그대로 사용하시면 됩니다.
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-title">
+                    <span class="feature-icon">③</span>
+                    혜택 누리며 입금 받기
+                </div>
+                <div class="feature-desc">
+                    이제 고객님들이 AQR 플레이트의 QR코드로 결제하면 케이뱅크 사장님 통장으로 바로 입금됩니다. 높은 금리와 다양한 혜택을 함께 누리세요!
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>지금 바로 케이뱅크 사장님 통장을 개설하세요!</h2>
+            <p style="font-size: 18px; margin: 20px 0;">AQR 플레이트는 그대로, 혜택은 더욱 풍성하게</p>
+            
+            <div class="qr-section">
+                <p style="font-size: 16px; margin-bottom: 15px;">QR 코드를 스캔하시거나 아래 버튼을 클릭하세요</p>
+                <div class="qr-placeholder">
+                    여기에 QR 코드 삽입
+                </div>
+                <a href="#" class="cta-button">케이뱅크 사장님 통장 개설하기</a>
+            </div>
+
+            <div style="margin-top: 30px; font-size: 14px; color: rgba(255,255,255,0.9);">
+                <p>✓ 비대면 개설 가능 (소요시간 약 5분)</p>
+                <p>✓ 기존 AQR 플레이트 교체 불필요</p>
+                <p>✓ 개설이 완료되면 2~3일내로 AQR플레이트의 QR과 연결됩니다.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>동행복권 가맹점주님들의 편리한 사업 운영을 응원합니다</p>
+            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+                <a href="https://dhlottery.co.kr" target="_blank" style="color:#fff;">동행복권</a> × <a href="https://kbanknow.com" target="_blank" style="color:#fff;">케이뱅크</a> × <a href="https://aply.biz" target="_blank" style="color:#fff;">APLY</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
