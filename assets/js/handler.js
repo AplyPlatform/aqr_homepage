@@ -2,7 +2,7 @@
 const showService = () => {
     $('#modal_title_content').text("AQR 이용약관");
     $('#contact_privacy_body_content').load("service.html");
-    $('#contactPrivacyDialog').modal({ "show": true });
+    $('#contactPrivacyDialog').modal({ "show": true });    
 };
 
 function stickToTop() {
@@ -56,4 +56,117 @@ $(function () {
 
     if ($('[data-youtube]').length > 0)
         $('[data-youtube]').youtube_background();
+
+
+    $("#btn_register_light_on_top").click(function() {
+        AAPI_GA_EVENT("btn_register_light_on_top", "homepage", "click");
+    });
+
+    $("#btn_register_dark_on_top").click(function() {
+        AAPI_GA_EVENT("btn_register_dark_on_top", "homepage", "click");
+    });
+
+    $("#btn_login_light_on_top").click(function() {
+        AAPI_GA_EVENT("btn_login_light_on_top", "homepage", "click");
+    });
+
+    $("#btn_login_dark_on_top").click(function() {
+        AAPI_GA_EVENT("btn_login_dark_on_top", "homepage", "click");
+    });
+
+    $("#btn_register_in_body_1").click(function() {
+        AAPI_GA_EVENT("btn_register_in_body_1", "homepage", "click");
+    });
+
+    $("#btn_manual_download_in_body_1").click(function() {
+        AAPI_GA_EVENT("btn_manual_download_in_body_1", "homepage", "click");
+    });
+
+    $("#btn_go_to_widget_page_in_body_1").click(function() {
+        AAPI_GA_EVENT("btn_go_to_widget_page_in_body_1", "homepage", "click");
+    });
+
+    $("#btn_go_to_email_up_in_body_1").click(function() {
+        AAPI_GA_EVENT("btn_go_to_email_up_in_body_1", "homepage", "click");
+    });
+
+    $("#btn_go_to_email_up_in_body_1").click(function() {
+        AAPI_GA_EVENT("btn_go_to_email_up_in_body_1", "homepage", "click");
+    });
+
+    $("#btn_slide_image_prev").click(function() {
+        AAPI_GA_EVENT("btn_slide_image_prev", "homepage", "click");
+    });
+
+    $("#btn_slide_image_next").click(function() {
+        AAPI_GA_EVENT("btn_slide_image_next", "homepage", "click");
+    });
+
+    $("#btn_go_to_aqr_store_in_body_1").click(function() {
+        AAPI_GA_EVENT("btn_go_to_aqr_store_in_body_1", "homepage", "click");
+    });
+
+    $("#form_contact_send").click(function() {
+        AAPI_GA_EVENT("btn_contact_sent", "homepage", "click");
+    });
+
+    $("#btn_main_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_main_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_aply_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_aply_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_widget_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_widget_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_plate_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_plate_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_give_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_give_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_aqrm_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_aqrm_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_aplx_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_aplx_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_qr_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_qr_on_related_site", "homepage", "click");
+    });
+
+    $("#btn_instagram_on_bottom").click(function() {
+        AAPI_GA_EVENT("btn_instagram_on_bottom", "homepage", "click");
+    });
+
+    $("#btn_facebook_on_bottom").click(function() {
+        AAPI_GA_EVENT("btn_facebook_on_bottom", "homepage", "click");
+    });
+
+    $("#btn_linkedin_on_bottom").click(function() {
+        AAPI_GA_EVENT("btn_linkedin_on_bottom", "homepage", "click");
+    });
+
+    $("#btn_aply_on_footer").click(function() {
+        AAPI_GA_EVENT("btn_aply_in_footer", "homepage", "click");
+    });
+
+    $("#form_contact_privacy_link").click(function() {
+        AAPI_GA_EVENT("btn_privacy_policy_in_mailup", "homepage", "click");
+    });
+
+    $("#bottom_smartstore_button").click(function() {
+        AAPI_GA_EVENT("btn_go_to_aqr_store_in_floating", "homepage", "click");
+    });
+
+    $("#bottom_register_button").click(function() {
+        AAPI_GA_EVENT("btn_reigister_in_floating", "homepage", "click");
+    });
 });
