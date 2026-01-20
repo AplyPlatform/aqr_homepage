@@ -46,18 +46,18 @@ $(function () {
 		  $("#form_contact_content").val("* 고급 고유 URL은 비영리 공익/사회적 기업 및 단체, 제휴 기업에게 무상으로 제공합니다.\n\n-고유 URL :\n-기업/단체명 :\n-고급 고유 URL을 위한 키워드 후보 1 Ex) mycompany1 :\n-고급 고유 URL을 위한 키워드 후보 2 Ex) mycompany2 :\n" + $("#form_contact_content").val());
 		}
     });
-
-    if (AAPI_isSet(getCookie("ref1"))) return;
-    if (AAPI_isSet(document.referrer) == false) {
-        setCookie("ref1", "", 1)
-    }
-    else {
-        setCookie("ref1", document.referrer + "&from=aqrhome", 1);
-    }
+    
+    if (!AAPI_isSet(getCookie("ref1"))) {
+        if (AAPI_isSet(document.referrer) == false) {
+            setCookie("ref1", "", 1)
+        }
+        else {
+            setCookie("ref1", document.referrer + "&from=aqrhome", 1);
+        }        
+    }    
 
     if ($('[data-youtube]').length > 0)
-        $('[data-youtube]').youtube_background();
-
+            $('[data-youtube]').youtube_background();
 
     $("#btn_register_light_on_top").click(function() {
         AAPI_GA_EVENT("btn_register_light_on_top", CUR_PAGE, "click");
