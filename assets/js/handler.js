@@ -91,8 +91,8 @@ $(function () {
         AAPI_GA_EVENT("btn_go_to_email_up_in_body_1", CUR_PAGE, "click");
     });
 
-    $("#btn_go_to_email_up_in_body_1").click(function() {
-        AAPI_GA_EVENT("btn_go_to_email_up_in_body_1", CUR_PAGE, "click");
+    $("#btn_go_to_email_up_in_body_2").click(function() {
+        AAPI_GA_EVENT("btn_go_to_email_up_in_body_2", CUR_PAGE, "click");
     });
 
     $("#btn_slide_image_prev").click(function() {
