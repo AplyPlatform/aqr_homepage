@@ -127,6 +127,10 @@ $(function () {
         AAPI_GA_EVENT("btn_plate_on_related_site", CUR_PAGE, "click");
     });
 
+    $("#btn_help_on_related_site").click(function() {
+        AAPI_GA_EVENT("btn_help_on_related_site", CUR_PAGE, "click");
+    });
+
     $("#btn_give_on_related_site").click(function() {
         AAPI_GA_EVENT("btn_give_on_related_site", CUR_PAGE, "click");
     });
