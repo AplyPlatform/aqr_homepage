@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보처리 방침 동의</title>
+  <link href="./assets/globals.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+<div class="site-bg">
+
+  <!-- ── 상단 헤더 배너 ── -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div>
+        <div class="header-badge">간편 QR계좌이체용 · STEP 2 / 2</div>
+        <h1 class="header-title"><span class="accent">개인정보처리</span> 방침 동의</h1>
+        <p class="header-sub">QR 코드 정보 갱신을 위해 아래 내용을 확인하고 동의해주세요.</p>
+      </div>
+      <!-- 데스크탑 장식 아이콘 -->
+      <div class="header-deco" aria-hidden="true" style="display:none;">📋</div>
+    </div>
+  </div>
+
+  <!-- ── 본문 ── -->
+  <div class="page-body">
+
+    <!-- 진행 단계 표시 -->
+    <div class="step-indicator">
+      <div class="step-item">
+        <div class="step-circle inactive">1</div>
+        <span class="step-label">계좌 정보 입력</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <div class="step-circle active">2</div>
+        <span class="step-label active">방침 동의 및 제출</span>
+      </div>
+    </div>
+
+    <!-- 결과 메시지 (초기 숨김) -->
+    <div class="result-box" id="resultBox">
+      <div class="result-icon" id="resultIcon"></div>
+      <div class="result-title" id="resultTitle"></div>
+      <div class="result-msg" id="resultMsg"></div>
+    </div>
+
+    <!-- 카드 그리드 (데스크탑: 2컬럼 / 모바일: 1컬럼) -->
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- 상호명 입력 카드 -->
+      <div class="card" id="formCard">
+        <div class="section-tag">
+          <span class="section-tag-bar"></span>
+          <span class="section-tag-text">상호 정보</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="storeName">
+            상호명 <span class="optional">선택</span>
+          </label>
+          <input
+            class="field-input"
+            type="text"
+            id="storeName"
+            name="storeName"
+            placeholder="예) 홍길동 복권판매점"
+            maxlength="50"
+          >
+        </div>
+      </div>
+
+      <!-- 개인정보처리 방침 카드 -->
+      <div class="card" id="privacyCard">
+        <div class="section-tag">
+          <span class="section-tag-bar"></span>
+          <span class="section-tag-text">개인정보처리 방침</span>
+        </div>
+
+        <p class="privacy-title">개인정보 제3자 제공 동의</p>
+
+        <div class="privacy-box">
+          <p class="privacy-text">
+            <strong>AQR 간편 송금 서비스</strong>는 QR 코드 정보 갱신 및 서비스 운영을 위해
+            아래와 같이 귀하의 개인정보를 제3자에게 제공하고 있습니다.
+            관련 내용을 충분히 숙지하신 후 동의 여부를 결정해 주시기 바랍니다.
+          </p>
+
+          <table class="privacy-table">
+            <tr>
+              <th>항목</th>
+              <th>내용</th>
+            </tr>
+            <tr>
+              <td>제공받는 자</td>
+              <td><strong>동행복권</strong>, <strong>케이뱅크</strong></td>
+            </tr>
+            <tr>
+              <td>제공 목적</td>
+              <td>
+                간편 QR계좌이체 서비스의<br>
+                QR 코드 정보 갱신 및 서비스 운영
+              </td>
+            </tr>
+            <tr>
+              <td>제공 항목</td>
+              <td>
+                사업자 번호, 계좌번호,<br>
+                예금주명, 상점 ID
+              </td>
+            </tr>
+            <tr>
+              <td>보유·이용 기간</td>
+              <td>서비스 종료 시 또는 동의 철회 시까지</td>
+            </tr>
+          </table>
+
+          <p class="privacy-text">
+            &#8226; <strong>동행복권</strong>은 복권 판매 시스템 연동을 위해 해당 정보를 이용합니다.
+          </p>
+          <p class="privacy-text">
+            &#8226; <strong>케이뱅크</strong>는 사업자 계좌 확인 및 QR 결제 연동을 위해 해당 정보를 이용합니다.
+          </p>
+          <p class="privacy-text">
+            &#8226; 귀하는 개인정보 제3자 제공 동의를 거부할 권리가 있으며, 거부 시 QR 코드 정보 갱신 서비스 이용이 제한될 수 있습니다.
+          </p>
+          <p class="privacy-text">
+            &#8226; 상점 ID는 서비스 등록 시 시스템에 의해 자동 부여되는 고유 식별자입니다.
+          </p>
+        </div>
+
+        <!-- 동의 체크박스 -->
+        <label class="consent-row" for="consentCheck">
+          <input type="checkbox" id="consentCheck" onchange="toggleSubmitBtn()">
+          <span class="consent-label">
+            위 개인정보처리 방침을 확인하였으며,<br>
+            <span>개인정보 제3자 제공에 동의합니다.</span>
+          </span>
+        </label>
+      </div>
+
+    </div><!-- /.cards-grid -->
+
+    <!-- 제출 버튼 -->
+    <div class="btn-wrap">
+      <button class="btn-primary" id="submitBtn" onclick="handleConsent()" disabled>
+        동의하고 진행하기
+      </button>
+    </div>
+
+    <a class="back-link" onclick="history.back()">&#8592; 이전 페이지로 돌아가기</a>
+
+  </div><!-- /.page-body -->
+</div><!-- /.site-bg -->
+
+<script>
+  /* 데스크탑 장식 아이콘 표시 */
+  (function () {
+    var deco = document.querySelector('.header-deco');
+    if (deco && window.innerWidth >= 1024) {
+      deco.style.display = 'flex';
+    }
+    window.addEventListener('resize', function () {
+      if (deco) deco.style.display = window.innerWidth >= 1024 ? 'flex' : 'none';
+    });
+  })();
+
+  function toggleSubmitBtn() {
+    var checked = document.getElementById('consentCheck').checked;
+    document.getElementById('submitBtn').disabled = !checked;
+  }
+
+  async function handleConsent() {
+    var storeName = document.getElementById('storeName').value.trim();
+    var btn = document.getElementById('submitBtn');
+
+    // 클립보드에서 데이터 읽기
+    var clipText = '';
+    try {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        clipText = await navigator.clipboard.readText();
+      } else {
+        throw new Error('clipboard not supported');
+      }
+    } catch (e) {
+      showResult('error', '&#9888;', '클립보드 접근 실패', '이전 페이지로 돌아가 정보를 다시 입력해주세요.<br>브라우저 클립보드 권한을 허용해야 합니다.');
+      return;
+    }
+
+    // 클립보드 데이터 파싱
+    var parts = clipText.split(',');
+    if (parts.length < 3 || !parts[0].trim() || !parts[1].trim() || !parts[2].trim()) {
+      showResult('error', '&#9888;', '정보 오류', '이전 페이지에서 사업자 번호, 계좌번호, 예금주명을 다시 입력해주세요.');
+      return;
+    }
+
+    var bizNo       = parts[0].trim();
+    var accountNo   = parts[1].trim();
+    var accountName = parts[2].trim();
+
+    // 버튼 로딩 상태
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>처리 중...';
+
+    // AJAX POST
+    var formData = new FormData();
+    formData.append('biz_no',       bizNo);
+    formData.append('account_no',   accountNo);
+    formData.append('account_name', accountName);
+    formData.append('store_name',   storeName);
+
+    try {
+      var response = await fetch('handler.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error('HTTP ' + response.status);
+      }
+
+      var result = await response.json();
+
+      if (result.success) {
+        // 성공: 폼 숨기고 성공 메시지 표시
+        document.getElementById('cardsGrid').style.display  = 'none';
+        document.querySelector('.btn-wrap').style.display   = 'none';
+        document.querySelector('.back-link').style.display  = 'none';
+        document.querySelector('.step-indicator').style.display = 'none';
+
+        var storeIdMsg = result.store_id
+          ? '<br><br>상점 ID: <strong>' + result.store_id + '</strong>'
+          : '';
+        showResult('success', '&#10003;', '등록이 완료되었습니다!',
+          'QR 코드 정보 갱신 요청이 정상적으로 접수되었습니다.' + storeIdMsg +
+          '<br><br>담당 매니저가 방문하여 QR 플레이트 업데이트를 안내드릴 예정입니다.');
+      } else {
+        throw new Error(result.message || '서버 오류');
+      }
+
+    } catch (e) {
+      btn.disabled = false;
+      btn.innerHTML = '동의하고 진행하기';
+      showResult('error', '&#9888;', '오류가 발생했습니다', e.message || '잠시 후 다시 시도해주세요.');
+    }
+  }
+
+  function showResult(type, icon, title, msg) {
+    var box = document.getElementById('resultBox');
+    box.className = 'result-box ' + type;
+    box.style.display = 'block';
+    document.getElementById('resultIcon').innerHTML = icon;
+    document.getElementById('resultTitle').textContent = title;
+    document.getElementById('resultMsg').innerHTML = msg;
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>

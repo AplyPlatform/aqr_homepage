@@ -1,0 +1,595 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Base (mobile-first)
+   kbank.html + aqr.html 공용 스타일시트
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #e2ddff;
+  min-height: 100%;
+}
+
+/* ── 레이아웃 껍데기 ── */
+.site-bg {
+  min-height: 100vh;
+  background-color: #e2ddff;
+}
+
+/* ── 헤더 배너 ── */
+.page-header {
+  background: linear-gradient(135deg, #4d2cff 0%, #7b5cff 100%);
+  padding: 32px 20px 36px;
+}
+.page-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header-badge {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.22);
+  color: #fff;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  margin-bottom: 14px;
+  letter-spacing: 0.4px;
+}
+.header-title {
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 10px;
+}
+.header-title .accent {
+  color: rgba(255,255,255,0.82);
+}
+.header-sub {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── 본문 영역 ── */
+.page-body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+  box-sizing: border-box;
+}
+
+/* ── 카드 ── */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 0.5px dashed #999;
+  padding: 24px 20px 28px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 12px rgba(77,44,255,0.06);
+}
+
+/* ── 섹션 제목 ── */
+.section-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.section-tag-bar {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: #4d2cff;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-tag-text {
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── 폼 그리드 & 필드 ── */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 7px;
+}
+.field-label .required {
+  display: inline-block;
+  background: #4d2cff;
+  color: #fff;
+  font-family: "Pretendard-SemiBold", Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.field-label .optional {
+  display: inline-block;
+  background: #e8e4ff;
+  color: #4d2cff;
+  font-family: "Pretendard-SemiBold", Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.field-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1.5px solid #d0caff;
+  border-radius: 12px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #111;
+  background: #fafafe;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.field-input::placeholder {
+  color: #bbb;
+  font-size: 13px;
+}
+.field-input:focus {
+  border-color: #4d2cff;
+  box-shadow: 0 0 0 3px rgba(77,44,255,0.12);
+  background: #fff;
+}
+.field-hint {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
+}
+.field-error {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 11px;
+  color: #e03535;
+  margin-top: 5px;
+  display: none;
+}
+
+/* ── 안내 박스 (kbank) ── */
+.info-box {
+  background: #f0edff;
+  border-radius: 14px;
+  border-left: 3px solid #4d2cff;
+  padding: 13px 16px;
+  margin-bottom: 16px;
+}
+.info-box p {
+  margin: 0;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.75;
+}
+.info-box p + p { margin-top: 3px; }
+
+/* ── 진행 단계 표시 ── */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 20px;
+}
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  position: relative;
+}
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 1;
+}
+.step-circle.active {
+  background: #4d2cff;
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(77,44,255,0.18);
+}
+.step-circle.inactive {
+  background: #e0daf8;
+  color: #9b8fe0;
+}
+.step-label {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
+}
+.step-label.active {
+  color: #4d2cff;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+}
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background: #d8d0ff;
+  margin-bottom: 16px;
+  max-width: 60px;
+}
+
+/* ── 개인정보처리 방침 (aqr) ── */
+.privacy-title {
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 12px;
+}
+.privacy-box {
+  background: #fafafe;
+  border: 1px solid #d0caff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  max-height: 260px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+.privacy-box::-webkit-scrollbar { width: 4px; }
+.privacy-box::-webkit-scrollbar-thumb {
+  background: #c4bcff;
+  border-radius: 4px;
+}
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 14px;
+}
+.privacy-table th {
+  background: #ede9ff;
+  color: #4d2cff;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 10px;
+  border: 1px solid #d0caff;
+  text-align: left;
+}
+.privacy-table td {
+  padding: 8px 10px;
+  border: 1px solid #e0daf8;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.privacy-text {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 12px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0 0 10px;
+}
+.privacy-text:last-child { margin-bottom: 0; }
+.privacy-text strong {
+  color: #4d2cff;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+}
+
+/* ── 동의 체크박스 (aqr) ── */
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #f0edff;
+  border-radius: 12px;
+  border: 1.5px solid #c4bcff;
+  cursor: pointer;
+}
+.consent-row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid #4d2cff;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  background: #fff;
+  transition: background 0.15s;
+}
+.consent-row input[type="checkbox"]:checked {
+  background: #4d2cff;
+}
+.consent-row input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.consent-label {
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.6;
+  cursor: pointer;
+}
+.consent-label span { color: #4d2cff; }
+
+/* ── 버튼 ── */
+.btn-wrap {
+  text-align: center;
+}
+.btn-primary {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  padding: 16px 24px;
+  background-color: #4d2cff;
+  color: #fff;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(77,44,255,0.3);
+}
+.btn-primary:hover {
+  background-color: #3b1fd4;
+  box-shadow: 0 6px 22px rgba(77,44,255,0.38);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+.btn-primary:disabled {
+  background-color: #b0a8e8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── 결과 메시지 (aqr) ── */
+.result-box {
+  display: none;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.result-box.success {
+  background: #edfff5;
+  border: 1.5px solid #34c97c;
+}
+.result-box.error {
+  background: #fff2f2;
+  border: 1.5px solid #e03535;
+}
+.result-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.result-title {
+  font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+.result-msg {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ── 로딩 스피너 (aqr) ── */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── 이전 페이지 링크 (aqr) ── */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 13px;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ── 토스트 (kbank) ── */
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(25, 15, 70, 0.93);
+  color: #fff;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 28px;
+  z-index: 9999;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+}
+.toast.show {
+  display: block;
+  animation: fadeInOut 2.2s ease forwards;
+}
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  18%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   sm: 640px 이상 (태블릿)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (min-width: 640px) {
+  .page-header      { padding: 40px 32px 44px; }
+  .header-title     { font-size: 30px; }
+  .header-sub       { font-size: 14px; }
+  .page-body        { padding: 32px 24px 64px; }
+  .card             { padding: 28px 26px 32px; border-radius: 22px; }
+  .section-tag-text { font-size: 16px; }
+  .field-input      { padding: 14px 18px; font-size: 15px; }
+  .privacy-box      { max-height: 300px; }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   md: 1024px 이상 (데스크탑)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (min-width: 1024px) {
+  .site-bg {
+    background: linear-gradient(160deg, #dbd4ff 0%, #c8bfff 100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header { padding: 52px 40px 56px; }
+  .page-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .header-title { font-size: 38px; margin-bottom: 12px; }
+  .header-sub   { font-size: 15px; max-width: 560px; }
+
+  .header-deco {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+  }
+
+  .page-body {
+    flex: 1;
+    padding: 40px 32px 72px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 36px 36px 40px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(77,44,255,0.08);
+  }
+  .section-tag-text { font-size: 17px; }
+
+  /* kbank: 폼 2컬럼 */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 28px;
+  }
+  .field-group.span-full {
+    grid-column: 1 / -1;
+  }
+
+  .field-label  { font-size: 14px; }
+  .field-input  { padding: 15px 18px; font-size: 15px; }
+  .field-hint   { font-size: 12px; }
+
+  /* 안내 박스 */
+  .info-box   { padding: 16px 22px; }
+  .info-box p { font-size: 13px; }
+
+  /* aqr: 카드 2컬럼 (상호명 + 개인정보) */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 16px;
+  }
+  .cards-grid .card {
+    margin-bottom: 0;
+  }
+
+  .privacy-box  { max-height: 400px; }
+  .privacy-table th,
+  .privacy-table td { font-size: 13px; padding: 10px 12px; }
+  .privacy-text { font-size: 13px; }
+
+  /* 버튼 */
+  .btn-primary {
+    max-width: 420px;
+    font-size: 17px;
+    padding: 18px 28px;
+    border-radius: 18px;
+  }
+  .back-link { font-size: 14px; }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   xl: 1280px 이상 (와이드)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (min-width: 1280px) {
+  .page-header  { padding: 60px 48px 64px; }
+  .header-title { font-size: 42px; }
+}
