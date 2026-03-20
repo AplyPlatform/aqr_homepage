@@ -1,0 +1,2277 @@
+.AQR {
+  background-color: #e2ddff;
+  overflow: hidden;
+  width: 595px;
+  min-width: 595px;
+  min-height: 3249px;
+  position: relative;
+  transform-origin: top left;
+  margin: 0 auto;
+}
+
+.AQR .line {
+  position: absolute;
+  top: 164px;
+  left: 16px;
+  width: 296px;
+  height: 10px;
+}
+
+.AQR .rectangle {
+  position: absolute;
+  top: 191px;
+  left: 404px;
+  width: 166px;
+  height: 31px;
+  background-color: #4d2cff;
+  border-radius: 15px;
+  border: 3px solid;
+}
+
+.AQR .div {
+  position: absolute;
+  top: 237px;
+  left: 24px;
+  width: 546px;
+  height: 856px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 0.5px dashed;
+  border-color: #777777;
+}
+
+.AQR .QR {
+  position: absolute;
+  top: 62px;
+  left: 17px;
+  width: 492px;
+  height: 120px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: 60px;
+}
+
+.AQR .text-wrapper {
+  color: #4d2cff;
+}
+
+.AQR .span {
+  color: #000000;
+}
+
+.AQR .rectangle-2 {
+  position: absolute;
+  top: 258px;
+  left: 40px;
+  width: 56px;
+  height: 26px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-3 {
+  position: absolute;
+  top: 339px;
+  left: 40px;
+  width: 88px;
+  height: 26px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-4 {
+  position: absolute;
+  top: 731px;
+  left: 40px;
+  width: 88px;
+  height: 26px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-5 {
+  position: absolute;
+  top: 850px;
+  left: 40px;
+  width: 88px;
+  height: 26px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-6 {
+  position: absolute;
+  top: 941px;
+  left: 40px;
+  width: 88px;
+  height: 26px;
+  background-color: #4d2cff;
+}
+
+.AQR .text-wrapper-2 {
+  position: absolute;
+  top: 244px;
+  left: 45px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .p {
+  position: absolute;
+  top: 290px;
+  left: 45px;
+  width: 471px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .QR-wrapper {
+  position: absolute;
+  top: 373px;
+  left: 45px;
+  width: 361px;
+  height: 35px;
+  display: flex;
+}
+
+.AQR .QR-2 {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 361px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .QR-3 {
+  position: absolute;
+  top: 547px;
+  left: 45px;
+  width: 430px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #0066ff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-3 {
+  font-weight: 700;
+}
+
+.AQR .text-wrapper-4 {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 500;
+}
+
+.AQR .text-wrapper-5 {
+  position: absolute;
+  top: 779px;
+  left: 40px;
+  width: 588px;
+  height: 35px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-6 {
+  position: absolute;
+  top: 717px;
+  left: 45px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .QR-4 {
+  position: absolute;
+  top: 886px;
+  left: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-7 {
+  position: absolute;
+  top: 836px;
+  left: 46px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-8 {
+  position: absolute;
+  top: 927px;
+  left: 44px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-9 {
+  top: 977px;
+  left: 40px;
+  height: 30px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 30px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-10 {
+  top: 1009px;
+  left: 40px;
+  height: 30px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 30px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-11 {
+  position: absolute;
+  top: 325px;
+  left: 45px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .img {
+  position: absolute;
+  top: 324px;
+  left: 30px;
+  width: 535px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-2 {
+  position: absolute;
+  top: 716px;
+  left: 30px;
+  width: 535px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-3 {
+  position: absolute;
+  top: 835px;
+  left: 30px;
+  width: 535px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-4 {
+  position: absolute;
+  top: 926px;
+  left: 30px;
+  width: 535px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .text-wrapper-12 {
+  position: absolute;
+  top: 1038px;
+  left: 49px;
+  width: 319px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 55px;
+}
+
+.AQR .text-wrapper-13 {
+  top: 3px;
+  left: 409px;
+  width: 182px;
+  height: 28px;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  line-height: 55px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.AQR .rectangle-7 {
+  position: absolute;
+  top: 44px;
+  left: 416px;
+  width: 139px;
+  height: 138px;
+  background-color: #4d2cff;
+  border-radius: 15px;
+  border: 3px solid;
+}
+
+.AQR .QR-5 {
+  position: absolute;
+  top: 50px;
+  left: 422px;
+  width: 128px;
+  height: 127px;
+  aspect-ratio: 1.01;
+  object-fit: cover;
+}
+
+.AQR .text-wrapper-14 {
+  position: absolute;
+  top: 179px;
+  left: 418px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .line-5 {
+  position: absolute;
+  top: 541px;
+  left: 30px;
+  width: 535px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .text-wrapper-15 {
+  position: absolute;
+  top: 511px;
+  left: 245px;
+  width: 118px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #4d4d4d;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.AQR .text-wrapper-16 {
+  position: absolute;
+  top: 686px;
+  left: 235px;
+  width: 140px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #bd0fdc;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.AQR .text-wrapper-17 {
+  position: absolute;
+  top: 686px;
+  left: 426px;
+  width: 102px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #be10dd;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.AQR .text-wrapper-18 {
+  position: absolute;
+  top: 509px;
+  left: 58px;
+  width: 143px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #4d4d4d;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .text-wrapper-19 {
+  position: absolute;
+  top: 683px;
+  left: 58px;
+  width: 143px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #4d4d4d;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .ellipse {
+  position: absolute;
+  top: 452px;
+  left: 217px;
+  width: 21px;
+  height: 21px;
+  border-radius: 10.5px;
+  border: 1px dashed;
+  border-color: #cccccc;
+}
+
+.AQR .vector {
+  position: absolute;
+  width: 62.52%;
+  height: 85.89%;
+  top: 14.11%;
+  left: 37.48%;
+}
+
+.AQR .ellipse-2 {
+  position: absolute;
+  top: 626px;
+  left: 217px;
+  width: 21px;
+  height: 21px;
+  border-radius: 10.5px;
+  border: 1px dashed;
+  border-color: #007bff;
+}
+
+.AQR .vector-2 {
+  position: absolute;
+  width: 62.52%;
+  height: 80.56%;
+  top: 19.44%;
+  left: 37.48%;
+}
+
+.AQR .ellipse-3 {
+  position: absolute;
+  top: 626px;
+  left: 377px;
+  width: 21px;
+  height: 21px;
+  border-radius: 10.5px;
+  border: 1px dashed;
+  border-color: #007bff;
+}
+
+.AQR .vector-3 {
+  position: absolute;
+  width: 35.63%;
+  height: 80.53%;
+  top: 19.47%;
+  left: 64.37%;
+}
+
+.AQR .ellipse-4 {
+  position: absolute;
+  top: 452px;
+  left: 377px;
+  width: 21px;
+  height: 21px;
+  border-radius: 10.5px;
+  border: 1px dashed;
+  border-color: #cccccc;
+}
+
+.AQR .ellipse-5 {
+  position: absolute;
+  top: 452px;
+  left: 377px;
+  width: 21px;
+  height: 21px;
+}
+
+.AQR .vector-4 {
+  position: absolute;
+  width: 35.63%;
+  height: 85.89%;
+  top: 14.11%;
+  left: 64.37%;
+}
+
+.AQR .rectangle-8 {
+  position: absolute;
+  top: 427px;
+  left: 132px;
+  width: 44px;
+  height: 74px;
+  background-color: #ffffff;
+}
+
+.AQR .image {
+  position: absolute;
+  top: 429px;
+  left: 55px;
+  width: 62px;
+  height: 62px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.AQR .image-2 {
+  position: absolute;
+  top: 603px;
+  left: 55px;
+  width: 63px;
+  height: 63px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.AQR .qr {
+  top: 423px;
+  position: absolute;
+  left: 128px;
+  width: 69px;
+  height: 74px;
+  aspect-ratio: 0.94;
+  object-fit: cover;
+}
+
+.AQR .qr-2 {
+  top: 597px;
+  position: absolute;
+  left: 128px;
+  width: 69px;
+  height: 74px;
+  aspect-ratio: 0.94;
+  object-fit: cover;
+}
+
+.AQR .group {
+  position: absolute;
+  top: 443px;
+  left: 115px;
+  width: 24px;
+  height: 34px;
+}
+
+.AQR .group-2 {
+  position: absolute;
+  top: 617px;
+  left: 114px;
+  width: 24px;
+  height: 34px;
+}
+
+.AQR .text-wrapper-20 {
+  position: absolute;
+  top: 511px;
+  left: 417px;
+  width: 118px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #4d4d4d;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.AQR .ellipse-6 {
+  position: absolute;
+  top: 630px;
+  left: 122px;
+  width: 8px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 4px / 5px;
+}
+
+.AQR .ellipse-7 {
+  position: absolute;
+  top: 456px;
+  left: 122px;
+  width: 8px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 4px / 5px;
+}
+
+.AQR .text-wrapper-21 {
+  position: absolute;
+  top: 454px;
+  left: 121px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-22 {
+  position: absolute;
+  top: 628px;
+  left: 121px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.AQR .group-3 {
+  position: absolute;
+  top: 430px;
+  left: 265px;
+  width: 84px;
+  height: 66px;
+}
+
+.AQR .image-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 82px;
+  height: 66px;
+  aspect-ratio: 1.23;
+}
+
+.AQR .ellipse-8 {
+  position: absolute;
+  top: 12px;
+  left: 48px;
+  width: 13px;
+  height: 18px;
+  background-color: #ffffff;
+  border-radius: 6.75px / 8.82px;
+}
+
+.AQR .text-wrapper-23 {
+  position: absolute;
+  top: 13px;
+  left: 48px;
+  width: 12px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.AQR .group-4 {
+  position: absolute;
+  top: 604px;
+  left: 265px;
+  width: 84px;
+  height: 66px;
+}
+
+.AQR .image-4 {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 82px;
+  height: 66px;
+  aspect-ratio: 1.23;
+}
+
+.AQR .text-wrapper-24 {
+  position: absolute;
+  top: 1126px;
+  left: 31px;
+  width: 96px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #4d2cff;
+  font-size: 35px;
+  letter-spacing: 0;
+  line-height: 55px;
+}
+
+.AQR .rectangle-9 {
+  position: absolute;
+  top: 1177px;
+  left: 24px;
+  width: 546px;
+  height: 2018px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 0.5px dashed;
+  border-color: #777777;
+}
+
+.AQR .text-wrapper-25 {
+  position: absolute;
+  top: 3000px;
+  left: 100px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .line-6 {
+  position: absolute;
+  top: 1400px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-7 {
+  position: absolute;
+  top: 1936px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-8 {
+  position: absolute;
+  top: 2106px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-9 {
+  position: absolute;
+  top: 2236px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .rectangle-10 {
+  position: absolute;
+  top: 1218px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-11 {
+  position: absolute;
+  top: 1415px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-12 {
+  position: absolute;
+  top: 1953px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-13 {
+  position: absolute;
+  top: 2123px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-14 {
+  position: absolute;
+  top: 2252px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-15 {
+  position: absolute;
+  top: 2356px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-16 {
+  position: absolute;
+  top: 2526px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-17 {
+  position: absolute;
+  top: 2711px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-18 {
+  position: absolute;
+  top: 2848px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-19 {
+  position: absolute;
+  top: 3000px;
+  left: 40px;
+  width: 47px;
+  height: 25px;
+  background-color: #4d2cff;
+}
+
+.AQR .rectangle-20 {
+  position: absolute;
+  top: 1265px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-21 {
+  position: absolute;
+  top: 1482px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-22 {
+  position: absolute;
+  top: 2000px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-23 {
+  position: absolute;
+  top: 2170px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-24 {
+  position: absolute;
+  top: 2299px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-25 {
+  position: absolute;
+  top: 2423px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-26 {
+  position: absolute;
+  top: 2573px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-27 {
+  position: absolute;
+  top: 2758px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-28 {
+  position: absolute;
+  top: 2895px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .rectangle-29 {
+  position: absolute;
+  top: 3047px;
+  left: 40px;
+  width: 36px;
+  height: 25px;
+  background-color: #4d4d4d;
+}
+
+.AQR .text-wrapper-26 {
+  top: 1265px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-27 {
+  top: 1482px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-28 {
+  top: 2000px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-29 {
+  top: 2170px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-30 {
+  top: 2299px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-31 {
+  top: 2423px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-32 {
+  top: 2573px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-33 {
+  top: 2758px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-34 {
+  top: 2895px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-35 {
+  top: 3047px;
+  position: absolute;
+  left: 46px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .div-2 {
+  position: absolute;
+  top: 1317px;
+  left: 86px;
+  width: 446px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .text-wrapper-36 {
+  font-weight: 500;
+}
+
+.AQR .text-wrapper-37 {
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.AQR .QR-6 {
+  position: absolute;
+  top: 1204px;
+  left: 86px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .QR-7 {
+  top: 1417px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  position: absolute;
+  left: 86px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.AQR .QR-8 {
+  top: 1487px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  position: absolute;
+  left: 86px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.AQR .div-3 {
+  position: absolute;
+  top: 1739px;
+  left: 86px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-38 {
+  position: absolute;
+  top: 1953px;
+  left: 86px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-39 {
+  position: absolute;
+  top: 2123px;
+  left: 86px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .div-4 {
+  position: absolute;
+  top: 2003px;
+  left: 86px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .div-5 {
+  position: absolute;
+  top: 2170px;
+  left: 86px;
+  width: 447px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+.AQR .div-6 {
+  position: absolute;
+  top: 2201px;
+  left: 86px;
+  width: 480px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.AQR .div-7 {
+  position: absolute;
+  top: 2051px;
+  left: 86px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .element {
+  position: absolute;
+  top: 1518px;
+  left: 86px;
+  width: 144px;
+  height: 189px;
+  aspect-ratio: 0.76;
+  object-fit: cover;
+}
+
+.AQR .group-5 {
+  position: absolute;
+  top: 1482px;
+  left: 115px;
+  width: 200px;
+  height: 229px;
+}
+
+.AQR .image-5 {
+  position: absolute;
+  top: 1767px;
+  left: 86px;
+  width: 346px;
+  height: 163px;
+  aspect-ratio: 2.12;
+}
+
+.AQR .mockup {
+  position: absolute;
+  top: 1478px;
+  left: 323px;
+  width: 199px;
+  height: 229px;
+  aspect-ratio: 0.87;
+}
+
+.AQR .image-6 {
+  position: absolute;
+  top: 1524px;
+  left: 386px;
+  width: 72px;
+  height: 151px;
+  aspect-ratio: 0.48;
+}
+
+.AQR .rectangle-30 {
+  position: absolute;
+  top: 1524px;
+  left: 410px;
+  width: 24px;
+  height: 6px;
+  background-color: #000000;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.AQR .rectangle-31 {
+  position: absolute;
+  top: 1626px;
+  left: 407px;
+  width: 22px;
+  height: 7px;
+  background-color: #0114a7;
+}
+
+.AQR .text-wrapper-40 {
+  position: absolute;
+  top: 1626px;
+  left: 403px;
+  width: 30px;
+  height: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 3px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 2px;
+}
+
+.AQR .ellipse-9 {
+  position: absolute;
+  top: 1590px;
+  left: 305px;
+  width: 37px;
+  height: 37px;
+  border-radius: 18.5px;
+  border: 1px dashed;
+  border-color: #4d2cff;
+}
+
+.AQR .vector-5 {
+  position: absolute;
+  width: 47.06%;
+  height: 50.72%;
+  top: 49.28%;
+  left: 52.94%;
+}
+
+.AQR .rectangle-32 {
+  position: absolute;
+  top: 1518px;
+  left: 86px;
+  width: 436px;
+  height: 189px;
+  border: 0.5px dashed;
+  border-color: #cccccc;
+}
+
+.AQR .group-35153 {
+  position: absolute;
+  top: 1518px;
+  left: 86px;
+  width: 436px;
+  height: 189px;
+  object-fit: contain;
+}
+
+.AQR .line-10 {
+  position: absolute;
+  top: 2339px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-11 {
+  position: absolute;
+  top: 2509px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-12 {
+  position: absolute;
+  top: 2694px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-13 {
+  position: absolute;
+  top: 2831px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .line-14 {
+  position: absolute;
+  top: 2983px;
+  left: 31px;
+  width: 533px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.AQR .div-8 {
+  position: absolute;
+  top: 2299px;
+  left: 86px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-41 {
+  position: absolute;
+  top: 2526px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-42 {
+  position: absolute;
+  top: 2711px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .QR-9 {
+  position: absolute;
+  top: 2573px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-43 {
+  font-weight: 700;
+  color: #000000;
+}
+
+.AQR .text-wrapper-44 {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+}
+
+.AQR .text-wrapper-45 {
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 500;
+  color: #777777;
+}
+
+.AQR .div-9 {
+  position: absolute;
+  top: 2760px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .QR-URL-URL {
+  top: 2606px;
+  left: 87px;
+  position: absolute;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .text-wrapper-46 {
+  position: absolute;
+  top: 2425px;
+  left: 85px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-47 {
+  position: absolute;
+  top: 2253px;
+  left: 86px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-48 {
+  position: absolute;
+  top: 2356px;
+  left: 87px;
+  height: 50px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+.AQR .div-10 {
+  position: absolute;
+  top: 2454px;
+  left: 85px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .QR-10 {
+  position: absolute;
+  top: 2654px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .div-11 {
+  position: absolute;
+  top: 2791px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-49 {
+  position: absolute;
+  top: 2848px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .div-12 {
+  position: absolute;
+  top: 2895px;
+  left: 87px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.AQR .div-13 {
+  position: absolute;
+  top: 2928px;
+  left: 87px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .div-14 {
+  position: absolute;
+  top: 3047px;
+  left: 100px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #007bff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .element-QR {
+  position: absolute;
+  top: 3095px;
+  left: 100px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .image-7 {
+  position: absolute;
+  top: 3208px;
+  left: 251px;
+  width: 91px;
+  height: 25px;
+  aspect-ratio: 3.67;
+  object-fit: cover;
+}
+
+.AQR .group-6 {
+  position: absolute;
+  top: 435px;
+  left: 455px;
+  width: 71px;
+  height: 62px;
+  background-image: url(https://c.animaapp.com/NgXUbe1A/img/image-320-1@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.AQR .ellipse-10 {
+  position: absolute;
+  top: 19px;
+  left: 31px;
+  width: 11px;
+  height: 14px;
+  background-color: #ffffff;
+  border-radius: 5.71px / 7.14px;
+}
+
+.AQR .ellipse-11 {
+  position: absolute;
+  top: 19px;
+  left: 23px;
+  width: 11px;
+  height: 14px;
+  background-color: #ffffff;
+  border-radius: 5.71px / 7.14px;
+}
+
+.AQR .group-7 {
+  position: absolute;
+  top: 610px;
+  left: 455px;
+  width: 71px;
+  height: 62px;
+  background-image: url(https://c.animaapp.com/NgXUbe1A/img/image-320-1@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.AQR .image-8 {
+  position: absolute;
+  top: 416px;
+  left: 430px;
+  width: 37px;
+  height: 28px;
+  aspect-ratio: 1.32;
+}
+
+.AQR .image-9 {
+  position: absolute;
+  top: 590px;
+  left: 430px;
+  width: 37px;
+  height: 28px;
+  aspect-ratio: 1.32;
+}
+
+.AQR .div-wrapper {
+  position: absolute;
+  top: 453px;
+  left: 481px;
+  width: 17px;
+  height: 19px;
+  display: flex;
+}
+
+.AQR .text-wrapper-50 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  width: 15.43px;
+  height: 19.09px;
+  margin-left: 0;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.AQR .group-8 {
+  position: absolute;
+  top: 626px;
+  left: 481px;
+  width: 17px;
+  height: 19px;
+  display: flex;
+}
+
+.AQR .ellipse-12 {
+  position: absolute;
+  top: 420px;
+  left: 437px;
+  width: 74px;
+  height: 73px;
+  border-radius: 36.86px / 36.48px;
+  border: 3px solid;
+  border-color: #4d4d4d;
+}
+
+.AQR .line-15 {
+  position: absolute;
+  top: 434px;
+  left: 445px;
+  width: 56px;
+  height: 45px;
+}
+
+.AQR .rectangle-33 {
+  position: absolute;
+  top: 1626px;
+  left: 399px;
+  width: 51px;
+  height: 7px;
+  background-color: #0114a7;
+}
+
+.AQR .ellipse-13 {
+  position: absolute;
+  top: 1626px;
+  left: 392px;
+  width: 7px;
+  height: 7px;
+  object-fit: cover;
+}
+
+.AQR .text-wrapper-51 {
+  position: absolute;
+  top: 1627px;
+  left: 399px;
+  width: 54px;
+  height: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 4px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 2px;
+}
+
+.AQR .text-wrapper-52 {
+  top: 1218px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-53 {
+  top: 1415px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-54 {
+  top: 1953px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-55 {
+  top: 2123px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-56 {
+  top: 2252px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-57 {
+  top: 2356px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-58 {
+  top: 2526px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-59 {
+  top: 2711px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-60 {
+  top: 2848px;
+  width: 36px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .text-wrapper-61 {
+  top: 3000px;
+  width: 47px;
+  position: absolute;
+  left: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+.AQR .div-15 {
+  position: absolute;
+  top: 1269px;
+  left: 86px;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .QR-11 {
+  top: 1345px;
+  left: 86px;
+  position: absolute;
+  height: 40px;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.AQR .text-wrapper-62 {
+  position: absolute;
+  top: 3157px;
+  left: 76px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 25px;
+  white-space: nowrap;
+}
