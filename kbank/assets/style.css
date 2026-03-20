@@ -546,10 +546,10 @@
 
 .AQR .vector {
   position: absolute;
-  width: 62.52%;
-  height: 85.89%;
-  top: 14.11%;
-  left: 37.48%;
+  width: 10px;
+  height: 9px;
+  top: 458px;
+  left: 223px;
 }
 
 .AQR .ellipse-2 {
@@ -565,10 +565,10 @@
 
 .AQR .vector-2 {
   position: absolute;
-  width: 62.52%;
-  height: 80.56%;
-  top: 19.44%;
-  left: 37.48%;
+  width: 10px;
+  height: 9px;
+  top: 632px;
+  left: 223px;
 }
 
 .AQR .ellipse-3 {
@@ -584,10 +584,10 @@
 
 .AQR .vector-3 {
   position: absolute;
-  width: 35.63%;
-  height: 80.53%;
-  top: 19.47%;
-  left: 64.37%;
+  width: 10px;
+  height: 9px;
+  top: 633px;
+  left: 383px;
 }
 
 .AQR .ellipse-4 {
@@ -611,10 +611,10 @@
 
 .AQR .vector-4 {
   position: absolute;
-  width: 35.63%;
-  height: 85.89%;
-  top: 14.11%;
-  left: 64.37%;
+  width: 8px;
+  height: 7px;
+  top: 458px;
+  left: 383px;
 }
 
 .AQR .rectangle-8 {
@@ -1543,10 +1543,10 @@
 
 .AQR .vector-5 {
   position: absolute;
-  width: 47.06%;
-  height: 50.72%;
-  top: 49.28%;
-  left: 52.94%;
+  width: 17px;
+  height: 15px;
+  top: 1601px;
+  left: 315px;
 }
 
 .AQR .rectangle-32 {
@@ -1900,7 +1900,7 @@
   left: 455px;
   width: 71px;
   height: 62px;
-  background-image: url(https://c.animaapp.com/NgXUbe1A/img/image-320-1@2x.png);
+  background-image: url(./image-320-1@2x.png);
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -1931,7 +1931,7 @@
   left: 455px;
   width: 71px;
   height: 62px;
-  background-image: url(https://c.animaapp.com/NgXUbe1A/img/image-320-1@2x.png);
+  background-image: url(./image-320-1@2x.png);
   background-size: cover;
   background-position: 50% 50%;
 }
