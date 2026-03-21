@@ -30,7 +30,7 @@
     <div class="step-indicator">
       <div class="step-item">
         <div class="step-circle active">1</div>
-        <span class="step-label active">계좌 정보 입력</span>
+        <span class="step-label active">계좌 정보 확인</span>
       </div>
       <div class="step-connector"></div>
       <div class="step-item">
@@ -43,7 +43,7 @@
     <div class="card">
       <div class="section-tag">
         <span class="section-tag-bar"></span>
-        <span class="section-tag-text">계좌 정보 입력</span>
+        <span class="section-tag-text">계좌 정보 확인</span>
       </div>
 
       <div class="form-grid">
@@ -51,9 +51,10 @@
         <!-- 사업자 번호 -->
         <div class="field-group">
           <label class="field-label" for="bizNo">
-            사업자 번호 <span class="required">필수</span>
+            사업자 번호
           </label>
           <input
+            value="123-12-12344"
             class="field-input"
             type="text"
             id="bizNo"
@@ -62,17 +63,18 @@
             maxlength="12"
             inputmode="numeric"
             autocomplete="off"
-          >
-          <p class="field-hint">숫자 10자리 (하이픈 자동 입력)</p>
+            disabled
+          >          
           <p class="field-error" id="bizNoError">사업자 번호를 입력해주세요.</p>
         </div>
 
         <!-- 예금주명 -->
         <div class="field-group">
           <label class="field-label" for="accountName">
-            예금주명 <span class="required">필수</span>
+            예금주명
           </label>
           <input
+            value="동행복"
             class="field-input"
             type="text"
             id="accountName"
@@ -80,6 +82,7 @@
             placeholder="예) 홍길동"
             maxlength="30"
             autocomplete="name"
+            disabled
           >
           <p class="field-error" id="accountNameError">예금주명을 입력해주세요.</p>
         </div>
@@ -87,9 +90,10 @@
         <!-- 계좌번호 (전체 너비) -->
         <div class="field-group span-full">
           <label class="field-label" for="accountNo">
-            계좌번호 <span class="required">필수</span>
+            계좌번호
           </label>
           <input
+            value="100-123-456789"
             class="field-input"
             type="text"
             id="accountNo"
@@ -98,8 +102,8 @@
             maxlength="25"
             inputmode="numeric"
             autocomplete="off"
-          >
-          <p class="field-hint">케이뱅크 사업자(사장님 통장) 계좌번호</p>
+            disabled
+          >          
           <p class="field-error" id="accountNoError">계좌번호를 입력해주세요.</p>
         </div>
 
@@ -108,8 +112,8 @@
 
     <!-- 안내 박스 -->
     <div class="info-box">
-      <p>&#8226; 입력하신 정보는 클립보드에 임시 저장되어 다음 단계로 전달됩니다.</p>
-      <p>&#8226; 다음 단계에서 개인정보처리 방침 동의 후 최종 등록됩니다.</p>
+      <p>&#8226; 상기 정보는 클립보드에 임시 저장되어 다음 단계로 전달됩니다.</p>
+      <p>&#8226; 다음 단계에서 개인정보처리 방침 동의 후 최종 사용됩니다.</p>
     </div>
 
     <!-- 제출 버튼 -->
