@@ -166,8 +166,8 @@
 
   function setFile(file) {
     if (file) {
-      if (file.size > 1 * 1024 * 1024) {
-        setFileError('파일 크기가 1MB를 초과합니다.');
+      if (file.size > 10 * 1024 * 1024) {
+        setFileError('파일 크기가 10MB를 초과합니다.');
         fileNameDisplay.textContent = '';
         fileUploadArea.classList.remove('has-file');
         fileInput.value = '';
@@ -357,6 +357,35 @@
   }
 
   /**
+   * 이미지 파일을 지정한 JPEG 품질로 압축하여 ArrayBuffer 반환
+   * @param {File}   file    - JPG 또는 PNG 파일
+   * @param {number} quality - 0~1 사이의 품질 (예: 1/16 ≈ 0.0625)
+   * @returns {Promise<ArrayBuffer>}
+   */
+  function compressImageToJpeg(file, quality) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      var url = URL.createObjectURL(file);
+      img.onload = function () {
+        var canvas = document.createElement('canvas');
+        canvas.width  = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';           /* PNG 투명 배경을 흰색으로 */
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+        canvas.toBlob(function (blob) {
+          if (!blob) { reject(new Error('이미지 압축 실패')); return; }
+          blob.arrayBuffer().then(resolve).catch(reject);
+        }, 'image/jpeg', quality);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('이미지 로드 실패')); };
+      img.src = url;
+    });
+  }
+
+  /**
    * 계약서 원본 PDF + 요약 페이지 + 첨부 파일을 하나의 PDF 로 병합
    * @returns {Uint8Array}
    */
@@ -382,17 +411,16 @@
     sPages.forEach(function (p) { merged.addPage(p); });
 
     /* (3) 첨부 파일 */
-    var attachBytes = await attachmentFile.arrayBuffer();
     if (attachmentFile.type === 'application/pdf') {
+      var attachBytes = await attachmentFile.arrayBuffer();
       var attachDoc = await PDFDocument.load(attachBytes);
       var aPages = await merged.copyPages(attachDoc, attachDoc.getPageIndices());
       aPages.forEach(function (p) { merged.addPage(p); });
     } else {
-      /* 이미지(JPG/PNG) → 새 A4 페이지에 삽입 */
-      var imgPage = merged.addPage([595.28, 841.89]);
-      var embeddedImg = attachmentFile.type === 'image/jpeg'
-        ? await merged.embedJpg(attachBytes)
-        : await merged.embedPng(attachBytes);
+      /* 이미지(JPG/PNG) → 1/16 품질 JPEG 로 압축 후 A4 페이지에 삽입 */
+      var compressedBytes = await compressImageToJpeg(attachmentFile, 1 / 16);
+      var imgPage     = merged.addPage([595.28, 841.89]);
+      var embeddedImg = await merged.embedJpg(compressedBytes);
       var dims = embeddedImg.scaleToFit(
         imgPage.getWidth()  - 40,
         imgPage.getHeight() - 40

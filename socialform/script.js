@@ -41,8 +41,8 @@ document.getElementById('attachment').addEventListener('change', function () {
   var area = document.getElementById('fileUploadArea');
   var display = document.getElementById('fileNameDisplay');
   if (this.files && this.files.length > 0) {
-    if (this.files[0].size > 1 * 1024 * 1024) {
-      showToast('파일 크기가 1MB를 초과합니다.');
+    if (this.files[0].size > 10 * 1024 * 1024) {
+      showToast('파일 크기가 10MB를 초과합니다.');
       this.value = '';
       display.textContent = '';
       area.classList.remove('has-file');
@@ -113,8 +113,8 @@ function validateForm() {
     showToast('사업자 등록증 또는 단체증을 첨부해주세요.');
     return false;
   }
-  if (attachment.files[0].size > 1 * 1024 * 1024) {
-    showToast('파일 크기가 1MB를 초과합니다.');
+  if (attachment.files[0].size > 10 * 1024 * 1024) {
+    showToast('파일 크기가 10MB를 초과합니다.');
     return false;
   }
   if (!agree) {
@@ -125,8 +125,32 @@ function validateForm() {
   return true;
 }
 
+// 이미지 파일을 지정한 JPEG 품질로 압축하여 Blob 반환
+function compressImageToJpeg(file, quality) {
+  return new Promise(function (resolve, reject) {
+    var img = new Image();
+    var url = URL.createObjectURL(file);
+    img.onload = function () {
+      var canvas = document.createElement('canvas');
+      canvas.width  = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      canvas.toBlob(function (blob) {
+        if (!blob) { reject(new Error('이미지 압축 실패')); return; }
+        resolve(blob);
+      }, 'image/jpeg', quality);
+    };
+    img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('이미지 로드 실패')); };
+    img.src = url;
+  });
+}
+
 // 폼 제출
-document.getElementById('socialForm').addEventListener('submit', function (e) {
+document.getElementById('socialForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   if (!validateForm()) return;
@@ -138,6 +162,20 @@ document.getElementById('socialForm').addEventListener('submit', function (e) {
   loading.style.display = 'block';
 
   var formData = new FormData(this);
+
+  /* 이미지 첨부 파일을 1/16 품질 JPEG 로 압축 후 교체 */
+  var attachInput = document.getElementById('attachment');
+  var attachFile  = attachInput.files && attachInput.files[0];
+  if (attachFile && attachFile.type !== 'application/pdf') {
+    try {
+      var compressed = await compressImageToJpeg(attachFile, 1 / 16);
+      var baseName   = attachFile.name.replace(/\.[^.]+$/, '') + '.jpg';
+      formData.delete('attachment');
+      formData.append('attachment', compressed, baseName);
+    } catch (err) {
+      console.warn('이미지 압축 실패, 원본 파일로 전송합니다:', err);
+    }
+  }
 
   $.ajax({
     url: 'https://aq.gy/contact/socialformhandler.php',
