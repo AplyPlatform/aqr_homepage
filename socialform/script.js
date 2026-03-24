@@ -15,6 +15,19 @@ function updateCharCount(inputId, countId) {
 updateCharCount('keyword1', 'count_keyword1');
 updateCharCount('keyword2', 'count_keyword2');
 
+// 기업 및 단체 소개 글자 수 카운터 (200자)
+(function () {
+  var el    = document.getElementById('org_intro');
+  var count = document.getElementById('count_org_intro');
+  if (!el || !count) return;
+  el.addEventListener('input', function () {
+    var len = this.value.length;
+    count.textContent = len + ' / 200';
+    if (len >= 200) count.classList.add('over');
+    else            count.classList.remove('over');
+  });
+}());
+
 // 팝업 토스트
 var toastTimer = null;
 function showToast(msg) {
@@ -84,9 +97,16 @@ function validateForm() {
   var attachment = document.getElementById('attachment');
   var agree      = document.getElementById('agree').checked;
 
+  var orgIntro   = document.getElementById('org_intro').value.trim();
+
   if (!orgName) {
     showToast('기업 및 단체명을 입력해주세요.');
     document.getElementById('org_name').focus();
+    return false;
+  }
+  if (!orgIntro) {
+    showToast('기업 및 단체 소개를 입력해주세요.');
+    document.getElementById('org_intro').focus();
     return false;
   }
   if (!phone || !/^\d+$/.test(phone)) {
