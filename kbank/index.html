@@ -920,31 +920,35 @@
 <script>
 (function () {
   var DESIGN_WIDTH = 595;
+  var MAX_WIDTH = 1024;
 
   function scaleAQR() {
     var el = document.querySelector('.AQR');
     if (!el) return;
     var vw = document.documentElement.clientWidth;
-    var scale = Math.min(1, vw / DESIGN_WIDTH);
+    var effectiveWidth = Math.min(vw, MAX_WIDTH);
+    var scale = effectiveWidth / DESIGN_WIDTH;
+    var designH = el.scrollHeight || 3249;
 
     if (scale < 1) {
+      // 모바일: 좌측 기준으로 축소
       el.style.transform = 'scale(' + scale + ')';
       el.style.transformOrigin = 'top left';
       el.style.marginLeft = '0';
       el.style.marginRight = '0';
-      // 줄어든 높이만큼 marginBottom으로 공백 제거
-      var designH = el.scrollHeight || 3249;
       el.style.marginBottom = '-' + Math.round(designH * (1 - scale)) + 'px';
     } else {
-      el.style.transform = '';
-      el.style.transformOrigin = '';
+      // 태블릿/데스크탑: 중앙 기준으로 확대 (최대 1024px)
+      el.style.transform = 'scale(' + scale + ')';
+      el.style.transformOrigin = 'top center';
       el.style.marginLeft = 'auto';
       el.style.marginRight = 'auto';
-      el.style.marginBottom = '';
+      el.style.marginBottom = Math.round(designH * (scale - 1)) + 'px';
     }
   }
 
   document.addEventListener('DOMContentLoaded', scaleAQR);
+  window.addEventListener('load', scaleAQR);
   window.addEventListener('resize', scaleAQR);
   window.addEventListener('orientationchange', scaleAQR);
 })();
