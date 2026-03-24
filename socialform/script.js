@@ -41,8 +41,15 @@ document.getElementById('attachment').addEventListener('change', function () {
   var area = document.getElementById('fileUploadArea');
   var display = document.getElementById('fileNameDisplay');
   if (this.files && this.files.length > 0) {
-    display.textContent = '선택된 파일: ' + this.files[0].name;
-    area.classList.add('has-file');
+    if (this.files[0].size > 5 * 1024 * 1024) {
+      showToast('파일 크기가 5MB를 초과합니다.');
+      this.value = '';
+      display.textContent = '';
+      area.classList.remove('has-file');
+    } else {
+      display.textContent = '선택된 파일: ' + this.files[0].name;
+      area.classList.add('has-file');
+    }
   } else {
     display.textContent = '';
     area.classList.remove('has-file');
@@ -104,6 +111,10 @@ function validateForm() {
   }
   if (!attachment.files || attachment.files.length === 0) {
     showToast('사업자 등록증 또는 단체증을 첨부해주세요.');
+    return false;
+  }
+  if (attachment.files[0].size > 5 * 1024 * 1024) {
+    showToast('파일 크기가 5MB를 초과합니다.');
     return false;
   }
   if (!agree) {
