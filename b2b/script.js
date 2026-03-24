@@ -495,7 +495,7 @@
     }
 
     $.ajax({
-      url:         'https://aply.biz/contact/b2bformhandler.php',
+      url:         'https://aq.gy/contact/b2bformhandler.php',
       type:        'POST',
       data:        formData,
       dataType:    'json',
