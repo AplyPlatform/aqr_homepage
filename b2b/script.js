@@ -290,46 +290,30 @@
 
   /**
    * summaryEl 을 html2canvas 로 캡처 → jsPDF A4 로 변환 후 ArrayBuffer 반환
-   * PDF 렌더링 시 글자가 작아지는 문제를 보정하기 위해 클론에 확대 스타일을 적용
+   * 계약서 원본과 유사한 글자 크기로, A4 한 페이지에 깔끔하게 배치
    */
   async function buildSummaryPdfBytes(summaryEl) {
-    /* ── PDF용 클론 생성 및 스타일 확대 적용 ── */
+    /* ── PDF용 클론: 배경·테두리만 정리하고 폰트 크기는 원본 유지 ── */
     var clone = summaryEl.cloneNode(true);
     clone.style.cssText = [
       'position:absolute',
       'left:-9999px',
       'top:0',
-      'width:600px',          /* 원본 ~700px 대비 약간 좁게 */
+      'width:560px',
       'background:#ffffff',
-      'padding:28px',
-      'box-sizing:border-box',
-      'border-radius:0'
+      'padding:0',
+      'margin:0',
+      'box-sizing:border-box'
     ].join(';') + ';';
 
-    /* section-title 확대 */
-    clone.querySelectorAll('.section-title').forEach(function (el) {
-      el.style.fontSize    = '40px';
-      el.style.marginBottom = '20px';
-      el.style.letterSpacing = '0.05em';
-    });
-
-    /* 테이블 th / td 글자 크기·패딩 확대 (4배) */
-    clone.querySelectorAll('.summary-table th, .summary-table td').forEach(function (el) {
-      el.style.fontSize = '48px';
-      el.style.padding  = '18px 28px';
-    });
-
-    /* 구분선 행은 글자 없이 얇게 유지 */
-    clone.querySelectorAll('.summary-divider-row th, .summary-divider-row td').forEach(function (el) {
-      el.style.fontSize = '0';
-      el.style.padding  = '0';
-      el.style.height   = '12px';
-    });
+    /* 테이블 래퍼 — 둥근 모서리 제거(PDF 에선 불필요) */
+    var wrap = clone.querySelector('.summary-table-wrap');
+    if (wrap) wrap.style.borderRadius = '0';
 
     document.body.appendChild(clone);
 
     var canvas = await html2canvas(clone, {
-      scale: 2,
+      scale: 3,
       backgroundColor: '#ffffff',
       useCORS: true,
       logging: false
@@ -341,17 +325,19 @@
     var pdf      = new jsPDF('p', 'mm', 'a4');
     var pageW    = pdf.internal.pageSize.getWidth();
     var pageH    = pdf.internal.pageSize.getHeight();
+    var margin   = 15;                              /* 상하좌우 여백 15mm */
+    var imgW     = pageW - margin * 2;              /* 콘텐츠 폭 180mm */
     var imgData  = canvas.toDataURL('image/png');
-    var ratio    = canvas.width / canvas.height;
-    var imgW     = pageW;
-    var imgH     = imgW / ratio;
+    var imgH     = imgW * (canvas.height / canvas.width);
+    var contentH = pageH - margin * 2;
 
-    /* 내용이 한 페이지를 넘을 경우 여러 페이지로 분할 */
-    if (imgH <= pageH) {
-      pdf.addImage(imgData, 'PNG', 0, 0, imgW, imgH);
+    /* 내용이 한 페이지에 들어갈 경우 */
+    if (imgH <= contentH) {
+      pdf.addImage(imgData, 'PNG', margin, margin, imgW, imgH);
     } else {
-      var sliceH   = Math.floor(canvas.height * (pageH / imgH));
-      var offsetY  = 0;
+      /* 한 페이지를 넘을 경우 분할 */
+      var sliceH  = Math.floor(canvas.height * (contentH / imgH));
+      var offsetY = 0;
       while (offsetY < canvas.height) {
         var sliceCanvas = document.createElement('canvas');
         sliceCanvas.width  = canvas.width;
@@ -362,7 +348,7 @@
         );
         var sliceImg = sliceCanvas.toDataURL('image/png');
         if (offsetY > 0) pdf.addPage();
-        pdf.addImage(sliceImg, 'PNG', 0, 0, imgW, sliceCanvas.height * (imgW / canvas.width));
+        pdf.addImage(sliceImg, 'PNG', margin, margin, imgW, sliceCanvas.height * (imgW / canvas.width));
         offsetY += sliceH;
       }
     }
