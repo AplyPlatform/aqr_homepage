@@ -166,8 +166,8 @@
 
   function setFile(file) {
     if (file) {
-      if (file.size > 10 * 1024 * 1024) {
-        setFileError('파일 크기가 10MB를 초과합니다.');
+      if (file.size > 5 * 1024 * 1024) {
+        setFileError('파일 크기가 5MB를 초과합니다.');
         fileNameDisplay.textContent = '';
         fileUploadArea.classList.remove('has-file');
         fileInput.value = '';
