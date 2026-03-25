@@ -497,7 +497,7 @@
     try {
       var mergedBytes = await generateMergedPDF(
         document.getElementById('summarySection'),
-        'file_20260324_01.pdf',
+        'latest.pdf?v=' + Date.now(),
         attachment
       );
       var bizName     = document.getElementById('biz_name').value.trim();
