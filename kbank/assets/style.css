@@ -7,7 +7,7 @@ body {
   overflow: hidden;
   width: 595px;
   min-width: 595px;
-  min-height: 3249px;
+  min-height: 3249px; /* JS adjusts this */
   position: relative;
   transform-origin: top left;
   margin: 0 auto;
@@ -64,6 +64,7 @@ body {
 
 .AQR .span {
   color: #000000;
+  font-size: 30px;
 }
 
 .AQR .rectangle-2 {
@@ -431,7 +432,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 55px;
@@ -477,7 +478,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #bd0fdc;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
@@ -825,7 +826,7 @@ body {
 
 .AQR .text-wrapper-24 {
   position: absolute;
-  top: 1126px;
+  top: 0px;
   left: 31px;
   width: 96px;
   height: 55px;
@@ -841,7 +842,7 @@ body {
 
 .AQR .rectangle-9 {
   position: absolute;
-  top: 1177px;
+  top: 51px;
   left: 24px;
   width: 546px;
   height: 2018px;
@@ -853,7 +854,7 @@ body {
 
 .AQR .text-wrapper-25 {
   position: absolute;
-  top: 3000px;
+  top: 1874px;
   left: 100px;
   height: 25px;
   display: flex;
@@ -869,7 +870,7 @@ body {
 
 .AQR .line-6 {
   position: absolute;
-  top: 1400px;
+  top: 274px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -878,7 +879,7 @@ body {
 
 .AQR .line-7 {
   position: absolute;
-  top: 1936px;
+  top: 810px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -887,7 +888,7 @@ body {
 
 .AQR .line-8 {
   position: absolute;
-  top: 2106px;
+  top: 980px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -896,7 +897,7 @@ body {
 
 .AQR .line-9 {
   position: absolute;
-  top: 2236px;
+  top: 1110px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -905,7 +906,7 @@ body {
 
 .AQR .rectangle-10 {
   position: absolute;
-  top: 1218px;
+  top: 92px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -914,7 +915,7 @@ body {
 
 .AQR .rectangle-11 {
   position: absolute;
-  top: 1415px;
+  top: 289px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -923,7 +924,7 @@ body {
 
 .AQR .rectangle-12 {
   position: absolute;
-  top: 1953px;
+  top: 827px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -932,7 +933,7 @@ body {
 
 .AQR .rectangle-13 {
   position: absolute;
-  top: 2123px;
+  top: 997px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -941,7 +942,7 @@ body {
 
 .AQR .rectangle-14 {
   position: absolute;
-  top: 2252px;
+  top: 1126px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -950,7 +951,7 @@ body {
 
 .AQR .rectangle-15 {
   position: absolute;
-  top: 2356px;
+  top: 1230px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -959,7 +960,7 @@ body {
 
 .AQR .rectangle-16 {
   position: absolute;
-  top: 2526px;
+  top: 1400px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -968,7 +969,7 @@ body {
 
 .AQR .rectangle-17 {
   position: absolute;
-  top: 2711px;
+  top: 1585px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -977,7 +978,7 @@ body {
 
 .AQR .rectangle-18 {
   position: absolute;
-  top: 2848px;
+  top: 1722px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -986,7 +987,7 @@ body {
 
 .AQR .rectangle-19 {
   position: absolute;
-  top: 3000px;
+  top: 1874px;
   left: 40px;
   width: 47px;
   height: 25px;
@@ -995,7 +996,7 @@ body {
 
 .AQR .rectangle-20 {
   position: absolute;
-  top: 1265px;
+  top: 139px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1004,7 +1005,7 @@ body {
 
 .AQR .rectangle-21 {
   position: absolute;
-  top: 1482px;
+  top: 356px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1013,7 +1014,7 @@ body {
 
 .AQR .rectangle-22 {
   position: absolute;
-  top: 2000px;
+  top: 874px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1022,7 +1023,7 @@ body {
 
 .AQR .rectangle-23 {
   position: absolute;
-  top: 2170px;
+  top: 1044px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1031,7 +1032,7 @@ body {
 
 .AQR .rectangle-24 {
   position: absolute;
-  top: 2299px;
+  top: 1173px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1040,7 +1041,7 @@ body {
 
 .AQR .rectangle-25 {
   position: absolute;
-  top: 2423px;
+  top: 1297px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1049,7 +1050,7 @@ body {
 
 .AQR .rectangle-26 {
   position: absolute;
-  top: 2573px;
+  top: 1447px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1058,7 +1059,7 @@ body {
 
 .AQR .rectangle-27 {
   position: absolute;
-  top: 2758px;
+  top: 1632px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1067,7 +1068,7 @@ body {
 
 .AQR .rectangle-28 {
   position: absolute;
-  top: 2895px;
+  top: 1769px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1076,7 +1077,7 @@ body {
 
 .AQR .rectangle-29 {
   position: absolute;
-  top: 3047px;
+  top: 1921px;
   left: 40px;
   width: 36px;
   height: 25px;
@@ -1084,7 +1085,7 @@ body {
 }
 
 .AQR .text-wrapper-26 {
-  top: 1265px;
+  top: 139px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1103,7 +1104,7 @@ body {
 }
 
 .AQR .text-wrapper-27 {
-  top: 1482px;
+  top: 356px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1122,7 +1123,7 @@ body {
 }
 
 .AQR .text-wrapper-28 {
-  top: 2000px;
+  top: 874px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1141,7 +1142,7 @@ body {
 }
 
 .AQR .text-wrapper-29 {
-  top: 2170px;
+  top: 1044px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1160,7 +1161,7 @@ body {
 }
 
 .AQR .text-wrapper-30 {
-  top: 2299px;
+  top: 1173px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1179,7 +1180,7 @@ body {
 }
 
 .AQR .text-wrapper-31 {
-  top: 2423px;
+  top: 1297px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1198,7 +1199,7 @@ body {
 }
 
 .AQR .text-wrapper-32 {
-  top: 2573px;
+  top: 1447px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1217,7 +1218,7 @@ body {
 }
 
 .AQR .text-wrapper-33 {
-  top: 2758px;
+  top: 1632px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1236,7 +1237,7 @@ body {
 }
 
 .AQR .text-wrapper-34 {
-  top: 2895px;
+  top: 1769px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1255,7 +1256,7 @@ body {
 }
 
 .AQR .text-wrapper-35 {
-  top: 3047px;
+  top: 1921px;
   position: absolute;
   left: 46px;
   width: 25px;
@@ -1275,7 +1276,7 @@ body {
 
 .AQR .div-2 {
   position: absolute;
-  top: 1317px;
+  top: 191px;
   left: 86px;
   width: 446px;
   height: 20px;
@@ -1300,7 +1301,7 @@ body {
 
 .AQR .QR-6 {
   position: absolute;
-  top: 1204px;
+  top: 78px;
   left: 86px;
   height: 55px;
   display: flex;
@@ -1317,7 +1318,7 @@ body {
 }
 
 .AQR .QR-7 {
-  top: 1417px;
+  top: 291px;
   height: 50px;
   font-weight: 700;
   font-size: 15px;
@@ -1330,7 +1331,7 @@ body {
 }
 
 .AQR .QR-8 {
-  top: 1487px;
+  top: 361px;
   height: 20px;
   display: flex;
   align-items: center;
@@ -1347,7 +1348,7 @@ body {
 
 .AQR .div-3 {
   position: absolute;
-  top: 1739px;
+  top: 613px;
   left: 86px;
   height: 20px;
   display: flex;
@@ -1363,7 +1364,7 @@ body {
 
 .AQR .text-wrapper-38 {
   position: absolute;
-  top: 1953px;
+  top: 827px;
   left: 86px;
   height: 25px;
   display: flex;
@@ -1379,7 +1380,7 @@ body {
 
 .AQR .text-wrapper-39 {
   position: absolute;
-  top: 2123px;
+  top: 997px;
   left: 86px;
   height: 25px;
   display: flex;
@@ -1395,7 +1396,7 @@ body {
 
 .AQR .div-4 {
   position: absolute;
-  top: 2003px;
+  top: 877px;
   left: 86px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
@@ -1408,7 +1409,7 @@ body {
 
 .AQR .div-5 {
   position: absolute;
-  top: 2170px;
+  top: 1044px;
   left: 86px;
   width: 447px;
   height: 25px;
@@ -1424,7 +1425,7 @@ body {
 
 .AQR .div-6 {
   position: absolute;
-  top: 2201px;
+  top: 1075px;
   left: 86px;
   width: 480px;
   height: 19px;
@@ -1441,7 +1442,7 @@ body {
 
 .AQR .div-7 {
   position: absolute;
-  top: 2051px;
+  top: 925px;
   left: 86px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
@@ -1454,7 +1455,7 @@ body {
 
 .AQR .element {
   position: absolute;
-  top: 1518px;
+  top: 392px;
   left: 86px;
   width: 144px;
   height: 189px;
@@ -1464,7 +1465,7 @@ body {
 
 .AQR .group-5 {
   position: absolute;
-  top: 1482px;
+  top: 356px;
   left: 115px;
   width: 200px;
   height: 229px;
@@ -1472,7 +1473,7 @@ body {
 
 .AQR .image-5 {
   position: absolute;
-  top: 1767px;
+  top: 641px;
   left: 86px;
   width: 346px;
   height: 163px;
@@ -1481,7 +1482,7 @@ body {
 
 .AQR .mockup {
   position: absolute;
-  top: 1478px;
+  top: 352px;
   left: 323px;
   width: 199px;
   height: 229px;
@@ -1490,7 +1491,7 @@ body {
 
 .AQR .image-6 {
   position: absolute;
-  top: 1524px;
+  top: 398px;
   left: 386px;
   width: 72px;
   height: 151px;
@@ -1499,7 +1500,7 @@ body {
 
 .AQR .rectangle-30 {
   position: absolute;
-  top: 1524px;
+  top: 398px;
   left: 410px;
   width: 24px;
   height: 6px;
@@ -1509,7 +1510,7 @@ body {
 
 .AQR .rectangle-31 {
   position: absolute;
-  top: 1626px;
+  top: 500px;
   left: 407px;
   width: 22px;
   height: 7px;
@@ -1518,7 +1519,7 @@ body {
 
 .AQR .text-wrapper-40 {
   position: absolute;
-  top: 1626px;
+  top: 500px;
   left: 403px;
   width: 30px;
   height: 6px;
@@ -1536,7 +1537,7 @@ body {
 
 .AQR .ellipse-9 {
   position: absolute;
-  top: 1590px;
+  top: 464px;
   left: 305px;
   width: 37px;
   height: 37px;
@@ -1549,13 +1550,13 @@ body {
   position: absolute;
   width: 17px;
   height: 15px;
-  top: 1601px;
+  top: 475px;
   left: 315px;
 }
 
 .AQR .rectangle-32 {
   position: absolute;
-  top: 1518px;
+  top: 392px;
   left: 86px;
   width: 436px;
   height: 189px;
@@ -1565,7 +1566,7 @@ body {
 
 .AQR .group-35153 {
   position: absolute;
-  top: 1518px;
+  top: 392px;
   left: 86px;
   width: 436px;
   height: 189px;
@@ -1574,7 +1575,7 @@ body {
 
 .AQR .line-10 {
   position: absolute;
-  top: 2339px;
+  top: 1213px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -1583,7 +1584,7 @@ body {
 
 .AQR .line-11 {
   position: absolute;
-  top: 2509px;
+  top: 1383px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -1592,7 +1593,7 @@ body {
 
 .AQR .line-12 {
   position: absolute;
-  top: 2694px;
+  top: 1568px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -1601,7 +1602,7 @@ body {
 
 .AQR .line-13 {
   position: absolute;
-  top: 2831px;
+  top: 1705px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -1610,7 +1611,7 @@ body {
 
 .AQR .line-14 {
   position: absolute;
-  top: 2983px;
+  top: 1857px;
   left: 31px;
   width: 533px;
   height: 1px;
@@ -1619,7 +1620,7 @@ body {
 
 .AQR .div-8 {
   position: absolute;
-  top: 2299px;
+  top: 1173px;
   left: 86px;
   height: 25px;
   display: flex;
@@ -1635,7 +1636,7 @@ body {
 
 .AQR .text-wrapper-41 {
   position: absolute;
-  top: 2526px;
+  top: 1400px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1651,7 +1652,7 @@ body {
 
 .AQR .text-wrapper-42 {
   position: absolute;
-  top: 2711px;
+  top: 1585px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1667,7 +1668,7 @@ body {
 
 .AQR .QR-9 {
   position: absolute;
-  top: 2573px;
+  top: 1447px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1700,7 +1701,7 @@ body {
 
 .AQR .div-9 {
   position: absolute;
-  top: 2760px;
+  top: 1634px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1715,7 +1716,7 @@ body {
 }
 
 .AQR .QR-URL-URL {
-  top: 2606px;
+  top: 1480px;
   left: 87px;
   position: absolute;
   height: 40px;
@@ -1729,7 +1730,7 @@ body {
 
 .AQR .text-wrapper-46 {
   position: absolute;
-  top: 2425px;
+  top: 1299px;
   left: 85px;
   height: 21px;
   display: flex;
@@ -1745,7 +1746,7 @@ body {
 
 .AQR .text-wrapper-47 {
   position: absolute;
-  top: 2253px;
+  top: 1127px;
   left: 86px;
   height: 25px;
   display: flex;
@@ -1761,7 +1762,7 @@ body {
 
 .AQR .text-wrapper-48 {
   position: absolute;
-  top: 2356px;
+  top: 1230px;
   left: 87px;
   height: 50px;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -1774,7 +1775,7 @@ body {
 
 .AQR .div-10 {
   position: absolute;
-  top: 2454px;
+  top: 1328px;
   left: 85px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -1787,7 +1788,7 @@ body {
 
 .AQR .QR-10 {
   position: absolute;
-  top: 2654px;
+  top: 1528px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1803,7 +1804,7 @@ body {
 
 .AQR .div-11 {
   position: absolute;
-  top: 2791px;
+  top: 1665px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1819,7 +1820,7 @@ body {
 
 .AQR .text-wrapper-49 {
   position: absolute;
-  top: 2848px;
+  top: 1722px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1835,7 +1836,7 @@ body {
 
 .AQR .div-12 {
   position: absolute;
-  top: 2895px;
+  top: 1769px;
   left: 87px;
   height: 25px;
   display: flex;
@@ -1851,7 +1852,7 @@ body {
 
 .AQR .div-13 {
   position: absolute;
-  top: 2928px;
+  top: 1802px;
   left: 87px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
@@ -1864,7 +1865,7 @@ body {
 
 .AQR .div-14 {
   position: absolute;
-  top: 3047px;
+  top: 1921px;
   left: 100px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -1877,7 +1878,7 @@ body {
 
 .AQR .element-QR {
   position: absolute;
-  top: 3095px;
+  top: 1969px;
   left: 100px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
@@ -1890,12 +1891,36 @@ body {
 
 .AQR .image-7 {
   position: absolute;
-  top: 3208px;
-  left: 251px;
-  width: 91px;
-  height: 25px;
+  top: 2085px;
+  left: 176px;
+  width: 82px;
+  height: 18px;
   aspect-ratio: 3.67;
   object-fit: cover;
+}
+
+.AQR .kbank-logo {
+  position: absolute;
+  top: 2082px;
+  left: 277px;
+  width: 65px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.AQR .logo-x-mark {
+  position: absolute;
+  top: 2082px;
+  left: 261px;
+  width: 16px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pretendard", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333333;
 }
 
 .AQR .group-6 {
@@ -2014,7 +2039,7 @@ body {
 
 .AQR .rectangle-33 {
   position: absolute;
-  top: 1626px;
+  top: 500px;
   left: 399px;
   width: 51px;
   height: 7px;
@@ -2023,7 +2048,7 @@ body {
 
 .AQR .ellipse-13 {
   position: absolute;
-  top: 1626px;
+  top: 500px;
   left: 392px;
   width: 7px;
   height: 7px;
@@ -2032,7 +2057,7 @@ body {
 
 .AQR .text-wrapper-51 {
   position: absolute;
-  top: 1627px;
+  top: 501px;
   left: 399px;
   width: 54px;
   height: 6px;
@@ -2049,7 +2074,7 @@ body {
 }
 
 .AQR .text-wrapper-52 {
-  top: 1218px;
+  top: 92px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2068,7 +2093,7 @@ body {
 }
 
 .AQR .text-wrapper-53 {
-  top: 1415px;
+  top: 289px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2087,7 +2112,7 @@ body {
 }
 
 .AQR .text-wrapper-54 {
-  top: 1953px;
+  top: 827px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2106,7 +2131,7 @@ body {
 }
 
 .AQR .text-wrapper-55 {
-  top: 2123px;
+  top: 997px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2125,7 +2150,7 @@ body {
 }
 
 .AQR .text-wrapper-56 {
-  top: 2252px;
+  top: 1126px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2144,7 +2169,7 @@ body {
 }
 
 .AQR .text-wrapper-57 {
-  top: 2356px;
+  top: 1230px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2163,7 +2188,7 @@ body {
 }
 
 .AQR .text-wrapper-58 {
-  top: 2526px;
+  top: 1400px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2182,7 +2207,7 @@ body {
 }
 
 .AQR .text-wrapper-59 {
-  top: 2711px;
+  top: 1585px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2201,7 +2226,7 @@ body {
 }
 
 .AQR .text-wrapper-60 {
-  top: 2848px;
+  top: 1722px;
   width: 36px;
   position: absolute;
   left: 40px;
@@ -2220,7 +2245,7 @@ body {
 }
 
 .AQR .text-wrapper-61 {
-  top: 3000px;
+  top: 1874px;
   width: 47px;
   position: absolute;
   left: 40px;
@@ -2240,7 +2265,7 @@ body {
 
 .AQR .div-15 {
   position: absolute;
-  top: 1269px;
+  top: 143px;
   left: 86px;
   height: 40px;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -2252,7 +2277,7 @@ body {
 }
 
 .AQR .QR-11 {
-  top: 1345px;
+  top: 219px;
   left: 86px;
   position: absolute;
   height: 40px;
@@ -2266,7 +2291,7 @@ body {
 
 .AQR .text-wrapper-62 {
   position: absolute;
-  top: 3157px;
+  top: 2031px;
   left: 76px;
   height: 25px;
   display: flex;
@@ -2278,4 +2303,24 @@ body {
   letter-spacing: 0;
   line-height: 25px;
   white-space: nowrap;
+}
+
+.AQR .faq-section-wrapper {
+  position: absolute;
+  top: 1126px; /* overridden by JS based on product-info-abs height */
+  left: 0;
+  width: 595px;
+  min-height: 2123px;
+}
+
+.AQR .compliance-text {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  width: 595px;
+  text-align: center;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  color: #000000;
+  line-height: 1.4;
 }
