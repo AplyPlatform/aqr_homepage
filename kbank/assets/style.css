@@ -1461,6 +1461,7 @@ body {
   height: 189px;
   aspect-ratio: 0.76;
   object-fit: cover;
+  z-index: -1;
 }
 
 .AQR .group-5 {
@@ -1892,7 +1893,7 @@ body {
 .AQR .image-7 {
   position: absolute;
   top: 2085px;
-  left: 176px;
+  left: 215px;
   width: 82px;
   height: 18px;
   aspect-ratio: 3.67;
@@ -1902,7 +1903,7 @@ body {
 .AQR .kbank-logo {
   position: absolute;
   top: 2082px;
-  left: 277px;
+  left: 316px;
   width: 65px;
   height: 25px;
   object-fit: contain;
@@ -1911,7 +1912,7 @@ body {
 .AQR .logo-x-mark {
   position: absolute;
   top: 2082px;
-  left: 261px;
+  left: 300px;
   width: 16px;
   height: 25px;
   display: flex;
