@@ -37,7 +37,7 @@ body {
   top: 237px;
   left: 24px;
   width: 546px;
-  height: 856px;
+  height: 825px;
   background-color: #ffffff;
   border-radius: 30px;
   border: 0.5px dashed;
@@ -1892,7 +1892,7 @@ body {
   position: absolute;
   top: 2083px;
   left: 215px;
-  width: 80px;
+  width: 81px;
   height: 19px;
   aspect-ratio: 3.37;
   object-fit: cover;
@@ -2314,10 +2314,10 @@ body {
 
 .AQR .compliance-text {
   position: absolute;
-  top: -28px;
-  left: 0;
+  top: -45px;
+  right: 25px;
   width: 595px;
-  text-align: center;
+  text-align: right;
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
   font-size: 13px;
   color: #000000;
