@@ -370,7 +370,6 @@ body {
   top: 1038px;
   left: 49px;
   width: 319px;
-  height: 55px;
   display: flex;
   align-items: center;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -378,7 +377,7 @@ body {
   color: #000000;
   font-size: 12px;
   letter-spacing: 0;
-  line-height: 55px;
+  line-height: 1.5;
 }
 
 .AQR .text-wrapper-13 {
