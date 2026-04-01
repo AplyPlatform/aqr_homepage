@@ -1276,16 +1276,14 @@ body {
   position: absolute;
   top: 191px;
   left: 86px;
-  width: 446px;
-  height: 20px;
-  display: flex;
-  align-items: center;
+  width: 460px;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
   font-weight: 400;
   color: #000000;
   font-size: 12px;
   letter-spacing: 0;
   line-height: 20px;
+  word-break: keep-all;
 }
 
 .AQR .text-wrapper-36 {
