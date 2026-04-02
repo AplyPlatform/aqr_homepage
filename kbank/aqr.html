@@ -297,7 +297,7 @@
             'QR 코드 정보 갱신 요청이 정상적으로 처리되었습니다.' + storeIdMsg);
         },
         error: function (err) {
-          throw new Error(result.message || '서버 오류. 잠시 후에 다시 시도해 주세요.');
+          throw new Error(err || '서버 오류. 잠시 후에 다시 시도해 주세요.');
         }
       });
     } catch (e) {
