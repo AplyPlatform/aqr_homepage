@@ -13,7 +13,7 @@ body {
   margin: 0 auto;
 }
 
-.AQR .line {
+.AQR .line{
   position: absolute;
   top: 164px;
   left: 16px;
@@ -21,7 +21,7 @@ body {
   height: 10px;
 }
 
-.AQR .rectangle {
+.AQR .rectangle{
   position: absolute;
   top: 191px;
   left: 404px;
@@ -32,9 +32,9 @@ body {
   border: 3px solid;
 }
 
-.AQR .div {
+.AQR .div{
   position: absolute;
-  top: 237px;
+  top: 252px;
   left: 24px;
   width: 546px;
   height: 825px;
@@ -44,7 +44,7 @@ body {
   border-color: #777777;
 }
 
-.AQR .QR {
+.AQR .QR{
   position: absolute;
   top: 62px;
   left: 17px;
@@ -58,63 +58,63 @@ body {
   line-height: 60px;
 }
 
-.AQR .text-wrapper {
+.AQR .text-wrapper{
   color: #4d2cff;
 }
 
-.AQR .span {
+.AQR .span{
   color: #000000;
   font-size: 28px;
 }
 
-.AQR .rectangle-2 {
+.AQR .rectangle-2{
   position: absolute;
-  top: 258px;
+  top: 273px;
   left: 40px;
   width: 56px;
   height: 26px;
   background-color: #4d2cff;
 }
 
-.AQR .rectangle-3 {
+.AQR .rectangle-3{
   position: absolute;
-  top: 339px;
+  top: 354px;
   left: 40px;
   width: 88px;
   height: 26px;
   background-color: #4d2cff;
 }
 
-.AQR .rectangle-4 {
+.AQR .rectangle-4{
   position: absolute;
-  top: 731px;
+  top: 746px;
   left: 40px;
   width: 88px;
   height: 26px;
   background-color: #4d2cff;
 }
 
-.AQR .rectangle-5 {
+.AQR .rectangle-5{
   position: absolute;
-  top: 850px;
+  top: 865px;
   left: 40px;
   width: 88px;
   height: 26px;
   background-color: #4d2cff;
 }
 
-.AQR .rectangle-6 {
+.AQR .rectangle-6{
   position: absolute;
-  top: 941px;
+  top: 956px;
   left: 40px;
   width: 88px;
   height: 26px;
   background-color: #4d2cff;
 }
 
-.AQR .text-wrapper-2 {
+.AQR .text-wrapper-2{
   position: absolute;
-  top: 244px;
+  top: 259px;
   left: 45px;
   height: 55px;
   display: flex;
@@ -130,9 +130,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .p {
+.AQR .p{
   position: absolute;
-  top: 290px;
+  top: 305px;
   left: 45px;
   width: 471px;
   height: 29px;
@@ -147,16 +147,16 @@ body {
   white-space: nowrap;
 }
 
-.AQR .QR-wrapper {
+.AQR .QR-wrapper{
   position: absolute;
-  top: 373px;
+  top: 388px;
   left: 45px;
   width: 361px;
   height: 35px;
   display: flex;
 }
 
-.AQR .QR-2 {
+.AQR .QR-2{
   display: flex;
   align-items: center;
   flex: 1;
@@ -170,9 +170,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .QR-3 {
+.AQR .QR-3{
   position: absolute;
-  top: 547px;
+  top: 562px;
   left: 45px;
   width: 430px;
   height: 35px;
@@ -196,9 +196,9 @@ body {
   font-weight: 500;
 }
 
-.AQR .text-wrapper-5 {
+.AQR .text-wrapper-5{
   position: absolute;
-  top: 768px;
+  top: 783px;
   left: 40px;
   width: 588px;
   height: 35px;
@@ -211,9 +211,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-6 {
+.AQR .text-wrapper-6{
   position: absolute;
-  top: 717px;
+  top: 732px;
   left: 45px;
   height: 55px;
   display: flex;
@@ -227,9 +227,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .QR-4 {
+.AQR .QR-4{
   position: absolute;
-  top: 886px;
+  top: 901px;
   left: 40px;
   height: 30px;
   display: flex;
@@ -243,9 +243,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-7 {
+.AQR .text-wrapper-7{
   position: absolute;
-  top: 836px;
+  top: 851px;
   left: 46px;
   height: 55px;
   display: flex;
@@ -261,9 +261,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-8 {
+.AQR .text-wrapper-8{
   position: absolute;
-  top: 927px;
+  top: 942px;
   left: 44px;
   height: 55px;
   display: flex;
@@ -279,8 +279,8 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-9 {
-  top: 977px;
+.AQR .text-wrapper-9{
+  top: 992px;
   left: 40px;
   height: 30px;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -295,8 +295,8 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-10 {
-  top: 1009px;
+.AQR .text-wrapper-10{
+  top: 1024px;
   left: 40px;
   height: 30px;
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
@@ -311,9 +311,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-11 {
+.AQR .text-wrapper-11{
   position: absolute;
-  top: 325px;
+  top: 340px;
   left: 45px;
   height: 55px;
   display: flex;
@@ -329,45 +329,45 @@ body {
   white-space: nowrap;
 }
 
-.AQR .img {
+.AQR .img{
   position: absolute;
-  top: 324px;
+  top: 339px;
   left: 30px;
   width: 535px;
   height: 1px;
   object-fit: cover;
 }
 
-.AQR .line-2 {
+.AQR .line-2{
   position: absolute;
-  top: 716px;
+  top: 731px;
   left: 30px;
   width: 535px;
   height: 1px;
   object-fit: cover;
 }
 
-.AQR .line-3 {
+.AQR .line-3{
   position: absolute;
-  top: 835px;
+  top: 850px;
   left: 30px;
   width: 535px;
   height: 1px;
   object-fit: cover;
 }
 
-.AQR .line-4 {
+.AQR .line-4{
   position: absolute;
-  top: 926px;
+  top: 941px;
   left: 30px;
   width: 535px;
   height: 1px;
   object-fit: cover;
 }
 
-.AQR .text-wrapper-12 {
+.AQR .text-wrapper-12{
   position: absolute;
-  top: 1038px;
+  top: 1053px;
   left: 49px;
   display: flex;
   align-items: center;
@@ -379,7 +379,7 @@ body {
   line-height: 1.5;
 }
 
-.AQR .text-wrapper-13 {
+.AQR .text-wrapper-13{
   top: 3px;
   left: 409px;
   width: 182px;
@@ -398,7 +398,7 @@ body {
   white-space: nowrap;
 }
 
-.AQR .rectangle-7 {
+.AQR .rectangle-7{
   position: absolute;
   top: 44px;
   left: 416px;
@@ -409,7 +409,7 @@ body {
   border: 3px solid;
 }
 
-.AQR .QR-5 {
+.AQR .QR-5{
   position: absolute;
   top: 50px;
   left: 422px;
@@ -419,9 +419,9 @@ body {
   object-fit: cover;
 }
 
-.AQR .text-wrapper-14 {
+.AQR .text-wrapper-14{
   position: absolute;
-  top: 179px;
+  top: 181px;
   left: 418px;
   height: 55px;
   display: flex;
@@ -437,18 +437,37 @@ body {
   white-space: nowrap;
 }
 
-.AQR .line-5 {
+.AQR .text-wrapper-14-1{
   position: absolute;
-  top: 541px;
+  top: 210px;
+  left: 420px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-weight: 700;
+  color: #4d2cff;
+  font-size: 9px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 55px;
+  white-space: nowrap;
+}
+
+
+.AQR .line-5{
+  position: absolute;
+  top: 556px;
   left: 30px;
   width: 535px;
   height: 1px;
   object-fit: cover;
 }
 
-.AQR .text-wrapper-15 {
+.AQR .text-wrapper-15{
   position: absolute;
-  top: 511px;
+  top: 526px;
   left: 245px;
   width: 118px;
   height: 15px;
@@ -464,9 +483,9 @@ body {
   line-height: 15px;
 }
 
-.AQR .text-wrapper-16 {
+.AQR .text-wrapper-16{
   position: absolute;
-  top: 686px;
+  top: 701px;
   left: 235px;
   width: 140px;
   height: 15px;
@@ -482,9 +501,10 @@ body {
   line-height: 15px;
 }
 
-.AQR .text-wrapper-17 {
+
+.AQR .text-wrapper-17{
   position: absolute;
-  top: 686px;
+  top: 701px;
   left: 426px;
   width: 102px;
   height: 15px;
@@ -500,9 +520,9 @@ body {
   line-height: 15px;
 }
 
-.AQR .text-wrapper-18 {
+.AQR .text-wrapper-18{
   position: absolute;
-  top: 509px;
+  top: 524px;
   left: 58px;
   width: 143px;
   height: 20px;
@@ -518,9 +538,9 @@ body {
   line-height: 20px;
 }
 
-.AQR .text-wrapper-19 {
+.AQR .text-wrapper-19{
   position: absolute;
-  top: 683px;
+  top: 698px;
   left: 58px;
   width: 143px;
   height: 20px;
@@ -536,9 +556,9 @@ body {
   line-height: 20px;
 }
 
-.AQR .ellipse {
+.AQR .ellipse{
   position: absolute;
-  top: 452px;
+  top: 467px;
   left: 217px;
   width: 21px;
   height: 21px;
@@ -547,17 +567,17 @@ body {
   border-color: #cccccc;
 }
 
-.AQR .vector {
+.AQR .vector{
   position: absolute;
   width: 10px;
   height: 9px;
-  top: 458px;
+  top: 473px;
   left: 223px;
 }
 
-.AQR .ellipse-2 {
+.AQR .ellipse-2{
   position: absolute;
-  top: 626px;
+  top: 641px;
   left: 217px;
   width: 21px;
   height: 21px;
@@ -566,17 +586,17 @@ body {
   border-color: #007bff;
 }
 
-.AQR .vector-2 {
+.AQR .vector-2{
   position: absolute;
   width: 10px;
   height: 9px;
-  top: 632px;
+  top: 647px;
   left: 223px;
 }
 
-.AQR .ellipse-3 {
+.AQR .ellipse-3{
   position: absolute;
-  top: 626px;
+  top: 641px;
   left: 377px;
   width: 21px;
   height: 21px;
@@ -585,17 +605,17 @@ body {
   border-color: #007bff;
 }
 
-.AQR .vector-3 {
+.AQR .vector-3{
   position: absolute;
   width: 10px;
   height: 9px;
-  top: 633px;
+  top: 648px;
   left: 383px;
 }
 
-.AQR .ellipse-4 {
+.AQR .ellipse-4{
   position: absolute;
-  top: 452px;
+  top: 467px;
   left: 377px;
   width: 21px;
   height: 21px;
@@ -604,34 +624,34 @@ body {
   border-color: #cccccc;
 }
 
-.AQR .ellipse-5 {
+.AQR .ellipse-5{
   position: absolute;
-  top: 452px;
+  top: 467px;
   left: 377px;
   width: 21px;
   height: 21px;
 }
 
-.AQR .vector-4 {
+.AQR .vector-4{
   position: absolute;
   width: 8px;
   height: 7px;
-  top: 458px;
+  top: 473px;
   left: 383px;
 }
 
-.AQR .rectangle-8 {
+.AQR .rectangle-8{
   position: absolute;
-  top: 427px;
+  top: 442px;
   left: 132px;
   width: 44px;
   height: 74px;
   background-color: #ffffff;
 }
 
-.AQR .image {
+.AQR .image{
   position: absolute;
-  top: 429px;
+  top: 444px;
   left: 55px;
   width: 62px;
   height: 62px;
@@ -639,9 +659,9 @@ body {
   object-fit: cover;
 }
 
-.AQR .image-2 {
+.AQR .image-2{
   position: absolute;
-  top: 603px;
+  top: 618px;
   left: 55px;
   width: 63px;
   height: 63px;
@@ -649,8 +669,8 @@ body {
   object-fit: cover;
 }
 
-.AQR .qr {
-  top: 423px;
+.AQR .qr{
+  top: 438px;
   position: absolute;
   left: 128px;
   width: 69px;
@@ -659,8 +679,8 @@ body {
   object-fit: cover;
 }
 
-.AQR .qr-2 {
-  top: 597px;
+.AQR .qr-2{
+  top: 612px;
   position: absolute;
   left: 128px;
   width: 69px;
@@ -669,25 +689,25 @@ body {
   object-fit: cover;
 }
 
-.AQR .group {
+.AQR .group{
   position: absolute;
-  top: 443px;
+  top: 458px;
   left: 115px;
   width: 24px;
   height: 34px;
 }
 
-.AQR .group-2 {
+.AQR .group-2{
   position: absolute;
-  top: 617px;
+  top: 632px;
   left: 114px;
   width: 24px;
   height: 34px;
 }
 
-.AQR .text-wrapper-20 {
+.AQR .text-wrapper-20{
   position: absolute;
-  top: 511px;
+  top: 526px;
   left: 417px;
   width: 118px;
   height: 15px;
@@ -703,9 +723,9 @@ body {
   line-height: 15px;
 }
 
-.AQR .ellipse-6 {
+.AQR .ellipse-6{
   position: absolute;
-  top: 630px;
+  top: 645px;
   left: 122px;
   width: 8px;
   height: 10px;
@@ -713,9 +733,9 @@ body {
   border-radius: 4px / 5px;
 }
 
-.AQR .ellipse-7 {
+.AQR .ellipse-7{
   position: absolute;
-  top: 456px;
+  top: 471px;
   left: 122px;
   width: 8px;
   height: 10px;
@@ -723,9 +743,9 @@ body {
   border-radius: 4px / 5px;
 }
 
-.AQR .text-wrapper-21 {
+.AQR .text-wrapper-21{
   position: absolute;
-  top: 454px;
+  top: 469px;
   left: 121px;
   height: 15px;
   display: flex;
@@ -741,9 +761,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .text-wrapper-22 {
+.AQR .text-wrapper-22{
   position: absolute;
-  top: 628px;
+  top: 643px;
   left: 121px;
   height: 15px;
   display: flex;
@@ -759,15 +779,15 @@ body {
   white-space: nowrap;
 }
 
-.AQR .group-3 {
+.AQR .group-3{
   position: absolute;
-  top: 430px;
+  top: 445px;
   left: 265px;
   width: 84px;
   height: 66px;
 }
 
-.AQR .image-3 {
+.AQR .image-3{
   position: absolute;
   top: 0;
   left: 0;
@@ -776,7 +796,7 @@ body {
   aspect-ratio: 1.23;
 }
 
-.AQR .ellipse-8 {
+.AQR .ellipse-8{
   position: absolute;
   top: 12px;
   left: 48px;
@@ -786,7 +806,7 @@ body {
   border-radius: 6.75px / 8.82px;
 }
 
-.AQR .text-wrapper-23 {
+.AQR .text-wrapper-23{
   position: absolute;
   top: 13px;
   left: 48px;
@@ -805,15 +825,15 @@ body {
   white-space: nowrap;
 }
 
-.AQR .group-4 {
+.AQR .group-4{
   position: absolute;
-  top: 604px;
+  top: 619px;
   left: 265px;
   width: 84px;
   height: 66px;
 }
 
-.AQR .image-4 {
+.AQR .image-4{
   position: absolute;
   top: 1px;
   left: 0;
@@ -1513,9 +1533,9 @@ body {
   background-color: #0114a7;
 }
 
-.AQR .text-wrapper-40 {
+.AQR .text-wrapper-40{
   position: absolute;
-  top: 500px;
+  top: 515px;
   left: 403px;
   width: 30px;
   height: 6px;
@@ -1919,9 +1939,9 @@ body {
   color: #333333;
 }
 
-.AQR .group-6 {
+.AQR .group-6{
   position: absolute;
-  top: 435px;
+  top: 450px;
   left: 455px;
   width: 71px;
   height: 62px;
@@ -1930,7 +1950,7 @@ body {
   background-position: 50% 50%;
 }
 
-.AQR .ellipse-10 {
+.AQR .ellipse-10{
   position: absolute;
   top: 19px;
   left: 31px;
@@ -1940,7 +1960,7 @@ body {
   border-radius: 5.71px / 7.14px;
 }
 
-.AQR .ellipse-11 {
+.AQR .ellipse-11{
   position: absolute;
   top: 19px;
   left: 23px;
@@ -1950,9 +1970,9 @@ body {
   border-radius: 5.71px / 7.14px;
 }
 
-.AQR .group-7 {
+.AQR .group-7{
   position: absolute;
-  top: 610px;
+  top: 625px;
   left: 455px;
   width: 71px;
   height: 62px;
@@ -1961,34 +1981,34 @@ body {
   background-position: 50% 50%;
 }
 
-.AQR .image-8 {
+.AQR .image-8{
   position: absolute;
-  top: 416px;
+  top: 431px;
   left: 430px;
   width: 37px;
   height: 28px;
   aspect-ratio: 1.32;
 }
 
-.AQR .image-9 {
+.AQR .image-9{
   position: absolute;
-  top: 590px;
+  top: 605px;
   left: 430px;
   width: 37px;
   height: 28px;
   aspect-ratio: 1.32;
 }
 
-.AQR .div-wrapper {
+.AQR .div-wrapper{
   position: absolute;
-  top: 453px;
+  top: 468px;
   left: 481px;
   width: 17px;
   height: 19px;
   display: flex;
 }
 
-.AQR .text-wrapper-50 {
+.AQR .text-wrapper-50{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2005,18 +2025,18 @@ body {
   line-height: 15px;
 }
 
-.AQR .group-8 {
+.AQR .group-8{
   position: absolute;
-  top: 626px;
+  top: 641px;
   left: 481px;
   width: 17px;
   height: 19px;
   display: flex;
 }
 
-.AQR .ellipse-12 {
+.AQR .ellipse-12{
   position: absolute;
-  top: 420px;
+  top: 435px;
   left: 437px;
   width: 74px;
   height: 73px;
@@ -2025,9 +2045,9 @@ body {
   border-color: #4d4d4d;
 }
 
-.AQR .line-15 {
+.AQR .line-15{
   position: absolute;
-  top: 434px;
+  top: 449px;
   left: 445px;
   width: 56px;
   height: 45px;
@@ -2042,18 +2062,18 @@ body {
   background-color: #0114a7;
 }
 
-.AQR .ellipse-13 {
+.AQR .ellipse-13{
   position: absolute;
-  top: 500px;
+  top: 515px;
   left: 392px;
   width: 7px;
   height: 7px;
   object-fit: cover;
 }
 
-.AQR .text-wrapper-51 {
+.AQR .text-wrapper-51{
   position: absolute;
-  top: 501px;
+  top: 516px;
   left: 399px;
   width: 54px;
   height: 6px;
@@ -2301,9 +2321,9 @@ body {
   white-space: nowrap;
 }
 
-.AQR .faq-section-wrapper {
+.AQR .faq-section-wrapper{
   position: absolute;
-  top: 1126px; /* overridden by JS based on product-info-abs height */
+  top: 1141px; /* overridden by JS based on product-info-abs height */
   left: 0;
   width: 595px;
   min-height: 2123px;
