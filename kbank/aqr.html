@@ -62,7 +62,57 @@
     </div>    
 
     <!-- 카드 그리드 (데스크탑: 2컬럼 / 모바일: 1컬럼) -->
-    <div class="cards-grid" id="cardsGrid">      
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- 수동 입력 카드 (클립보드 오류 시 표시) -->
+      <div class="card" id="manualInputCard" style="display:none; grid-column:1/-1;">
+        <div class="section-tag">
+          <span class="section-tag-bar"></span>
+          <span class="section-tag-text">계좌 정보 직접 입력</span>
+        </div>
+        <p style="font-size:13px;color:#e67e22;margin:0 0 16px;">
+          클립보드에서 정보를 불러올 수 없습니다. 아래에 직접 입력해주세요.
+        </p>
+        <div class="field-group">
+          <label class="field-label" for="manualBizNo">
+            사업자 번호 <span class="optional" style="color:#e74c3c;">필수</span>
+          </label>
+          <input
+            class="field-input"
+            type="text"
+            id="manualBizNo"
+            placeholder="예) 123-45-67890"
+            maxlength="20"
+            oninput="checkManualFormValidity()"
+          >
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="manualAccountName">
+            예금주명 <span class="optional" style="color:#e74c3c;">필수</span>
+          </label>
+          <input
+            class="field-input"
+            type="text"
+            id="manualAccountName"
+            placeholder="예) 홍길동"
+            maxlength="50"
+            oninput="checkManualFormValidity()"
+          >
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="manualAccountNo">
+            계좌번호 <span class="optional" style="color:#e74c3c;">필수</span>
+          </label>
+          <input
+            class="field-input"
+            type="text"
+            id="manualAccountNo"
+            placeholder="예) 100-123456-789"
+            maxlength="30"
+            oninput="checkManualFormValidity()"
+          >
+        </div>
+      </div>      
 
       <!-- 상호명 입력 카드 -->
       <div class="card slide-hidden" id="formCard">        
@@ -188,7 +238,7 @@
     <!-- 제출 버튼 -->
     <div class="btn-wrap">
       <button class="btn-primary" id="submitBtn" onclick="handleConsent()" disabled>
-        게속 진행하기
+        계속 진행하기
       </button>
     </div>
 

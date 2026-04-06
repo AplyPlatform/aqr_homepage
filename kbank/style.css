@@ -115,6 +115,7 @@ html, body {
   font-weight: 700;
   color: #222;
   margin-bottom: 7px;
+  margin-top: 7px;
 }
 .field-label .required {
   display: inline-block;

@@ -29,7 +29,32 @@
     });
   })();
 
+  var manualMode = false;
+
+  function showManualForm() {
+    manualMode = true;
+    var card = document.getElementById('manualInputCard');
+    if (card) {
+      card.style.display = 'block';
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.getElementById('submitBtn').disabled = true;
+  }
+
+  function checkManualFormValidity() {
+    if (!manualMode) return;
+    var bizNo       = document.getElementById('manualBizNo').value.trim();
+    var accountName = document.getElementById('manualAccountName').value.trim();
+    var accountNo   = document.getElementById('manualAccountNo').value.trim();
+    var checked     = document.getElementById('consentCheck').checked;
+    document.getElementById('submitBtn').disabled = !(bizNo && accountName && accountNo && checked);
+  }
+
   function toggleSubmitBtn() {
+    if (manualMode) {
+      checkManualFormValidity();
+      return;
+    }
     var checked = document.getElementById('consentCheck').checked;
     document.getElementById('submitBtn').disabled = !checked;
   }
@@ -38,29 +63,38 @@
     var storeName = document.getElementById('storeName').value.trim();
     var btn = document.getElementById('submitBtn');
 
-    // 클립보드에서 데이터 읽기
-    var clipText = '';
-    try {
-      if (navigator.clipboard && navigator.clipboard.readText) {
-        clipText = await navigator.clipboard.readText();
-      } else {
-        throw new Error('clipboard not supported');
+    var bizNo, accountNo, accountName;
+
+    if (manualMode) {
+      // 수동 입력 모드: 폼에서 직접 읽기
+      bizNo       = document.getElementById('manualBizNo').value.trim();
+      accountName = document.getElementById('manualAccountName').value.trim();
+      accountNo   = document.getElementById('manualAccountNo').value.trim();
+    } else {
+      // 클립보드에서 데이터 읽기
+      var clipText = '';
+      try {
+        if (navigator.clipboard && navigator.clipboard.readText) {
+          clipText = await navigator.clipboard.readText();
+        } else {
+          throw new Error('clipboard not supported');
+        }
+      } catch (e) {
+        showManualForm();
+        return;
       }
-    } catch (e) {
-      showResult('error', '&#9888;', '클립보드 접근 실패', '이전 페이지로 돌아가 정보를 다시 입력해주세요.<br>브라우저 클립보드 권한을 허용해야 합니다.');
-      return;
-    }
 
-    // 클립보드 데이터 파싱
-    var parts = clipText.split(',');
-    if (parts.length < 3 || !parts[0].trim() || !parts[1].trim() || !parts[2].trim()) {
-      showResult('error', '&#9888;', '정보 오류', '이전 페이지에서 사업자 번호, 계좌번호, 예금주명을 다시 입력해주세요.');
-      return;
-    }
+      // 클립보드 데이터 파싱
+      var parts = clipText.split(',');
+      if (parts.length < 3 || !parts[0].trim() || !parts[1].trim() || !parts[2].trim()) {
+        showManualForm();
+        return;
+      }
 
-    var bizNo       = parts[0].trim();
-    var accountNo   = parts[1].trim();
-    var accountName = parts[2].trim();
+      bizNo       = parts[0].trim();
+      accountNo   = parts[1].trim();
+      accountName = parts[2].trim();
+    }
 
     // 버튼 로딩 상태
     btn.disabled = true;
