@@ -477,7 +477,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #4d4d4d;
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
@@ -487,6 +487,7 @@ body {
   position: absolute;
   top: 701px;
   left: 235px;
+  width: 140px;
   height: 15px;
   display: flex;
   align-items: center;
@@ -494,7 +495,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #bd0fdc;
-  font-size: 11px;
+  font-size: 9px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
@@ -505,6 +506,7 @@ body {
   position: absolute;
   top: 701px;
   left: 426px;
+  width: 102px;
   height: 15px;
   display: flex;
   align-items: center;
@@ -512,7 +514,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #be10dd;
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
@@ -521,7 +523,8 @@ body {
 .AQR .text-wrapper-18{
   position: absolute;
   top: 524px;
-  left: 58px;  
+  left: 58px;
+  width: 143px;
   height: 20px;
   display: flex;
   align-items: center;
@@ -529,7 +532,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #4d4d4d;
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 20px;
@@ -547,7 +550,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #4d4d4d;
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 20px;
@@ -714,7 +717,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #4d4d4d;
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
