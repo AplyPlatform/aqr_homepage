@@ -468,8 +468,7 @@ body {
 .AQR .text-wrapper-15{
   position: absolute;
   top: 526px;
-  left: 245px;
-  width: 118px;
+  left: 245px;  
   height: 15px;
   display: flex;
   align-items: center;
@@ -486,8 +485,7 @@ body {
 .AQR .text-wrapper-16{
   position: absolute;
   top: 701px;
-  left: 235px;
-  width: 140px;
+  left: 235px;  
   height: 15px;
   display: flex;
   align-items: center;
@@ -495,7 +493,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #bd0fdc;
-  font-size: 9px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
@@ -505,8 +503,7 @@ body {
 .AQR .text-wrapper-17{
   position: absolute;
   top: 701px;
-  left: 426px;
-  width: 102px;
+  left: 426px;  
   height: 15px;
   display: flex;
   align-items: center;
@@ -514,7 +511,7 @@ body {
   font-family: "Gmarket Sans TTF-Bold", Helvetica;
   font-weight: 700;
   color: #be10dd;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: 15px;
@@ -523,8 +520,7 @@ body {
 .AQR .text-wrapper-18{
   position: absolute;
   top: 524px;
-  left: 58px;
-  width: 143px;
+  left: 58px;  
   height: 20px;
   display: flex;
   align-items: center;
@@ -541,8 +537,7 @@ body {
 .AQR .text-wrapper-19{
   position: absolute;
   top: 698px;
-  left: 58px;
-  width: 143px;
+  left: 58px;  
   height: 20px;
   display: flex;
   align-items: center;
@@ -708,8 +703,7 @@ body {
 .AQR .text-wrapper-20{
   position: absolute;
   top: 526px;
-  left: 417px;
-  width: 118px;
+  left: 417px;  
   height: 15px;
   display: flex;
   align-items: center;
