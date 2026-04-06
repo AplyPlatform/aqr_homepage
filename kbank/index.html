@@ -983,13 +983,13 @@
     var complianceH = complianceText ? complianceText.offsetHeight : 24;
 
     // 3. 로고 그룹: 페이지 최하단
-    var logoTop = complianceTop + complianceH + gap + 25;
+    var logoTop = complianceTop + complianceH + gap;
     var kbankLogo = document.querySelector('.kbank-logo');
     var logoXMark = document.querySelector('.logo-x-mark');
     var image7 = document.querySelector('.image-7');
-    if (kbankLogo) kbankLogo.style.top = logoTop + 'px';
-    if (logoXMark) logoXMark.style.top = logoTop + 'px';
-    if (image7) image7.style.top = logoTop + 'px';
+    if (kbankLogo) kbankLogo.style.top = (logoTop + 15) + 'px';
+    if (logoXMark) logoXMark.style.top = (logoTop + 16) + 'px';
+    if (image7) image7.style.top = (logoTop + 20) + 'px';
 
     aqr.style.minHeight = (logoTop + 35 + gap) + 'px';
   }
