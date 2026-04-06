@@ -2323,7 +2323,7 @@ body {
 
 .AQR .faq-section-wrapper{
   position: absolute;
-  top: 1141px; /* overridden by JS based on product-info-abs height */
+  top: 1100px; /* FAQ section comes first; product-info-abs is positioned after by JS */
   left: 0;
   width: 595px;
   min-height: 2123px;
@@ -2331,7 +2331,7 @@ body {
 
 .AQR .compliance-text {
   position: absolute;
-  top: -45px;
+  top: 9999px; /* JS로 동적 배치 */
   right: 25px;
   width: 595px;
   text-align: right;

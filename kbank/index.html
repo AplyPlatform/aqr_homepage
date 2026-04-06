@@ -292,7 +292,7 @@
     (판매인 사업자 계좌 개설) 2026.04.09. ~ 05.31.
    </p>
    <p class="text-wrapper-10">
-    (계좌 테스트 및 사용) 2026.06.01.(예정) ~
+    (계좌 테스트 및 사용) 2026.06월 내(예정) ~
    </p>
    <div class="text-wrapper-11">
     2. 변경사항
@@ -538,7 +538,6 @@
     </table>
    </div>
    <div class="faq-section-wrapper">
-   <div class="compliance-text">2026.01.01. 준법감시인 심의필 2026-568(유효기간 : 2026.12.31)</div>
    <div class="text-wrapper-24">
     FAQ
    </div>
@@ -890,9 +889,6 @@
      '간편 QR계좌이체' 서비스를 적극 활용</span><span class="text-wrapper-36">하시기 바랍니다.
     </span>
    </p>
-   <img class="kbank-logo" src="./assets/kbank_logo.png">
-   <div class="logo-x-mark">X</div>
-   <img class="image-7" src="./assets/dh-logo-big.svg">
    <div class="text-wrapper-52">
     Q1
    </div>
@@ -952,6 +948,10 @@
     ※ 이외 궁금하신 사항은 담당 매니저에게 문의하여 주시기 바랍니다. 감사합니다.
    </p>
    </div><!-- /faq-section-wrapper -->
+   <div class="compliance-text">2026.01.01. 준법감시인 심의필 2026-568(유효기간 : 2026.12.31)</div>
+   <img class="kbank-logo" src="./assets/kbank_logo.png">
+   <div class="logo-x-mark">X</div>
+   <img class="image-7" src="./assets/dh-logo-big.svg">
   </div>
  
 
@@ -966,11 +966,32 @@
     var faqWrapper = document.querySelector('.faq-section-wrapper');
     var aqr = document.querySelector('.AQR');
     if (!productInfo || !faqWrapper || !aqr) return;
+    var faqH = faqWrapper.offsetHeight;
     var productInfoH = productInfo.offsetHeight;
-    var gap = 36;
-    var faqTop = 1141 + productInfoH + gap;
-    faqWrapper.style.top = faqTop + 'px';
-    aqr.style.minHeight = (3264 + productInfoH + gap) + 'px';
+    var gap = 6;
+
+    // 1. product-info-abs: FAQ 섹션 아래
+    var productTop = 1065 + faqH + gap;
+    productInfo.style.top = productTop + 'px';
+
+    // 2. compliance-text: 상품안내 섹션 아래
+    var complianceText = document.querySelector('.compliance-text');
+    var complianceTop = productTop + productInfoH + gap;
+    if (complianceText) {
+      complianceText.style.top = complianceTop + 'px';
+    }
+    var complianceH = complianceText ? complianceText.offsetHeight : 24;
+
+    // 3. 로고 그룹: 페이지 최하단
+    var logoTop = complianceTop + complianceH + gap + 25;
+    var kbankLogo = document.querySelector('.kbank-logo');
+    var logoXMark = document.querySelector('.logo-x-mark');
+    var image7 = document.querySelector('.image-7');
+    if (kbankLogo) kbankLogo.style.top = logoTop + 'px';
+    if (logoXMark) logoXMark.style.top = logoTop + 'px';
+    if (image7) image7.style.top = logoTop + 'px';
+
+    aqr.style.minHeight = (logoTop + 35 + gap) + 'px';
   }
 
   function scaleAQR() {
