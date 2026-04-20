@@ -5,28 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>간편 QR계좌이체(AQR) 서비스 수신 계좌 변경 진행 : 케이뱅크</title>
   <link href="./assets/globals.css" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
-</head>
-<body style="word-break:keep-all;">
-<div class="site-bg">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: #fff;
+      color: #1a1a1a;
+      font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
 
-  <!-- ── 상단 헤더 배너 ── -->
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div>
-        <div class="header-badge">간편 QR계좌이체용 · STEP 1 / 2</div>
-        <h1 class="header-title">간편 QR계좌이체 서비스의 QR코드를 아래의 계좌 정보로 수정하시겠습니까?</h1>
-        <p class="header-sub">QR 코드 정보 갱신을 위해 "다음 단계로" 버튼을 터치해주세요.</p>
-      </div>
-      <!-- 데스크탑 장식 아이콘 (모바일에서는 CSS로 숨김) -->
-      <div class="header-deco" aria-hidden="true" style="display:none;">🏦</div>
-    </div>
+    /* ── 상단 헤더 바 ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .icon-btn {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: #1a1a1a;
+      border-radius: 50%;
+    }
+
+    /* ── 본문 ── */
+    .page-body { padding: 24px 20px 64px; }
+
+    /* ── 페이지 제목 영역 ── */
+    .page-title-badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: #2952e0;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 11px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1.5px solid #c0ccff;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+    .page-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+    .page-sub {
+      font-size: 13px;
+      color: #888;
+      margin: 0 0 28px;
+      line-height: 1.6;
+    }
+
+    /* ── 스텝 인디케이터 ── */
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+    }
+    .step-circle {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 14px;
+    }
+    .step-circle.active {
+      background: #2952e0;
+      color: #fff;
+      box-shadow: 0 0 0 4px rgba(41,82,224,0.15);
+    }
+    .step-circle.inactive {
+      background: #eef2ff;
+      color: #9ab0e8;
+      border: 2px solid #c8d4f8;
+    }
+    .step-label {
+      font-size: 11px;
+      color: #999;
+      white-space: nowrap;
+    }
+    .step-label.active {
+      color: #2952e0;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+    }
+    .step-connector {
+      flex: 1; height: 2px;
+      background: #d8e0ff;
+      margin-bottom: 18px;
+      max-width: 56px;
+    }
+
+    /* ── 카드 ── */
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid #e0e8ff;
+      padding: 22px 18px 26px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 10px rgba(41,82,224,0.06);
+    }
+
+    /* ── 섹션 태그 ── */
+    .section-tag {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 20px;
+    }
+    .section-tag-bar {
+      display: inline-block;
+      width: 4px; height: 18px;
+      background: #2952e0;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-tag-text {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 14px;
+      color: #1a1a1a;
+    }
+
+    /* ── 폼 그리드 ── */
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .field-group { display: flex; flex-direction: column; }
+    .field-label {
+      display: flex; align-items: center; gap: 6px;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 6px; margin-top: 4px;
+    }
+    .field-input {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1.5px solid #d8e2ff;
+      border-radius: 12px;
+      font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: #fafbff;
+      outline: none;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .field-input:focus {
+      border-color: #2952e0;
+      box-shadow: 0 0 0 3px rgba(41,82,224,0.1);
+      background: #fff;
+    }
+    .field-input:disabled {
+      color: #333;
+      background: #f4f6ff;
+      cursor: default;
+    }
+    .field-error {
+      font-size: 11px; color: #e03535;
+      margin-top: 4px; display: none;
+    }
+
+    /* ── 안내 박스 ── */
+    .info-box {
+      background: #eef2ff;
+      border-radius: 14px;
+      border-left: 3px solid #2952e0;
+      padding: 13px 16px;
+      margin-bottom: 14px;
+    }
+    .info-box p {
+      margin: 0;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.75;
+    }
+    .info-box p + p { margin-top: 2px; }
+
+    /* ── 개인정보 영역 ── */
+    .privacy-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 14px;
+      color: #1a1a1a;
+      margin: 0 0 12px;
+    }
+    .privacy-box {
+      background: #fafbff;
+      border: 1.5px solid #d8e2ff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      max-height: 260px;
+      overflow-y: auto;
+      margin-bottom: 18px;
+    }
+    .privacy-box::-webkit-scrollbar { width: 4px; }
+    .privacy-box::-webkit-scrollbar-thumb { background: #bcc8f8; border-radius: 4px; }
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .privacy-table th {
+      background: #eef2ff;
+      color: #2952e0;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 12px;
+      padding: 8px 10px;
+      border: 1px solid #d0d8ff;
+      text-align: left;
+    }
+    .privacy-table td {
+      padding: 8px 10px;
+      border: 1px solid #e0e8ff;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .privacy-text {
+      font-size: 12px;
+      color: #444;
+      line-height: 1.8;
+      margin: 0 0 8px;
+    }
+    .privacy-text:last-child { margin-bottom: 0; }
+    .privacy-text strong {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      color: #2952e0;
+    }
+
+    /* ── 동의 체크박스 ── */
+    .consent-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 15px;
+      background: #eef2ff;
+      border-radius: 12px;
+      border: 1.5px solid #c0ccff;
+      cursor: pointer;
+    }
+    .consent-row input[type="checkbox"] {
+      appearance: none; -webkit-appearance: none;
+      width: 20px; height: 20px; min-width: 20px;
+      border: 2px solid #2952e0;
+      border-radius: 6px;
+      cursor: pointer; margin: 0;
+      position: relative; background: #fff;
+      transition: background 0.15s;
+    }
+    .consent-row input[type="checkbox"]:checked { background: #2952e0; }
+    .consent-row input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 6px;
+      width: 5px; height: 9px;
+      border: 2px solid #fff;
+      border-top: none; border-left: none;
+      transform: rotate(45deg);
+    }
+    .consent-label {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 13px;
+      color: #1a1a1a;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+    .consent-label span { color: #2952e0; }
+
+    /* ── 제출 버튼 ── */
+    .btn-wrap { margin-top: 6px; }
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: #172462;
+      color: #fff;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 17px;
+      text-align: center;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(23,36,98,0.22);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: #0f1a52;
+      box-shadow: 0 6px 20px rgba(23,36,98,0.3);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active:not(:disabled) { transform: scale(0.98); }
+    .btn-primary:disabled {
+      background: #b0bce8;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* ── 토스트 ── */
+    .toast {
+      display: none;
+      position: fixed;
+      bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(23,36,98,0.94);
+      color: #fff;
+      font-size: 14px;
+      padding: 13px 26px;
+      border-radius: 28px;
+      z-index: 9999;
+      white-space: nowrap;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .toast.show {
+      display: block;
+      animation: fadeInOut 2.2s ease forwards;
+    }
+    @keyframes fadeInOut {
+      0%   { opacity: 0; transform: translateX(-50%) translateY(12px); }
+      18%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+      75%  { opacity: 1; }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 바 -->
+  <div class="top-bar">
+    <button class="icon-btn" onclick="history.back()">&#8592;</button>
+    <button class="icon-btn">&#8679;</button>
   </div>
 
-  <!-- ── 본문 ── -->
+  <!-- 본문 -->
   <div class="page-body">
 
-    <!-- 진행 단계 표시 -->
+    <!-- 페이지 제목 -->
+    <div class="page-title-badge">간편 QR계좌이체용 &middot; STEP 1 / 2</div>
+    <h1 class="page-title">간편 QR계좌이체 서비스의 QR코드를 아래의 계좌 정보로 수정하시겠습니까?</h1>
+    <p class="page-sub">QR 코드 정보 갱신을 위해 "다음 단계로" 버튼을 터치해주세요.</p>
+
+    <!-- 스텝 인디케이터 -->
     <div class="step-indicator">
       <div class="step-item">
         <div class="step-circle active">1</div>
@@ -39,7 +371,7 @@
       </div>
     </div>
 
-    <!-- 입력 카드 -->
+    <!-- 계좌 정보 카드 -->
     <div class="card">
       <div class="section-tag">
         <span class="section-tag-bar"></span>
@@ -50,9 +382,7 @@
 
         <!-- 사업자 번호 -->
         <div class="field-group">
-          <label class="field-label" for="bizNo">
-            사업자 번호
-          </label>
+          <label class="field-label" for="bizNo">사업자 번호</label>
           <input
             value="123-12-12344"
             class="field-input"
@@ -64,15 +394,13 @@
             inputmode="numeric"
             autocomplete="off"
             disabled
-          >          
+          >
           <p class="field-error" id="bizNoError">사업자 번호를 입력해주세요.</p>
         </div>
 
         <!-- 예금주명 -->
         <div class="field-group">
-          <label class="field-label" for="accountName">
-            예금주명
-          </label>
+          <label class="field-label" for="accountName">예금주명</label>
           <input
             value="동행복"
             class="field-input"
@@ -87,11 +415,9 @@
           <p class="field-error" id="accountNameError">예금주명을 입력해주세요.</p>
         </div>
 
-        <!-- 계좌번호 (전체 너비) -->
+        <!-- 계좌번호 -->
         <div class="field-group span-full">
-          <label class="field-label" for="accountNo">
-            계좌번호
-          </label>
+          <label class="field-label" for="accountNo">계좌번호</label>
           <input
             value="100-123-456789"
             class="field-input"
@@ -103,12 +429,12 @@
             inputmode="numeric"
             autocomplete="off"
             disabled
-          >          
+          >
           <p class="field-error" id="accountNoError">계좌번호를 입력해주세요.</p>
         </div>
 
-      </div><!-- /form-grid -->
-    </div><!-- /card -->
+      </div>
+    </div>
 
     <!-- 안내 박스 -->
     <div class="info-box">
@@ -116,8 +442,8 @@
       <p>&#8226; 다음 단계에서 개인정보처리 방침 동의 후 최종 사용됩니다.</p>
     </div>
 
-    <!-- 개인정보 제3자 제공 동의 -->
-    <div class="card" style="margin-top:12px;">
+    <!-- 금융정보 활용 동의 카드 -->
+    <div class="card">
       <div class="section-tag">
         <span class="section-tag-bar"></span>
         <span class="section-tag-text">금융정보 활용 동의</span>
@@ -130,7 +456,6 @@
           <strong>케이뱅크</strong>는 어떤 서비스 운영을 위해
           금융정보 활용 동의를 받고 있습니다.
         </p>
-
         <table class="privacy-table">
           <tr>
             <th>항목</th>
@@ -142,24 +467,17 @@
           </tr>
           <tr>
             <td>제공 목적</td>
-            <td>
-              간편 QR계좌이체 서비스의<br>
-              QR 코드 정보 갱신 및 서비스 운영
-            </td>
+            <td>간편 QR계좌이체 서비스의<br>QR 코드 정보 갱신 및 서비스 운영</td>
           </tr>
           <tr>
             <td>제공 항목</td>
-            <td>
-              사업자 번호, 계좌번호,<br>
-              예금주명, 상호명(선택)
-            </td>
+            <td>사업자 번호, 계좌번호,<br>예금주명, 상호명(선택)</td>
           </tr>
           <tr>
             <td>보유·이용 기간</td>
             <td>서비스 종료 시 또는 동의 철회 시까지</td>
           </tr>
         </table>
-
         <p class="privacy-text">
           &#8226; <strong>(주)동행복권</strong>은 복권 판매 시스템 연동을 위해 해당 정보를 이용합니다.
         </p>
@@ -174,7 +492,6 @@
         </p>
       </div>
 
-      <!-- 동의 체크박스 -->
       <label class="consent-row" for="consentCheck1">
         <input type="checkbox" id="consentCheck1" onchange="toggleSubmitBtn()">
         <span class="consent-label">
@@ -193,81 +510,68 @@
 
   </div><!-- /page-body -->
 
-</div><!-- /site-bg -->
+  <!-- 토스트 -->
+  <div class="toast" id="toast">&#10003;&nbsp; 클립보드에 복사되었습니다. 다음 페이지로 이동합니다.</div>
 
-<!-- 토스트 -->
-<div class="toast" id="toast">&#10003;&nbsp; 클립보드에 복사되었습니다. 다음 페이지로 이동합니다.</div>
-
-<script>
-  // 데스크탑 장식 아이콘 표시
-  (function () {
-    var deco = document.querySelector('.header-deco');
-    if (deco && window.innerWidth >= 1024) {
-      deco.style.display = 'flex';
-    }
-    window.addEventListener('resize', function () {
-      if (deco) deco.style.display = window.innerWidth >= 1024 ? 'flex' : 'none';
+  <script>
+    // 사업자 번호 자동 하이픈
+    document.getElementById('bizNo').addEventListener('input', function () {
+      var val = this.value.replace(/[^0-9]/g, '');
+      if (val.length > 5) {
+        val = val.slice(0, 3) + '-' + val.slice(3, 5) + '-' + val.slice(5, 10);
+      } else if (val.length > 3) {
+        val = val.slice(0, 3) + '-' + val.slice(3);
+      }
+      this.value = val;
     });
-  })();
 
-  // 사업자 번호 자동 하이픈
-  document.getElementById('bizNo').addEventListener('input', function () {
-    var val = this.value.replace(/[^0-9]/g, '');
-    if (val.length > 5) {
-      val = val.slice(0, 3) + '-' + val.slice(3, 5) + '-' + val.slice(5, 10);
-    } else if (val.length > 3) {
-      val = val.slice(0, 3) + '-' + val.slice(3);
-    }
-    this.value = val;
-  });
-
-  function toggleSubmitBtn() {
-    var checked = document.getElementById('consentCheck1').checked;
-    document.getElementById('submitBtn').disabled = !checked;
-  }
-
-  function showError(id, show) {
-    var el = document.getElementById(id);
-    if (el) el.style.display = show ? 'block' : 'none';
-  }
-
-  function handleSubmit() {
-    var bizNo       = document.getElementById('bizNo').value.trim();
-    var accountNo   = document.getElementById('accountNo').value.trim();
-    var accountName = document.getElementById('accountName').value.trim();
-
-    var valid = true;
-    showError('bizNoError',      !bizNo);       if (!bizNo)       valid = false;
-    showError('accountNoError',  !accountNo);   if (!accountNo)   valid = false;
-    showError('accountNameError', !accountName); if (!accountName) valid = false;
-    if (!valid) return;
-
-    var clipText = [bizNo, accountNo, accountName].join(',');
-
-    function goNext() {
-      var toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(function () { window.location.href = 'aqr.html'; }, 1800);
+    function toggleSubmitBtn() {
+      var checked = document.getElementById('consentCheck1').checked;
+      document.getElementById('submitBtn').disabled = !checked;
     }
 
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(clipText).then(goNext).catch(function () {
+    function showError(id, show) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = show ? 'block' : 'none';
+    }
+
+    function handleSubmit() {
+      var bizNo       = document.getElementById('bizNo').value.trim();
+      var accountNo   = document.getElementById('accountNo').value.trim();
+      var accountName = document.getElementById('accountName').value.trim();
+
+      var valid = true;
+      showError('bizNoError',      !bizNo);       if (!bizNo)       valid = false;
+      showError('accountNoError',  !accountNo);   if (!accountNo)   valid = false;
+      showError('accountNameError', !accountName); if (!accountName) valid = false;
+      if (!valid) return;
+
+      var clipText = [bizNo, accountNo, accountName].join(',');
+
+      function goNext() {
+        var toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(function () { window.location.href = 'aqr.html'; }, 1800);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(clipText).then(goNext).catch(function () {
+          fallbackCopy(clipText); goNext();
+        });
+      } else {
         fallbackCopy(clipText); goNext();
-      });
-    } else {
-      fallbackCopy(clipText); goNext();
+      }
     }
-  }
 
-  function fallbackCopy(text) {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
-    document.body.appendChild(ta);
-    ta.focus(); ta.select();
-    try { document.execCommand('copy'); } catch (e) {}
-    document.body.removeChild(ta);
-  }
-</script>
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  </script>
 </body>
 </html>
