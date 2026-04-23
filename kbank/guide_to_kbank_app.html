@@ -244,9 +244,48 @@
       font-size: 14px; line-height: 1.5; margin: 0 0 3px;
     }
     .step-desc { font-size: 13px; color: #888; line-height: 1.6; margin: 0; }
+
+    /* ── CI 헤더 / 푸터 ── */
+    .ci-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      background: #fff;
+    }
+    .ci-bar.ci-top { border-bottom: 1px solid #f0f0f0; }
+    .ci-bar.ci-bottom {
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px 20px 24px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .ci-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ci-kbank { height: 30px; width: auto; display: block; }
+    .ci-dh    { height: 20px; width: auto; display: block; }
+    .ci-sep   { font-size: 30px; color: #999; line-height: 1; margin-left: 4px;}
+    .ci-compliance {
+      font-size: 10px;
+      color: #bbb;
+      text-align: center;
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
+
+  <!-- 최상단 CI 바 -->
+  <div class="ci-bar ci-top">
+    <div class="ci-logos">
+      <img src="./assets/dh-logo-big.svg" class="ci-dh" alt="동행복권">
+      <span class="ci-sep">×</span>
+      <img src="./assets/kbank_logo.png" class="ci-kbank" alt="케이뱅크">
+    </div>
+  </div>
 
   <!-- 본문 -->
   <div class="page-body">
@@ -261,7 +300,9 @@
       <div class="qr-frame">
         <div class="qr-corner-tr"></div>
         <div class="qr-corner-bl"></div>
-        <div id="qrcode"></div>
+        <div id="qrcode">
+          <img src="assets/qr-1@2x.png" width="196" height="196" alt="QR Code">
+        </div>
       </div>
       <p class="qr-hint">카메라 앱으로 촬영하세요</p>
     </div>
@@ -311,20 +352,13 @@
 
   </div><!-- /page-body -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <script>
-    (function () {
-      var target = window.location.origin + window.location.pathname.replace('guide_to_kbank_app.html', 'kbank.html');
-
-      new QRCode(document.getElementById('qrcode'), {
-        text: target,
-        width: 196,
-        height: 196,
-        colorDark: '#172462',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    })();
-  </script>
+  <!-- 최하단 CI 바 -->
+  <div class="ci-bar ci-bottom">
+    <div class="ci-logos">
+      <img src="./assets/dh-logo-big.svg" class="ci-dh" alt="동행복권">
+      <span class="ci-sep">×</span>
+      <img src="./assets/kbank_logo.png" class="ci-kbank" alt="케이뱅크">
+    </div>    
+  </div> 
 </body>
 </html>
