@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>간편 QR계좌이체 서비스 정보 갱신 안내 : 케이뱅크</title>
+  <link href="./assets/globals.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: #fff;
+      color: #1a1a1a;
+      font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    /* ── 상단 헤더 바 ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .icon-btn {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: #1a1a1a;
+      border-radius: 50%;
+    }
+
+    /* ── 본문 ── */
+    .page-body { padding: 24px 20px 64px; }
+
+    /* ── 배지 + 제목 ── */
+    .page-title-badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: #2952e0;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 11px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1.5px solid #c0ccff;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+    .page-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      margin: 0 0 28px;
+    }
+
+    /* ── QR 코드 카드 ── */
+    .qr-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid #e0e8ff;
+      padding: 32px 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 10px rgba(41,82,224,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .qr-label {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 13px;
+      color: #2952e0;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .qr-label::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 16px;
+      background: #2952e0;
+      border-radius: 2px;
+    }
+    .qr-frame {
+      width: 220px; height: 220px;
+      border-radius: 16px;
+      background: #fff;
+      border: 2px solid #dce6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      position: relative;
+    }
+    /* QR 코너 장식 */
+    .qr-frame::before,
+    .qr-frame::after {
+      content: '';
+      position: absolute;
+      width: 22px; height: 22px;
+      border-color: #2952e0;
+      border-style: solid;
+    }
+    .qr-frame::before {
+      top: -2px; left: -2px;
+      border-width: 3px 0 0 3px;
+      border-radius: 8px 0 0 0;
+    }
+    .qr-frame::after {
+      bottom: -2px; right: -2px;
+      border-width: 0 3px 3px 0;
+      border-radius: 0 0 8px 0;
+    }
+    .qr-corner-tr,
+    .qr-corner-bl {
+      position: absolute;
+      width: 22px; height: 22px;
+      border-color: #2952e0;
+      border-style: solid;
+    }
+    .qr-corner-tr {
+      top: -2px; right: -2px;
+      border-width: 3px 3px 0 0;
+      border-radius: 0 8px 0 0;
+    }
+    .qr-corner-bl {
+      bottom: -2px; left: -2px;
+      border-width: 0 0 3px 3px;
+      border-radius: 0 0 0 8px;
+    }
+    #qrcode {
+      width: 196px; height: 196px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #qrcode canvas,
+    #qrcode img {
+      border-radius: 8px;
+      display: block;
+    }
+    .qr-hint {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    /* ── 안내 박스 ── */
+    .info-box {
+      background: #eef2ff;
+      border-radius: 14px;
+      border-left: 3px solid #2952e0;
+      padding: 18px 16px;
+      margin-bottom: 14px;
+    }
+    .info-box-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 13px;
+      color: #2952e0;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .info-box-title::before {
+      content: 'ℹ';
+      font-size: 14px;
+    }
+    .info-box p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* ── 진행 단계 카드 ── */
+    .steps-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid #e0e8ff;
+      padding: 22px 18px;
+      box-shadow: 0 2px 10px rgba(41,82,224,0.06);
+    }
+    .steps-card-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 14px;
+      color: #1a1a1a;
+      margin: 0 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .steps-card-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 16px;
+      background: #2952e0;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+    }
+    .step-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+    .step-num {
+      width: 26px; height: 26px;
+      background: #2952e0;
+      border-radius: 50%;
+      color: #fff;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 12px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .step-vline {
+      width: 2px; background: #c8d0ff;
+      flex: 1; min-height: 18px;
+      margin: 3px 0;
+    }
+    .step-body {
+      flex: 1;
+      padding-top: 3px;
+      padding-bottom: 20px;
+    }
+    .step-row:last-child .step-body { padding-bottom: 0; }
+    .step-head {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 14px; line-height: 1.5; margin: 0 0 3px;
+    }
+    .step-desc { font-size: 13px; color: #888; line-height: 1.6; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- 본문 -->
+  <div class="page-body">
+
+    <!-- 배지 + 제목 -->
+    <div class="page-title-badge">간편 QR계좌이체(AQR) 서비스</div>
+    <h1 class="page-title">아래 QR을 촬영하여 간편 QR계좌이체 서비스 정보를 갱신해주세요.</h1>
+
+    <!-- QR 코드 카드 -->
+    <div class="qr-card">
+      <p class="qr-label">QR 코드 스캔</p>
+      <div class="qr-frame">
+        <div class="qr-corner-tr"></div>
+        <div class="qr-corner-bl"></div>
+        <div id="qrcode"></div>
+      </div>
+      <p class="qr-hint">카메라 앱으로 촬영하세요</p>
+    </div>
+
+    <!-- 안내 박스 -->
+    <div class="info-box">
+      <p class="info-box-title">이용 안내</p>
+      <p>QR을 촬영하면 케이뱅크 앱이 실행됩니다. 케이뱅크 앱에 표시되는 지침에 따라 간편 QR계좌이체 서비스 정보의 갱신을 진행해 주세요.</p>
+    </div>
+
+    <!-- 진행 단계 -->
+    <div class="steps-card">
+      <p class="steps-card-title">진행 순서</p>
+
+      <div class="step-row">
+        <div class="step-side">
+          <div class="step-num">1</div>
+          <div class="step-vline"></div>
+        </div>
+        <div class="step-body">
+          <p class="step-head">QR 코드 촬영</p>
+          <p class="step-desc">카메라 앱 또는 QR 코드 리더 앱의 QR 스캔 기능으로 위 QR을 촬영해주세요.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-side">
+          <div class="step-num">2</div>
+          <div class="step-vline"></div>
+        </div>
+        <div class="step-body">
+          <p class="step-head">케이뱅크 앱 실행</p>
+          <p class="step-desc">QR 촬영 후 케이뱅크 앱이 자동으로 실행됩니다.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-side">
+          <div class="step-num">3</div>
+        </div>
+        <div class="step-body">
+          <p class="step-head">안내에 따라 정보 갱신</p>
+          <p class="step-desc">앱에 표시되는 지침에 따라 간편 QR계좌이체 서비스 정보의 갱신을 완료해주세요.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page-body -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    (function () {
+      var target = window.location.origin + window.location.pathname.replace('guide_to_kbank_app.html', 'kbank.html');
+
+      new QRCode(document.getElementById('qrcode'), {
+        text: target,
+        width: 196,
+        height: 196,
+        colorDark: '#172462',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    })();
+  </script>
+</body>
+</html>

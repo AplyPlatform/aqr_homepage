@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>케이뱅크 사장님 통장 개설 및 QR 간편이체 서비스 안내</title>
+  <link href="./assets/globals.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: #fff;
+      color: #1a1a1a;
+      font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    /* ── 상단 헤더 바 ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .icon-btn {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: #1a1a1a;
+      border-radius: 50%;
+    }
+
+    /* ── 본문 ── */
+    .page-body {
+      padding: 0 0 56px;
+    }
+
+    /* ── 히어로 섹션 (로고 + 환영 타이틀) ── */
+    .hero {
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    .hero-logo {
+      display: block;
+      width: 180px;
+      margin: 0 auto 20px;
+    }
+    .hero-name {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 22px;
+      color: #888;
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+    .hero-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 36px;
+      color: #2952e0;
+      margin: 0 0 28px;
+      line-height: 1.25;
+    }
+    .hero-divider {
+      width: 40px; height: 4px;
+      background: #2952e0;
+      border-radius: 2px;
+      margin: 0 auto 28px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.8;
+      margin: 0;
+    }
+    .hero-desc strong {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      color: #2952e0;
+    }
+
+    /* ── 섹션 구분선 ── */
+    .sec-divider { height: 8px; background: #f4f4f4; }
+
+    /* ── 안내 카드 ── */
+    .guide-wrap { padding: 28px 20px; }
+    .guide-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid #e0e8ff;
+      padding: 24px 20px;
+      box-shadow: 0 2px 12px rgba(41,82,224,0.07);
+      margin-bottom: 20px;
+    }
+    .guide-card-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 16px;
+      color: #2952e0;
+      margin: 0 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .guide-card-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 18px;
+      background: #2952e0;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .guide-group { margin-bottom: 20px; }
+    .guide-group:last-child { margin-bottom: 0; }
+    .guide-group-title {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 15px;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+    }
+    .guide-divider {
+      border: none;
+      border-top: 1px solid #eef2ff;
+      margin: 18px 0;
+    }
+    .guide-steps {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .guide-steps li {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+      padding-left: 22px;
+      position: relative;
+    }
+    .guide-steps li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #2952e0;
+      font-size: 13px;
+    }
+    .guide-steps li strong {
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      color: #2952e0;
+    }
+    .guide-screenshot {
+      text-align: center;
+      margin: 14px 0 6px;
+    }
+    .guide-screenshot img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+      object-fit: contain;
+    }
+
+    /* ── 버튼 ── */
+    .btn-wrap { padding: 0 20px; display: flex; flex-direction: column; gap: 12px; }
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: #172462;
+      color: #fff;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 17px;
+      text-align: center;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.1s, box-shadow 0.18s;
+      box-shadow: 0 4px 16px rgba(23,36,98,0.22);
+    }
+    .btn-primary:hover {
+      background: #0f1a52;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(23,36,98,0.3);
+    }
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: #dce6ff;
+      color: #2952e0;
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: center;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 바 -->
+  <div class="top-bar">
+    <button class="icon-btn" onclick="history.back()">&#8592;</button>
+  </div>
+
+  <div class="page-body">
+
+    <!-- 히어로 / 환영 영역 -->
+    <div class="hero">
+      <img src="./assets/dh-logo-big.svg" class="hero-logo" alt="동행복권">
+      <p class="hero-name">판매인 여러분</p>
+      <h1 class="hero-title">사장님 통장 개설을 환영합니다!</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        <strong>동행복권 판매인 계좌</strong> 등록을 케이뱅크 앱에 접속하셔서 진행해주세요.
+      </p>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- 안내 카드 -->
+    <div class="guide-wrap">
+      <div class="guide-card">
+        <h2 class="guide-card-title">사장님 통장 개설 안내</h2>
+
+        <div class="guide-group">
+          <p class="guide-group-title">1. 신규회원</p>
+          <ul class="guide-steps">
+            <li>회원가입 완료 화면: <strong>[사장님통장 만들기]</strong> 터치 후 앱 실행</li>
+            <li>앱 설치, 실행 후 계좌 개설 시: <strong>'개인사업자'</strong>, 통장: <strong>'사장님 통장'</strong>으로 기본 설정</li>
+          </ul>
+        </div>
+
+        <hr class="guide-divider">
+
+        <div class="guide-group">
+          <p class="guide-group-title">2. 기존회원</p>
+          <ul class="guide-steps">
+            <li>조회결과 <strong>"기존 회원입니다"</strong> 표시: <strong>[사장님통장 만들기]</strong> 터치 후 앱 실행</li>
+            <li>(로그인 가능 시) 로그인 진행</li>
+            <li>(로그인 불가 시) 앱 설치, 실행 및 기기등록, 로그인 진행</li>
+            <li>앱의 홈화면에서 우측 상단의 <strong>"사장님"</strong> 버튼 터치</li>
+          </ul>
+          <div class="guide-screenshot">
+            <img src="./assets/shot1.png" alt="홈화면 사장님 버튼">
+          </div>
+          <ul class="guide-steps">
+            <li><strong>[사장님통장 만들기]</strong> 버튼 터치</li>
+          </ul>
+          <div class="guide-screenshot">
+            <img src="./assets/shot2.png" alt="사장님통장 만들기 버튼">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 버튼 -->
+    <div class="btn-wrap">
+      <a href="./kbank.html" class="btn-primary">계속하기</a>
+      <a href="./kbank.html" class="btn-secondary">카카오톡 아이디가 없으면 여기 터치</a>
+    </div>
+
+  </div><!-- /page-body -->
+</body>
+</html>
