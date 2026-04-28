@@ -237,6 +237,25 @@
       vertical-align: top;
       line-height: 1.6;
     }
+    .accept-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;      
+      margin-bottom: 12px;
+    }
+    .accept-table th {      
+      font-family: "Gmarket Sans TTF-Bold", Helvetica, sans-serif;
+      font-size: 12px;
+      padding: 8px 10px;
+      border: 0px solid;
+      text-align: left;
+    }
+    .accept-table td {
+      padding: 8px 10px;
+      border: 0px solid;
+      vertical-align: top;
+      line-height: 1.6;
+    }
     .privacy-text {
       font-size: 12px;
       color: #444;
@@ -446,15 +465,16 @@
     <div class="card">
       <div class="section-tag">
         <span class="section-tag-bar"></span>
-        <span class="section-tag-text">금융정보 활용 동의</span>
+        <span class="section-tag-text">금융거래정보 제3자 제공 동의서</span>
       </div>
 
-      <p class="privacy-title">금융정보 활용 동의</p>
+      <p class="privacy-title">판매인用 사장님통장, 동행복권</p>
 
       <div class="privacy-box">
         <p class="privacy-text">
-          <strong>케이뱅크</strong>는 어떤 서비스 운영을 위해
-          금융정보 활용 동의를 받고 있습니다.
+          <strong> [(주)케이뱅크] 귀중</strong>
+          <br>
+          * 케이뱅크 사장님 통장 상품 이용과 관련하여 귀 행이 본인의 금융거래정보를 제3자에게 제공하고자 하는 경우에는 「금융실명거래 및 비밀보장에 관한 법률」등 관계 법령에 따라 본인의 동의가 필요합니다.
         </p>
         <table class="privacy-table">
           <tr>
@@ -463,40 +483,49 @@
           </tr>
           <tr>
             <td>제공받는 자</td>
-            <td><strong>(주)동행복권</strong>, <strong>(주)케이뱅크</strong>, <strong>(주)어플라이</strong></td>
+            <td><span style="font-weight: bold;">주식회사 동행복권</span></td>
           </tr>
           <tr>
-            <td>제공 목적</td>
-            <td>간편 QR계좌이체 서비스의<br>QR 코드 정보 갱신 및 서비스 운영</td>
+            <td>제공받는 자의 이용목적</td>
+            <td>판매점에 설치된 QR을 통한 복권구매 시 고객이 입금한 내역에 대한판매 단말기 화면 실시간 노출</td>
           </tr>
           <tr>
-            <td>제공 항목</td>
-            <td>사업자 번호, 계좌번호,<br>예금주명, 상호명(선택)</td>
+            <td>제공받는 자의 보유 및 이용기간</td>
+            <td>5기 복권사업자 사업기간까지(2028년 12월 31일)</td>
           </tr>
           <tr>
-            <td>보유·이용 기간</td>
-            <td>서비스 종료 시 또는 동의 철회 시까지</td>
+            <td>동의서 유효기간</td>
+            <td><span style="font-weight: bold;">동의일로부터 5년</span>
+            <p style="background-color: #eee;padding:3px;">다만, 「금융실명거래 및 비밀보장에 관한 법률」제4조의2 제1항에 따라 케이뱅크는 명의인의 지속적인 동의에 따른 불이익 또는 편의의 저해가 우려되어 1년 이내의 단위로 기존 정보제공 동의내용을 재차 확인하고, 계좌개설 시 등록한 이메일을 통해 해당 정보 제공 내역을 전자문서의 방식으로 일괄 통보합니다.</p>
+            </td>
           </tr>
+          <tr>
+            <td>거부 권리 및 불이익</td>
+            <td>귀하는 금융거래정보제공을 거부하실 수 있습니다. 다만, 본 금융거래정보제공에 대한 동의는 판매점에 설치된 QR을 통하여 복권 구매시 고객이 입금한 내역에 대하여 판매 단말기에 실시간 노출을 위한 필수적인 사항이므로 동의하셔야만 판매 단말기에 입금내역이 노출될 수 있습니다.</td>
+          </tr>          
         </table>
+
         <p class="privacy-text">
-          &#8226; <strong>(주)동행복권</strong>은 복권 판매 시스템 연동을 위해 해당 정보를 이용합니다.
+          &#8226; <strong>제공 항목</strong>
         </p>
-        <p class="privacy-text">
-          &#8226; <strong>(주)케이뱅크</strong>는 동행복권 사업자 계좌 확인 및 QR 결제 연동을 위해 해당 정보를 이용합니다.
-        </p>
-        <p class="privacy-text">
-          &#8226; <strong>(주)어플라이</strong>는 간편 QR계좌이체 서비스(AQR)의 QR 코드 정보 갱신 및 서비스 운영을 위해 해당 정보를 이용합니다.
-        </p>
-        <p class="privacy-text">
-          &#8226; 귀하는 개인정보 제3자 제공 동의를 거부할 권리가 있으며, 거부 시 QR계좌이체 서비스(AQR) 이용이 제한될 수 있습니다.
-        </p>
+        <table class="privacy-table">
+          <tr>
+            <td>금융거래정보</td>
+            <td>점포 식별 정보 및 금융거래내역<br>
+- 점포식별정보(사업자번호, 예금주성명)<br>
+- 금융거래내역(입금일자, 입금시간, 입금은행, 입금계좌번호, 입금액, 입금의뢰인명, 계좌거래 일련번호 등)</td>
+          </tr>
+        </table>        
       </div>
 
-      <label class="consent-row" for="consentCheck1">
-        <input type="checkbox" id="consentCheck1" onchange="toggleSubmitBtn()">
-        <span class="consent-label">
-          위 개인정보처리 방침을 확인하였으며,<br>
-          <span>개인정보 제3자 제공에 동의합니다.</span>
+      <label class="consent-row" for="consentCheck1">                
+        <span class="consent-label">          
+          위 금융거래정보 제공에 동의하십니까?<br>
+          <table class="accept-table" style="width:80px !important;"><tr>
+            <td style="width:10px !important;padding: 0 !important;"><input type="checkbox" id="consentCheck1" onchange="toggleSubmitBtn()"></td>
+            <td valign="center" width="25px;" style="padding: 0 !important;"><span style="font-size:14px;">동의함</span></td>
+          </tr>
+          </table>          
         </span>
       </label>
     </div>
