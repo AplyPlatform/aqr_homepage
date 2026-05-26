@@ -418,7 +418,7 @@ html, body {
 .result-msg {
   font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
   font-size: 15px;
-  color: #fff;
+  color: rgb(32, 32, 172);
   line-height: 1.7;
 }
 
