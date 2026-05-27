@@ -44,13 +44,13 @@
     <!-- 진행 단계 표시 -->
     <div class="step-indicator">
       <div class="step-item">
-        <div class="step-circle inactive">1</div>
-        <span class="step-label">계좌 정보 입력</span>
+        <div class="step-circle active" id="tab-1">1</div>
+        <span class="step-label active"  id="tab-1-sub">개인정보처리방침 동의 및 제출</span>
       </div>
       <div class="step-connector"></div>
       <div class="step-item">
-        <div class="step-circle active">2</div>
-        <span class="step-label active">방침 동의 및 제출</span>
+        <div class="step-circle inactive" id="tab-2">2</div>
+        <span class="step-label" id="tab-2-sub">계좌 정보 확인 및 완료</span>
       </div>
     </div>
 
@@ -68,10 +68,10 @@
       <div class="card" id="manualInputCard" style="display:none; grid-column:1/-1;">
         <div class="section-tag">
           <span class="section-tag-bar"></span>
-          <span class="section-tag-text">계좌 정보 직접 입력</span>
+          <span class="section-tag-text">계좌 정보 확인</span>
         </div>
-        <p style="font-size:13px;color:#e67e22;margin:0 0 16px;">
-          클립보드에서 정보를 불러올 수 없습니다. 아래에 직접 입력해주세요.
+        <p style="font-size:13px;color:#e67e22;margin:0 0 16px;" id="autoInputErrorMsg">
+          클립보드에서 정보를 불러올 수 없습니다. 직접 입력해주세요.
         </p>
         <div class="field-group">
           <label class="field-label" for="manualBizNo">
@@ -83,7 +83,6 @@
             id="manualBizNo"
             placeholder="예) 123-45-67890"
             maxlength="20"
-            oninput="checkManualFormValidity()"
           >
         </div>
         <div class="field-group">
@@ -95,9 +94,7 @@
             type="text"
             id="manualAccountName"
             placeholder="예) 홍길동"
-            maxlength="50"
-            oninput="checkManualFormValidity()"
-          >
+            maxlength="50">
         </div>
         <div class="field-group">
           <label class="field-label" for="manualAccountNo">
@@ -108,33 +105,17 @@
             type="text"
             id="manualAccountNo"
             placeholder="예) 100-123456-789"
-            maxlength="30"
-            oninput="checkManualFormValidity()"
-          >
+            maxlength="30">
         </div>
-      </div>      
 
-      <!-- 상호명 입력 카드 -->
-      <div class="card slide-hidden" id="formCard">        
-        <div class="section-tag">
-          <span class="section-tag-bar"></span>
-          <span class="section-tag-text">상호 정보</span>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="storeName">
-            상호명 <span class="optional">선택</span>
-          </label>
-          <input
-            class="field-input"
-            type="text"
-            id="storeName"
-            name="storeName"
-            placeholder="예) 홍길동 복권판매점"
-            maxlength="50"
-          >
-        </div>
-        <div class="section-tag" style="margin-top:10px;">
-          <img src="./assets/plate.png" alt="QR 플레이트" style="width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.15);object-fit:contain;">          
+        <div class="btn-wrap">
+          <button class="btn-primary" id="modifyBtn" onclick="handleModify()">
+            직접 수정하기
+          </button>
+
+          <button class="btn-primary" id="goBtn" onclick="handleGo()">
+            QR 정보 갱신하기
+          </button>
         </div>
       </div>
 
@@ -238,11 +219,11 @@
     <!-- 제출 버튼 -->
     <div class="btn-wrap">
       <button class="btn-primary" id="submitBtn" onclick="handleConsent()" disabled>
-         QR 정보 변경하기
+         동의하고 진행하기
       </button>
     </div>
 
-    <a class="back-link" onclick="history.back()">&#8592; 이전 페이지로 돌아가기</a>
+    <a class="back-link" onclick="history.back()" style="display:none;">&#8592; 이전 페이지로 돌아가기</a>
 
   </div><!-- /.page-body -->
 </div><!-- /.site-bg -->

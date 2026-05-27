@@ -388,12 +388,28 @@ html, body {
   box-shadow: none;
 }
 
+/* ── 수동 입력 카드 버튼 (가로 정렬 + 소형) ── */
+#manualInputCard .btn-wrap {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+#manualInputCard .btn-primary {
+  flex: 1;
+  width: auto;
+  max-width: none;
+  padding: 11px 14px;
+  font-size: 14px;
+  border-radius: 14px;
+}
+
 /* ── 결과 메시지 (aqr) ── */
 .result-box {
   display: none;
   border-radius: 16px;
   padding: 20px 22px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  max-width: 480px;
   text-align: center;
 }
 .result-box.success {
@@ -532,6 +548,7 @@ html, body {
     padding: 40px 32px 72px;
     display: flex;
     flex-direction: column;
+    width: 800px;
   }
 
   .card {
@@ -569,6 +586,7 @@ html, body {
   }
   .cards-grid .card {
     margin-bottom: 0;
+    width: 800px;
   }
 
   .privacy-box  { max-height: 400px; }
