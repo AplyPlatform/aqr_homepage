@@ -402,6 +402,17 @@ html, body {
   font-size: 14px;
   border-radius: 14px;
 }
+#manualInputCard #modifyBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /* ── 결과 메시지 (aqr) ── */
 .result-box {
