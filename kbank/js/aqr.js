@@ -224,7 +224,7 @@
           document.querySelector('.step-indicator').style.display = 'none';
 
           var storeIdMsg = '<br><br>사업자 번호: <strong>' + bizNo + '</strong>';
-          showResult('success', '&#10003;', '수정이 완료되었습니다!',
+          showResult('success', '&#10003;', '갱신이 완료되었습니다!',
             'QR 코드 정보 갱신 요청이 정상적으로 처리되었습니다.' + storeIdMsg);
         },
         error: function (err) {
