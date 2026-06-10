@@ -127,10 +127,19 @@
   }
 
   function isIPhone() {
-    return /iPhone/i.test(navigator.userAgent);
+    const isIPhone = /iPhone/i.test(navigator.userAgent);
+    const isMac = /Macintosh|MacIntel/i.test(navigator.userAgent);
+
+    if (isIPhone || isMac) return true;
+
+    return false;
   }
 
   function showIPhonePasteHint() {
+    var onIPhone = /iPhone/i.test(navigator.userAgent);
+    var onMac    = /Macintosh|MacIntel/i.test(navigator.userAgent);
+    if (!onIPhone && !onMac) return;
+
     var existing = document.getElementById('iphone-paste-hint');
     if (existing) existing.remove();
 
@@ -139,36 +148,67 @@
       style.id = 'iphone-paste-hint-style';
       style.textContent = [
         '@keyframes paste-pulse{',
-        '  0%,100%{transform:translateX(-50%) scale(1);box-shadow:0 4px 24px rgba(230,126,34,0.5)}',
-        '  50%{transform:translateX(-50%) scale(1.04);box-shadow:0 8px 36px rgba(230,126,34,0.8)}',
+        '  0%,100%{transform:scale(1);box-shadow:0 4px 24px rgba(230,126,34,0.5)}',
+        '  50%{transform:scale(1.04);box-shadow:0 8px 36px rgba(230,126,34,0.8)}',
         '}'
       ].join('');
       document.head.appendChild(style);
     }
 
+    var btn = document.getElementById('submitBtn');
+    var rect = btn ? btn.getBoundingClientRect() : null;
+
     var hint = document.createElement('div');
     hint.id = 'iphone-paste-hint';
-    hint.style.cssText = [
-      'position:fixed',
-      'bottom:72px',
-      'left:50%',
-      'transform:translateX(-50%)',
+
+    var styleProps = [
       'background:linear-gradient(135deg,#f39c12,#e67e22)',
       'color:#fff',
       'font-size:19px',
       'font-weight:800',
-      'padding:18px 32px',
+      'padding:14px 20px',
       'border-radius:16px',
       'box-shadow:0 4px 24px rgba(230,126,34,0.5)',
       'z-index:99999',
       'text-align:center',
       'line-height:1.6',
       'animation:paste-pulse 1s ease-in-out infinite',
-      'white-space:nowrap',
-      'letter-spacing:-0.3px'
-    ].join(';');    
-    hint.innerHTML = '⇧ ⇧ ⇧<br>위의 <strong>붙여넣기</strong>&nbsp;를 터치하세요!';
+      'letter-spacing:-0.3px',
+      'box-sizing:border-box'
+    ];
+
+    if (rect) {
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var scrollX = window.pageXOffset || document.documentElement.scrollLeft || 0;
+      styleProps.unshift('position:absolute');
+      styleProps.push('left:' + (scrollX + rect.left) + 'px');
+      styleProps.push('width:' + rect.width + 'px');
+
+      if (onIPhone) {
+        // 버튼 z축 위에 겹쳐서 표시
+        styleProps.push('top:' + (scrollY + rect.top) + 'px');
+        styleProps.push('display:flex');
+        styleProps.push('flex-direction:column');
+        styleProps.push('align-items:center');
+        styleProps.push('justify-content:center');
+      } else {
+        // Mac: 버튼 바로 아래에 표시
+        styleProps.push('top:' + (scrollY + rect.bottom + 10) + 'px');
+      }
+    } else {
+      styleProps.unshift('position:fixed');
+      styleProps.push('bottom:72px');
+      styleProps.push('left:50%');
+      styleProps.push('transform:translateX(-50%)');
+      styleProps.push('white-space:nowrap');
+    }
+
+    hint.style.cssText = styleProps.join(';');
+    hint.innerHTML = onIPhone
+      ? '<span>⬆ ⬆ ⬆</span><span><strong>"붙여넣기"</strong>를 터치하세요!</span>'
+      : '<span style="display:block">⬆ ⬆ ⬆</span><span style="display:block"><strong>"붙여넣기"</strong>를 터치하세요!</span>';
     document.body.appendChild(hint);
+    if (!onIPhone) hint.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function hideIPhonePasteHint() {
@@ -182,16 +222,14 @@
   async function handleConsent() {
     var btn = document.getElementById('submitBtn');
 
+    btn.disabled = true;
+
     if (isIPhone()) {      
-      btn.innerHTML = '⇧⇧⇧ 위의 붙여넣기를 터치하세요!';
-      btn.disabled = true;
+      btn.innerHTML = '"붙여넣기"를 터치하세요!';    
       showIPhonePasteHint();
       await new Promise(function (resolve) { setTimeout(resolve, 200); });
     }
-
-    // 버튼 로딩 상태
-    btn.disabled = true;
-    if (!isIPhone()) {
+    else {
       btn.innerHTML = '<span class="spinner"></span>처리 중...';
     }
 
