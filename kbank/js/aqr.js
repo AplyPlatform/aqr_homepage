@@ -65,8 +65,14 @@
   }
 
   function validateBizNum() {
-    var bizNo       = document.getElementById('manualBizNo').value.trim();    
-    if (!/^\d{3}-\d{2}-\d{5}$/.test(bizNo)) return false;
+    var bizNo       = document.getElementById('manualBizNo').value.trim();
+
+    // 하이픈 제거
+    var plainBizNo = bizNo.replace(/-/g, '');
+    // 10자리 숫자인지 확인
+    if (!/^\d{10}$/.test(plainBizNo)) {
+      return false;
+    }
     return true;
   }
 
@@ -86,7 +92,7 @@
     }
 
     if (!validateBizNum()) {
-        alert('사업자번호 형식이 올바르지 않습니다. 예시: 123-45-67890');
+        alert('사업자번호가 올바르지 않습니다. [ 예시: 123-45-67890 / 10자리 숫자 ]');
         return;
     }
 
@@ -161,6 +167,8 @@
       showManualForm();
       return;
     }
+
+    showManualForm();
             
     if (parsedData == null
         || parsedData["accountHolderName"] == null || parsedData["accountNumber"] == null || parsedData["businessNumber"] == null
@@ -168,23 +176,21 @@
     ) {
       manualMode = true;
       hideGoButtons();
-      showManualForm();
       return;
     }
 
     let bizNo       = parsedData["businessNumber"];
     let accountNo   = parsedData["accountNumber"];
     let accountName = parsedData["accountHolderName"];
-    
-    document.getElementsByClassName('optional')[0].style.display = 'none';
-    document.getElementsByClassName('optional')[1].style.display = 'none';
-    document.getElementsByClassName('optional')[2].style.display = 'none';
-    document.getElementById('autoInputErrorMsg').style.display = 'none';
-    showManualForm();
-
+        
     document.getElementById('manualBizNo').value = bizNo;
     document.getElementById('manualAccountNo').value = accountNo;
     document.getElementById('manualAccountName').value = accountName;
+
+    document.getElementsByClassName('optional')[0].style.display = 'none';
+    document.getElementsByClassName('optional')[1].style.display = 'none';
+    document.getElementsByClassName('optional')[2].style.display = 'none';
+    document.getElementById('autoInputErrorMsg').style.display = 'none';    
 
     document.getElementById('manualBizNo').disabled = true;
     document.getElementById('manualAccountNo').disabled = true;
