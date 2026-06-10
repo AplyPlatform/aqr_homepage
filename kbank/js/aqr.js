@@ -187,6 +187,13 @@
     document.getElementById('manualAccountNo').value = accountNo;
     document.getElementById('manualAccountName').value = accountName;
 
+    if(!validateBizNum()) {
+      alert('사업자번호가 올바르지 않습니다. [ 예시: 123-45-67890 / 10자리 숫자 ]');
+      manualMode = true;
+      hideGoButtons();
+      return;
+    }
+
     document.getElementsByClassName('optional')[0].style.display = 'none';
     document.getElementsByClassName('optional')[1].style.display = 'none';
     document.getElementsByClassName('optional')[2].style.display = 'none';
