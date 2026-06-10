@@ -135,8 +135,7 @@
     var tab2Sub = document.getElementById('tab-2-sub');
     tab1.classList.remove('active'); tab2.classList.add('active'); tab1.classList.add('inactive');
     tab1Sub.classList.remove('active'); tab2Sub.classList.add('active');
-
-    var bizNo, accountNo, accountName;
+    
     // 클립보드에서 데이터 읽기
     var clipText = '';
     try {
@@ -152,9 +151,22 @@
       return;
     }
 
+    var parsedData = null;
+    try {
+      // 텍스트를 JSON 객체로 파싱 시도
+      parsedData = JSON.parse(clipText);      
+    } catch (error) {      
+      manualMode = true;
+      hideGoButtons();
+      showManualForm();
+      return;
+    }
+
     // 클립보드 데이터 파싱
-    var parts = clipText.split(',');
-    if (parts.length < 3 || !parts[0].trim() || !parts[1].trim() || !parts[2].trim()) {
+    
+    if (!parsedData["accountHolderName"] || !parsedData["accountNumber"] || !parsedData["businessNumber"]
+        || parsedData["accountHolderName"] == '' || parsedData["accountNumber"] == '' || parsedData["businessNumber"] == ''
+    ) {
       manualMode = true;
       hideGoButtons();
       showManualForm();
@@ -167,14 +179,14 @@
     document.getElementById('autoInputErrorMsg').style.display = 'none';
     showManualForm();    
 
-    bizNo       = parts[0].trim();
-    accountNo   = parts[1].trim();
-    accountName = parts[2].trim();
+    let bizNo       = parsedData["businessNumber"];
+    let accountNo   = parsedData["accountNumber"];
+    let accountName = parsedData["accountHolderName"];
 
     document.getElementById('manualBizNo').value = bizNo;
     document.getElementById('manualAccountNo').value = accountNo;
     document.getElementById('manualAccountName').value = accountName;
-    
+
     document.getElementById('manualBizNo').disabled = true;
     document.getElementById('manualAccountNo').disabled = true;
     document.getElementById('manualAccountName').disabled = true;
