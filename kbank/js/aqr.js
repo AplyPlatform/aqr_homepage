@@ -161,10 +161,9 @@
       showManualForm();
       return;
     }
-
-    // 클립보드 데이터 파싱
-    
-    if (!parsedData["accountHolderName"] || !parsedData["accountNumber"] || !parsedData["businessNumber"]
+            
+    if (parsedData == null
+        || parsedData["accountHolderName"] == null || parsedData["accountNumber"] == null || parsedData["businessNumber"] == null
         || parsedData["accountHolderName"] == '' || parsedData["accountNumber"] == '' || parsedData["businessNumber"] == ''
     ) {
       manualMode = true;
@@ -172,16 +171,16 @@
       showManualForm();
       return;
     }
+
+    let bizNo       = parsedData["businessNumber"];
+    let accountNo   = parsedData["accountNumber"];
+    let accountName = parsedData["accountHolderName"];
     
     document.getElementsByClassName('optional')[0].style.display = 'none';
     document.getElementsByClassName('optional')[1].style.display = 'none';
     document.getElementsByClassName('optional')[2].style.display = 'none';
     document.getElementById('autoInputErrorMsg').style.display = 'none';
-    showManualForm();    
-
-    let bizNo       = parsedData["businessNumber"];
-    let accountNo   = parsedData["accountNumber"];
-    let accountName = parsedData["accountHolderName"];
+    showManualForm();
 
     document.getElementById('manualBizNo').value = bizNo;
     document.getElementById('manualAccountNo').value = accountNo;
