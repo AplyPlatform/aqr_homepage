@@ -122,17 +122,80 @@
   function showGoButtons() {
     var modifyBtn = document.getElementById('modifyBtn');
     var goBtn = document.getElementById('goBtn');
-    if (manualMode == false &&modifyBtn) modifyBtn.style.display = 'block';
+    if (manualMode == false && modifyBtn) modifyBtn.style.display = 'block';
     if (goBtn) goBtn.style.display = 'block';
   }
 
-  async function handleConsent() {        
+  function isIPhone() {
+    return /iPhone/i.test(navigator.userAgent);
+  }
+
+  function showIPhonePasteHint() {
+    var existing = document.getElementById('iphone-paste-hint');
+    if (existing) existing.remove();
+
+    if (!document.getElementById('iphone-paste-hint-style')) {
+      var style = document.createElement('style');
+      style.id = 'iphone-paste-hint-style';
+      style.textContent = [
+        '@keyframes paste-pulse{',
+        '  0%,100%{transform:translateX(-50%) scale(1);box-shadow:0 4px 24px rgba(230,126,34,0.5)}',
+        '  50%{transform:translateX(-50%) scale(1.04);box-shadow:0 8px 36px rgba(230,126,34,0.8)}',
+        '}'
+      ].join('');
+      document.head.appendChild(style);
+    }
+
+    var hint = document.createElement('div');
+    hint.id = 'iphone-paste-hint';
+    hint.style.cssText = [
+      'position:fixed',
+      'bottom:72px',
+      'left:50%',
+      'transform:translateX(-50%)',
+      'background:linear-gradient(135deg,#f39c12,#e67e22)',
+      'color:#fff',
+      'font-size:19px',
+      'font-weight:800',
+      'padding:18px 32px',
+      'border-radius:16px',
+      'box-shadow:0 4px 24px rgba(230,126,34,0.5)',
+      'z-index:99999',
+      'text-align:center',
+      'line-height:1.6',
+      'animation:paste-pulse 1s ease-in-out infinite',
+      'white-space:nowrap',
+      'letter-spacing:-0.3px'
+    ].join(';');    
+    hint.innerHTML = '⇧ ⇧ ⇧<br>위의 <strong>붙여넣기</strong>&nbsp;를 터치하세요!';
+    document.body.appendChild(hint);
+  }
+
+  function hideIPhonePasteHint() {
+    var hint = document.getElementById('iphone-paste-hint');
+    if (!hint) return;
+    hint.style.transition = 'opacity .3s';
+    hint.style.opacity = '0';
+    setTimeout(function () { if (hint.parentNode) hint.parentNode.removeChild(hint); }, 300);
+  }
+
+  async function handleConsent() {
     var btn = document.getElementById('submitBtn');
+
+    if (isIPhone()) {      
+      btn.innerHTML = '⇧⇧⇧ 위의 붙여넣기를 터치하세요!';
+      btn.disabled = true;
+      showIPhonePasteHint();
+      await new Promise(function (resolve) { setTimeout(resolve, 200); });
+    }
+
     // 버튼 로딩 상태
     btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span>처리 중...';
+    if (!isIPhone()) {
+      btn.innerHTML = '<span class="spinner"></span>처리 중...';
+    }
 
-    privacyCard.style.display = 'none';
+    document.getElementById('privacyCard').style.display = 'none';
     btn.style.display = 'none';
 
     var tab1 = document.getElementById('tab-1');
@@ -141,7 +204,7 @@
     var tab2Sub = document.getElementById('tab-2-sub');
     tab1.classList.remove('active'); tab2.classList.add('active'); tab1.classList.add('inactive');
     tab1Sub.classList.remove('active'); tab2Sub.classList.add('active');
-    
+
     // 클립보드에서 데이터 읽기
     var clipText = '';
     try {
@@ -151,11 +214,13 @@
         throw new Error('clipboard not supported');
       }
     } catch (e) {
-      manualMode = true;            
+      hideIPhonePasteHint();
+      manualMode = true;
       hideGoButtons();
       showManualForm();
       return;
     }
+    hideIPhonePasteHint();
 
     var parsedData = null;
     try {
@@ -272,4 +337,12 @@
     document.getElementById('resultTitle').textContent = title;
     document.getElementById('resultMsg').innerHTML = msg;
     box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function clearResult() {
+    var box = document.getElementById('resultBox');
+    box.style.display = 'none';
+    document.getElementById('resultIcon').innerHTML = '';
+    document.getElementById('resultTitle').textContent = '';
+    document.getElementById('resultMsg').textContent = '';
   }
