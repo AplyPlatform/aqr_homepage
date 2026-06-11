@@ -222,10 +222,21 @@
   async function handleConsent() {
     var btn = document.getElementById('submitBtn');
 
+    // user gesture가 살아 있는 동안 clipboardPromise를 먼저 생성
+    // (Samsung Internet은 첫 await 이후 user activation을 소멸로 처리할 수 있음)
+    var clipboardPromise = null;
+    try {
+      if (navigator.clipboard && typeof navigator.clipboard.readText === 'function') {
+        clipboardPromise = navigator.clipboard.readText();
+      }
+    } catch (e) {
+      clipboardPromise = null;
+    }
+
     btn.disabled = true;
 
-    if (isIPhone()) {      
-      btn.innerHTML = '"붙여넣기"를 터치하세요!';    
+    if (isIPhone()) {
+      btn.innerHTML = '"붙여넣기"를 터치하세요!';
       showIPhonePasteHint();
       await new Promise(function (resolve) { setTimeout(resolve, 200); });
     }
@@ -243,11 +254,11 @@
     tab1.classList.remove('active'); tab2.classList.add('active'); tab1.classList.add('inactive');
     tab1Sub.classList.remove('active'); tab2Sub.classList.add('active');
 
-    // 클립보드에서 데이터 읽기
+    // 클립보드에서 데이터 읽기 (앞서 생성한 Promise를 await)
     var clipText = '';
     try {
-      if (navigator.clipboard && navigator.clipboard.readText) {
-        clipText = await navigator.clipboard.readText();
+      if (clipboardPromise) {
+        clipText = await clipboardPromise;
       } else {
         throw new Error('clipboard not supported');
       }
