@@ -357,6 +357,10 @@ html, body {
 .btn-wrap {
   text-align: center;
 }
+#submitBtnWrap {
+  position: relative;
+  z-index: 1;
+}
 .btn-primary {
   display: inline-block;
   width: 100%;
@@ -374,6 +378,7 @@ html, body {
   letter-spacing: 0.2px;
   transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
   box-shadow: 0 4px 18px rgba(77,44,255,0.3);
+  touch-action: manipulation;
 }
 .btn-primary:hover {
   background-color: #3b1fd4;

@@ -5,13 +5,22 @@
   window.addEventListener('load', function(){
     var el = document.getElementById('page-spinner');
     var shown = Date.now();
-    function revealCards(){      
-      var privacyCard = document.getElementById('privacyCard');      
-      if(privacyCard) { privacyCard.classList.remove('slide-hidden'); privacyCard.classList.add('slide-in-delay'); }
+    function revealCards(){
+      var privacyCard = document.getElementById('privacyCard');
+      if(privacyCard) {
+        privacyCard.classList.remove('slide-hidden');
+        privacyCard.classList.add('slide-in-delay');
+        // 애니메이션 종료 후 클래스 제거: transform 합성 레이어가 버튼 터치 영역을
+        // 잘못 점유하는 Samsung Internet 버그 방지 (animation: 0.5s + delay: 0.15s)
+        setTimeout(function() {
+          privacyCard.classList.remove('slide-in-delay');
+        }, 700);
+      }
     }
     var hide = function(){
-      el.style.opacity='0';
       el.style.transition='opacity .3s';
+      el.style.pointerEvents='none';
+      el.style.opacity='0';
       setTimeout(function(){ el.style.display='none'; revealCards(); }, 300);
     };
     var elapsed = Date.now() - shown;
@@ -214,6 +223,7 @@
   function hideIPhonePasteHint() {
     var hint = document.getElementById('iphone-paste-hint');
     if (!hint) return;
+    hint.style.pointerEvents = 'none';
     hint.style.transition = 'opacity .3s';
     hint.style.opacity = '0';
     setTimeout(function () { if (hint.parentNode) hint.parentNode.removeChild(hint); }, 300);
@@ -221,18 +231,6 @@
 
   async function handleConsent() {
     var btn = document.getElementById('submitBtn');
-
-    // user gesture가 살아 있는 동안 clipboardPromise를 먼저 생성
-    // (Samsung Internet은 첫 await 이후 user activation을 소멸로 처리할 수 있음)
-    var clipboardPromise = null;
-    try {
-      if (navigator.clipboard && typeof navigator.clipboard.readText === 'function') {
-        clipboardPromise = navigator.clipboard.readText();
-      }
-    } catch (e) {
-      clipboardPromise = null;
-    }
-
     btn.disabled = true;
 
     if (isIPhone()) {
@@ -254,11 +252,11 @@
     tab1.classList.remove('active'); tab2.classList.add('active'); tab1.classList.add('inactive');
     tab1Sub.classList.remove('active'); tab2Sub.classList.add('active');
 
-    // 클립보드에서 데이터 읽기 (앞서 생성한 Promise를 await)
+    // 클립보드에서 데이터 읽기
     var clipText = '';
     try {
-      if (clipboardPromise) {
-        clipText = await clipboardPromise;
+      if (navigator.clipboard && typeof navigator.clipboard.readText === 'function') {
+        clipText = await navigator.clipboard.readText();
       } else {
         throw new Error('clipboard not supported');
       }
@@ -271,7 +269,7 @@
     }
     hideIPhonePasteHint();
 
-    var parsedData = null;
+     var parsedData = null;
     try {
       // 텍스트를 JSON 객체로 파싱 시도
       parsedData = JSON.parse(clipText);      
